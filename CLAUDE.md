@@ -1,4 +1,4 @@
-# Contexte du repo pour l'agent Dev
+# Contexte du repo pour l'agent Dev 
 
 Ce fichier est lu par Claude Code au démarrage. Il doit rester court et exact. À copier à la racine de chaque repo de site, puis à adapter.
 
