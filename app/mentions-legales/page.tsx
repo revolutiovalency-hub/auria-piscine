@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section";
-import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/site.config";
 
 export const generateMetadata = () => buildMetadata({ title: "Mentions légales", description: `Mentions légales du site ${site.name}.`, path: "/mentions-legales" });
@@ -24,6 +25,7 @@ export default function MentionsLegales() {
         <h2>Propriété intellectuelle</h2>
         <p>L'ensemble des contenus de ce site (textes, images, logos) est la propriété de {l.legalName || site.name} ou de ses partenaires. Toute reproduction sans autorisation est interdite.</p>
       </article>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Mentions légales", path: "/mentions-legales" }])} />
     </Section>
   );
 }

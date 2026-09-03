@@ -1,5 +1,6 @@
 import { Section } from "@/components/Section";
-import { buildMetadata } from "@/lib/seo";
+import { JsonLd } from "@/components/JsonLd";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/site.config";
 
 export const generateMetadata = () => buildMetadata({ title: "Politique de confidentialité", description: `Comment ${site.name} traite vos données personnelles.`, path: "/confidentialite" });
@@ -23,6 +24,7 @@ export default function Confidentialite() {
         <h2>Vos droits</h2>
         <p>Vous pouvez accéder à vos données, les rectifier, les supprimer ou vous opposer à leur traitement en écrivant à {b.email || "l'adresse indiquée dans les mentions légales"}. Vous pouvez aussi saisir la CNIL.</p>
       </article>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Politique de confidentialité", path: "/confidentialite" }])} />
     </Section>
   );
 }
