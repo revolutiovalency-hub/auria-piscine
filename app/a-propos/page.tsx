@@ -23,14 +23,15 @@ export default function APropos() {
   return (
     <>
       <Hero
+        breadcrumb="À propos"
         title="Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009"
         lead="Aurea Piscines est une SARL créée en 2009, dont le siège et le dépôt se trouvent 128 avenue de la Pompignane à Montpellier. Plus de 300 projets de construction et de rénovation ont été menés depuis, à Montpellier et dans un rayon d’environ 30 km, avec une équipe de maçonnerie salariée."
         cta={{ label: "Demander un devis détaillé", href: "/contact" }}
       />
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">L’équipe et la répartition des lots</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">L’équipe et la répartition des lots</h2>
+        <div className="prose mt-4">
           <p>
             Deux conducteurs de travaux suivent les chantiers, du relevé de terrain à la réception. C’est l’un d’eux qui reste
             votre interlocuteur pendant toute la durée du projet.
@@ -54,8 +55,8 @@ export default function APropos() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Notre façon de travailler</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Notre façon de travailler</h2>
+        <div className="prose mt-4">
           <ul>
             <li>
               <strong>Un prix contractualisé.</strong> Le devis est établi poste par poste après le relevé de terrain. Une fois
@@ -105,8 +106,8 @@ export default function APropos() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Ce que nous refusons de faire</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Ce que nous refusons de faire</h2>
+        <div className="prose mt-4">
           <ul>
             <li>Nous ne vendons pas de coques polyester ni de piscines en kit, et nous n’assistons pas l’auto-construction.</li>
             <li>Nous ne reprenons pas un gros œuvre commencé par une autre entreprise.</li>
@@ -122,8 +123,8 @@ export default function APropos() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Informations légales</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Informations légales</h2>
+        <div className="prose mt-4">
           <ul>
             <li>Raison sociale : {l.legalName}, {l.legalForm}</li>
             <li>SIREN : {l.siren}</li>
@@ -139,13 +140,11 @@ export default function APropos() {
         </div>
       </Section>
 
-      <Section tone="surface">
-        <CtaBand
+      <CtaBand
           title="Parler de votre projet"
           text="Décrivez votre terrain, votre commune et votre échéance. Nous vous rappelons sous 24 h ouvrées."
           cta={{ label: "Demander un devis détaillé", href: "/contact" }}
-        />
-      </Section>
+      />
 
       <JsonLd
         data={[

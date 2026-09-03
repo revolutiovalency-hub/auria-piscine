@@ -37,14 +37,15 @@ export default function EquipementsPiscine() {
   return (
     <>
       <Hero
+        breadcrumb="Équipements de piscine"
         title="Équiper ou moderniser sa piscine à Montpellier"
         lead="Aurea Piscines installe et remplace les équipements de piscine à Montpellier et dans un rayon d’environ 30 km : filtration et hydraulique, pompe à chaleur, électrolyse au sel, régulation automatique du traitement, volet immergé et dispositifs de sécurité. Nous intervenons sur nos bassins comme sur des piscines construites par d’autres."
         cta={{ label: "Demander un devis détaillé", href: "/contact" }}
       />
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Filtration et hydraulique</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Filtration et hydraulique</h2>
+        <div className="prose mt-4">
           <p>
             La filtration est le poste qui décide de la qualité de l’eau et de la consommation électrique du bassin. Elle se
             dimensionne à partir du volume d’eau, du temps de renouvellement visé, du linéaire de canalisation entre le bassin
@@ -64,8 +65,8 @@ export default function EquipementsPiscine() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Chauffage et saison de baignade</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Chauffage et saison de baignade</h2>
+        <div className="prose mt-4">
           <p>
             Une pompe à chaleur de piscine prélève des calories dans l’air extérieur et les transfère à l’eau du bassin. Sous le
             climat héraultais, elle sert surtout à avancer le début de saison au printemps et à la prolonger à l’automne, quand
@@ -93,8 +94,8 @@ export default function EquipementsPiscine() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Traitement de l’eau</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Traitement de l’eau</h2>
+        <div className="prose mt-4">
           <p>
             L’électrolyse au sel est un procédé qui produit le désinfectant directement dans le circuit : une cellule traversée
             par un courant transforme le sel dissous dans l’eau en chlore actif, lequel se recombine ensuite en sel après avoir
@@ -115,8 +116,8 @@ export default function EquipementsPiscine() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Sécurité et mise aux normes</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Sécurité et mise aux normes</h2>
+        <div className="prose mt-4">
           <p>
             Une piscine enterrée non close à usage privatif doit être pourvue d’un dispositif de sécurité normalisé destiné à
             prévenir la noyade des enfants de moins de cinq ans, obligation prévue par le code de la construction et de

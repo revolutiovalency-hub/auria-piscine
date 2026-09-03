@@ -1,12 +1,25 @@
 import { Hero } from "@/components/Hero";
-import { Section } from "@/components/Section";
+import { Section, SectionHead } from "@/components/Section";
+import { IntroSplit } from "@/components/IntroSplit";
+import { FactRow } from "@/components/FactRow";
+import { PoolTypeCard } from "@/components/PoolTypeCard";
+import { OptionList } from "@/components/OptionList";
 import { EtapesProjet } from "@/components/EtapesProjet";
+import { ProjectCard } from "@/components/ProjectCard";
+import { CtaCard } from "@/components/CtaBand";
 import { Faq } from "@/components/Faq";
 import { EtapesSuivantes } from "@/components/EtapesSuivantes";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, serviceJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { relatedLinks } from "@/lib/nav";
-import { etapesProjet } from "@/lib/site-content";
+import {
+  etapesProjet,
+  faitsConstruction,
+  typesBassins,
+  optionsConstruction,
+  projets,
+  MENTION_PROJETS,
+} from "@/lib/site-content";
 
 const PATH = "/construction-piscine-beton-montpellier";
 const NOM = "Construction de piscine en béton armé projeté";
@@ -38,14 +51,36 @@ export default function ConstructionPiscine() {
   return (
     <>
       <Hero
+        breadcrumb="Piscine sur mesure"
         title="Faire construire une piscine béton sur mesure à Montpellier"
         lead="Aurea Piscines construit des bassins en béton armé projeté à Montpellier et dans un rayon d’environ 30 km. Le bassin est dessiné pour votre terrain, sans forme imposée par un moule, et la structure est réalisée par notre équipe de maçonnerie salariée, du relevé de terrain à la mise en eau."
         cta={{ label: "Demander un devis détaillé", href: "/contact" }}
+        secondary={{ label: "Voir la zone d’intervention", href: "/zone-intervention-montpellier" }}
       />
 
-      <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Le béton armé projeté : principe et durée de vie</h2>
-        <div className="mt-4 prose text-secondary">
+      <Section size="sm">
+        <IntroSplit
+          title="Une piscine dessinée, pas choisie sur catalogue."
+          min="280px"
+          gap="clamp(28px,4vw,72px)"
+          aside={<FactRow faits={faitsConstruction} />}
+        >
+          <p className="m-0 text-[16.5px] leading-[1.75] text-body">
+            Nous construisons en béton armé projeté, une technique qui autorise toutes les formes, toutes les profondeurs et une
+            durée de vie de plusieurs décennies. Chaque projet démarre par un relevé du terrain, et par une étude de sol lorsque
+            la pente ou la nature du sol l’exige.
+          </p>
+          <p className="m-0 text-[16.5px] leading-[1.75] text-body">
+            Nous prenons en charge le dossier de déclaration préalable ou de permis de construire, la coordination des corps de
+            métier et la réception de chantier. Comptez en moyenne 10 à 16 semaines entre le début des travaux et la mise en
+            eau ; la date qui vous engage est celle du planning annexé au devis signé.
+          </p>
+        </IntroSplit>
+      </Section>
+
+      <Section tone="surface" size="sm">
+        <h2 className="h2-md max-w-[20ch]">Le béton armé projeté : principe et durée de vie</h2>
+        <div className="prose mt-4">
           <p>
             Le béton armé projeté est un béton envoyé sous pression sur une armature en acier montée dans la fouille : la matière
             se compacte au contact du ferraillage et forme une coque monolithique, sans joint de reprise. C’est cette technique
@@ -64,36 +99,33 @@ export default function ConstructionPiscine() {
         </div>
       </Section>
 
-      <Section>
-        <EtapesProjet
-          title="Du relevé de terrain à la mise en eau"
-          intro="Six étapes. Chacune fait l’objet d’une date annoncée dans le devis et le planning contractualisé, y compris le délai d’instruction du dossier d’urbanisme, qui dépend de la mairie et non de nous."
-          etapes={etapesProjet}
-        />
-      </Section>
-
-      <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Revêtements et finitions</h2>
-        <div className="mt-4 prose text-secondary">
-          <p>
-            Une membrane armée est un revêtement d’étanchéité en PVC composé de deux feuilles soudées autour d’une trame
-            textile, posée et soudée sur place au fond et sur les parois du bassin. Nous posons de la membrane armée Renolit
-            Alkorplan.
-          </p>
-          <p>
-            L’autre voie est l’enduit, appliqué directement sur la structure. Le choix se fait sur l’aspect recherché, la
-            tolérance aux mouvements de structure et la façon dont vous comptez entretenir le bassin.
-          </p>
-          <p>
-            Les margelles et les plages ferment l’ouvrage : pierre naturelle, pierre reconstituée, bois ou carrelage extérieur.
-            Ces lots sont réalisés par des entreprises locales que nous coordonnons, sous notre planning.
-          </p>
+      <Section size="sm">
+        <h2 className="h2-md mb-[clamp(26px,3vw,44px)] max-w-[20ch]">Types de piscines que nous réalisons</h2>
+        <div className="grid gap-[clamp(18px,2vw,28px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(250px,100%),1fr))" }}>
+          {typesBassins.map((t) => (
+            <PoolTypeCard key={t.titre} type={t} />
+          ))}
         </div>
       </Section>
 
-      <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Comment nous chiffrons</h2>
-        <div className="mt-4 prose text-secondary">
+      <Section tone="surface" size="sm">
+        <div className="grid gap-[clamp(30px,4vw,72px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(290px,100%),1fr))" }}>
+          <div>
+            <p className="eyebrow mb-4">Personnalisation</p>
+            <h2 className="h2-md max-w-[18ch]">Ce que vous choisissez réellement</h2>
+            <p className="mt-4 max-w-[48ch] text-[16px] leading-[1.7] text-muted">
+              Nous présentons chaque option avec son entretien et sa durée de vie, échantillons en main. Une membrane armée, par
+              exemple, est un revêtement d’étanchéité en PVC composé de deux feuilles soudées autour d’une trame textile, posée
+              et soudée sur place au fond et sur les parois du bassin.
+            </p>
+          </div>
+          <OptionList options={optionsConstruction} />
+        </div>
+      </Section>
+
+      <Section size="sm">
+        <h2 className="h2-md max-w-[20ch]">Comment nous chiffrons</h2>
+        <div className="prose mt-4">
           <p>
             Nous ne publions pas de grille de prix, parce qu’un bassin béton se chiffre à partir du terrain et pas à partir d’un
             catalogue. Le devis est établi après le relevé, poste par poste.
@@ -123,20 +155,44 @@ export default function ConstructionPiscine() {
         </div>
       </Section>
 
-      <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Ce que nous ne faisons pas</h2>
-        <ul className="mt-4 grid gap-2 text-secondary max-w-content list-disc pl-5">
-          <li>Nous ne vendons ni ne posons de coques polyester.</li>
-          <li>Nous ne vendons pas de piscines en kit et nous n’accompagnons pas les chantiers en auto-construction.</li>
-          <li>Nous ne reprenons pas un chantier de gros œuvre commencé par une autre entreprise.</li>
-        </ul>
+      <Section tone="surface" size="sm">
+        <h2 className="h2-md max-w-[20ch]">Ce que nous ne faisons pas</h2>
+        <div className="prose mt-4">
+          <ul>
+            <li>Nous ne vendons ni ne posons de coques polyester.</li>
+            <li>Nous ne vendons pas de piscines en kit et nous n’accompagnons pas les chantiers en auto-construction.</li>
+            <li>Nous ne reprenons pas un chantier de gros œuvre commencé par une autre entreprise.</li>
+          </ul>
+        </div>
       </Section>
 
-      <Section>
-        <Faq items={faq} />
+      <Section tone="dark" size="sm">
+        <EtapesProjet
+          title="Les étapes de votre projet"
+          intro="Chaque étape fait l’objet d’une date annoncée dans le devis et le planning contractualisé, y compris le délai d’instruction du dossier d’urbanisme, qui dépend de la mairie et non de nous."
+          etapes={etapesProjet}
+        />
       </Section>
 
-      <Section tone="surface">
+      <Section size="sm">
+        <SectionHead title="Réalisations sur mesure récentes" />
+        <div className="grid gap-[clamp(16px,2vw,26px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(260px,100%),1fr))" }}>
+          {projets.slice(0, 2).map((p) => (
+            <ProjectCard key={p.titre} projet={p} />
+          ))}
+          <CtaCard
+            title="Votre terrain mérite une étude, pas une estimation au hasard."
+            cta={{ label: "Demander un devis", href: "/contact" }}
+          />
+        </div>
+        <p className="mt-6 text-[12.5px] text-faint">{MENTION_PROJETS}</p>
+      </Section>
+
+      <Section tone="surface" size="sm">
+        <Faq title="Questions sur la piscine sur mesure" items={faq} soft />
+      </Section>
+
+      <Section size="sm">
         <EtapesSuivantes
           points={[
             "Vous nous décrivez le projet, la commune et l’échéance souhaitée. Nous vous rappelons sous 24 h ouvrées.",

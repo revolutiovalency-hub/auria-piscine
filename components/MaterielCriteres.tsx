@@ -1,24 +1,33 @@
+import { OptionList, type Option } from "./OptionList";
+
 // « Matériel que nous installons et critères de choix » : formulation factuelle, sans logo,
 // sans le mot partenaire ni agréé (décision D1, point 13).
-export function MaterielCriteres({ title, intro, marques, criteres }: { title: string; intro: string; marques: string[]; criteres: { titre: string; texte: string }[] }) {
+export function MaterielCriteres({
+  title,
+  intro,
+  marques,
+  criteres,
+}: {
+  title: string;
+  intro: string;
+  marques: string[];
+  criteres: Option[];
+}) {
   return (
-    <div>
-      <h2 className="text-2xl sm:text-3xl font-heading text-primary">{title}</h2>
-      <p className="mt-4 text-secondary max-w-content">{intro}</p>
-      <ul className="mt-6 flex flex-wrap gap-2">
-        {marques.map((m) => (
-          <li key={m} className="rounded bg-surface px-4 py-2 text-primary">{m}</li>
-        ))}
-      </ul>
-      <h3 className="mt-10 text-lg font-heading text-primary">Nos critères de choix</h3>
-      <dl className="mt-4 grid gap-4 sm:grid-cols-2">
-        {criteres.map((c) => (
-          <div key={c.titre} className="rounded bg-surface p-5">
-            <dt className="font-heading text-primary">{c.titre}</dt>
-            <dd className="mt-1 text-secondary">{c.texte}</dd>
-          </div>
-        ))}
-      </dl>
+    <div className="grid gap-[clamp(30px,4vw,72px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(290px,100%),1fr))" }}>
+      <div>
+        <h2 className="h2-md max-w-[18ch]">{title}</h2>
+        <p className="mt-4 max-w-[48ch] text-[16px] leading-[1.7] text-muted">{intro}</p>
+        <ul className="mt-6 flex list-none flex-wrap gap-2.5 p-0">
+          {marques.map((m) => (
+            <li key={m} className="pill">{m}</li>
+          ))}
+        </ul>
+      </div>
+      <div>
+        <h3 className="mb-6 h3-sans">Nos critères de choix</h3>
+        <OptionList options={criteres} />
+      </div>
     </div>
   );
 }

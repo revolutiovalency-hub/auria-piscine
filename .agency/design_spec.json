@@ -5,37 +5,53 @@
       "sections": [
         {
           "component": "Header",
-          "content_summary": "Nom Aurea Piscines, navigation vers les 5 pages service, téléphone visible, CTA devis."
+          "content_summary": "Logo AUREA / PISCINES, nav desktop 8 items, téléphone 04 67 00 00 00 visible desktop, bouton Demander un devis, hamburger mobile."
         },
         {
-          "cta": "Demander un devis détaillé",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Constructeur de piscines béton à Montpellier depuis 2009 ». Réponse directe 40 à 60 mots : qui est Aurea Piscines, ce qu'elle construit, où, avec quelles équipes."
+          "cta": "Demander un devis + Découvrir nos réalisations",
+          "component": "Hero pleine largeur (image de fond sombre)",
+          "content_summary": "Surtitre 'Constructeur de piscines · Hérault', H1 'Votre piscine, pensée pour votre maison.', paragraphe de positionnement, ligne de confiance '+15 ans, entreprise locale, intervention autour de Montpellier'."
+        },
+        {
+          "component": "IntroSplit",
+          "content_summary": "'Notre approche' : H2 'Un projet de piscine ne commence pas par un bassin', deux paragraphes, 4 badges pilules Conception/Construction/Rénovation/Entretien."
         },
         {
           "component": "ServiceCard",
-          "content_summary": "Les 5 prestations (construction, rénovation, équipements, entretien, étude de faisabilité) avec lien vers chaque page."
+          "content_summary": "'Nos expertises' : grille de 4 cartes services (piscine sur mesure, rénovation, équipements, entretien), chacune avec image placeholder, titre, texte, lien Découvrir vers /construction-piscine-beton-montpellier."
         },
         {
-          "component": "PreuveBlock",
-          "content_summary": "Ce que nous faisons et ce que nous ne faisons pas : ni coque, ni kit, ni show-room."
+          "component": "ProjectCard",
+          "content_summary": "'Réalisations' : une carte large en avant (bassin miroir Castelnau, texte superposé) + 2 cartes standards ; lien 'Voir toutes nos réalisations'."
         },
         {
-          "component": "PreuveBlock",
-          "content_summary": "Preuves datées et sourcées : 300+ projets, décennale MAAF Pro, Qualibat 2181, Propiscines®, note Google 4,8/5 sur 87 avis, avec lien vers la fiche, jamais en AggregateRating JSON-LD."
+          "component": "EtapesProjet (bandeau numéroté)",
+          "content_summary": "'Notre méthode' : H2 'Cinq étapes, aucune zone d'ombre', 5 blocs numérotés sur fond sombre #123F44."
         },
         {
-          "component": "EtapesProjet",
-          "content_summary": "Déroulé d'un projet en 6 étapes, du relevé à la mise en eau."
+          "component": "PreuveBlock / FactList",
+          "content_summary": "'Pourquoi Aurea' : 3 chiffres clés (15+ ans, 300+ projets, 100% sur mesure, mention 'chiffres indicatifs à titre de démonstration') + colonne de 5 preuves numérotées."
         },
         {
-          "component": "ZoneCarte",
-          "content_summary": "Zone d'intervention : Montpellier et communes en intervention courante, rayon d'environ 30 km, lien vers la page zone."
+          "component": "Testimonial",
+          "content_summary": "'Ce qu'en disent nos clients' : 3 citations avec auteur, ville, projet."
         },
         {
-          "cta": "Demander un devis détaillé",
+          "component": "ArticleRow",
+          "content_summary": "'Conseils' : 3 lignes d'articles (num, tag, temps de lecture, titre, résumé), lien 'Voir tous nos conseils'. Selon décision D1 (retrait de /journal), ce lien et cette section pointent en interne sans page dédiée ou sont à retirer en phase 2."
+        },
+        {
+          "component": "FAQ",
+          "content_summary": "'Questions fréquentes' réduite à 3 questions factuelles générales (décision D1, point 10) : intro + téléphone à gauche, questions en accordéon à droite."
+        },
+        {
+          "cta": "Demander un devis + Prendre rendez-vous",
           "component": "CTA band devis",
-          "content_summary": "Demande de devis détaillé et rappel sous 24 h ouvrées (fictif, assumé pour le test selon décision D1)."
+          "content_summary": "Bandeau final fond #1D5E63 : H2 'Parlons de votre projet', 2 CTA (Demander un devis, Prendre rendez-vous), téléphone en grand, horaires."
+        },
+        {
+          "component": "Footer",
+          "content_summary": "Colonnes navigation, prestations, zones d'intervention, contact, mentions légales."
         }
       ]
     },
@@ -43,38 +59,54 @@
       "path": "/construction-piscine-beton-montpellier",
       "sections": [
         {
-          "cta": "Demander un devis détaillé",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Faire construire une piscine béton sur mesure à Montpellier ». Réponse directe : bassin béton armé projeté dessiné pour le terrain, équipe maçonnerie intégrée."
+          "component": "Header",
+          "content_summary": "Identique au header global."
+        },
+        {
+          "cta": "Demander un devis + Voir des réalisations",
+          "component": "Hero pleine largeur (image de fond sombre)",
+          "content_summary": "Fil d'Ariane Accueil / Piscine sur mesure, H1 'Faire construire une piscine béton sur mesure à Montpellier', paragraphe réponse directe (béton armé projeté, équipe maçonnerie intégrée)."
+        },
+        {
+          "component": "IntroSplit",
+          "content_summary": "H2 'Une piscine dessinée, pas choisie sur catalogue' : béton armé projeté (définition), étude de sol, démarches, délai 10 à 16 semaines annoncé ; colonne de faits clé/valeur (customFacts)."
+        },
+        {
+          "component": "PoolTypeCard",
+          "content_summary": "'Types de piscines que nous réalisons' : 3 cartes types de bassins sur fond #F3EEE6."
+        },
+        {
+          "component": "OptionList",
+          "content_summary": "'Personnalisation' : H2 'Ce que vous choisissez réellement', 6 options en grille avec titre + texte."
         },
         {
           "component": "generic",
-          "content_summary": "Le béton armé projeté : principe, durée de vie, formes possibles, avec définition courte du terme dès sa première occurrence."
-        },
-        {
-          "component": "EtapesProjet",
-          "content_summary": "Du relevé de terrain à la mise en eau : les 6 étapes et les délais annoncés."
+          "content_summary": "'Comment nous chiffrons' (méthode, postes, ce qui fait varier, sans montant), remplace toute grille de prix par décision D1 point 5."
         },
         {
           "component": "generic",
-          "content_summary": "Revêtements et finitions : membrane armée Renolit Alkorplan, enduit, margelles, plages, avec définition de « membrane armée »."
+          "content_summary": "'Ce que nous ne faisons pas' (coques polyester, kits en piscine) ; requis par forbidden site_constitution."
         },
         {
-          "component": "generic",
-          "content_summary": "Section « Comment nous chiffrons » : méthode, postes, ce qui fait varier le prix. Aucun montant (décision D1, point 5)."
+          "component": "EtapesProjet (bandeau numéroté)",
+          "content_summary": "'Les étapes de votre projet' : 5 blocs numérotés sur fond #123F44."
         },
         {
-          "component": "generic",
-          "content_summary": "Ce que nous ne faisons pas : coques polyester, piscines en kit."
+          "component": "ProjectCard",
+          "content_summary": "'Réalisations sur mesure récentes' : 2 cartes projets."
+        },
+        {
+          "component": "CTA card promotionnelle",
+          "content_summary": "'Votre terrain mérite une étude, pas une estimation au hasard' + bouton Demander un devis, en fin de grille projets."
         },
         {
           "component": "FAQ",
-          "content_summary": "3 questions factuelles générales : délai de chantier, permis nécessaire, garanties (décision D1, point 10)."
+          "content_summary": "'Questions sur la piscine sur mesure' réduite à 3 questions factuelles générales (décision D1 point 10), fond #F3EEE6."
         },
         {
           "cta": "Demander un devis détaillé",
-          "component": "EtapesSuivantes",
-          "content_summary": "Étapes suivantes en 3 points et lien vers la page contact."
+          "component": "generic (dérivée)",
+          "content_summary": "'Étapes suivantes' en 3 points + lien vers /contact."
         }
       ]
     },
@@ -82,38 +114,42 @@
       "path": "/renovation-piscine-montpellier",
       "sections": [
         {
-          "cta": "Demander un diagnostic",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Rénover une piscine vieillissante à Montpellier et alentours ». Réponse directe : diagnostic structure et étanchéité, reprise du bassin, nouveau revêtement."
+          "component": "Header",
+          "content_summary": "Identique au header global."
         },
         {
-          "component": "generic",
+          "cta": "Demander un diagnostic + Voir des réalisations",
+          "component": "Hero pleine largeur (image de fond sombre) (dérivée)",
+          "content_summary": "Structure calquée sur le hero de /construction (fil d'Ariane, H1 'Rénover une piscine vieillissante à Montpellier et alentours', paragraphe réponse directe : diagnostic structure et étanchéité, reprise, nouveau revêtement)."
+        },
+        {
+          "component": "IntroSplit (dérivée)",
           "content_summary": "Signes qui imposent une rénovation : fuite, fissures, revêtement HS, plages descellées."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Le diagnostic : ce que nous contrôlons et ce que le rapport contient."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Les travaux possibles : reprise de structure, étanchéité, revêtement, margelles, plages."
         },
         {
-          "component": "generic",
-          "content_summary": "Rénover ou reconstruire : critères de décision, sans détour."
+          "component": "generic (dérivée)",
+          "content_summary": "Rénover ou reconstruire : les critères de décision, sans détour."
         },
         {
-          "component": "generic",
-          "content_summary": "Section « Comment nous chiffrons » par type d'intervention, sans montant (décision D1, point 5)."
+          "component": "generic (dérivée)",
+          "content_summary": "'Comment nous chiffrons' par type d'intervention, sans montant (décision D1 point 5)."
         },
         {
-          "component": "FAQ",
-          "content_summary": "3 questions factuelles générales : durée des travaux, piscine utilisable la même saison, garantie."
+          "component": "FAQ (dérivée)",
+          "content_summary": "3 questions factuelles générales : durée des travaux, utilisation la même saison, garantie (décision D1 point 10)."
         },
         {
           "cta": "Demander un diagnostic",
-          "component": "EtapesSuivantes",
-          "content_summary": "Étapes suivantes et demande de diagnostic."
+          "component": "generic (dérivée)",
+          "content_summary": "'Étapes suivantes' en 3 points + lien vers /contact."
         }
       ]
     },
@@ -121,38 +157,42 @@
       "path": "/equipements-piscine-montpellier",
       "sections": [
         {
-          "cta": "Demander un devis détaillé",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Équiper ou moderniser sa piscine à Montpellier ». Réponse directe : filtration, pompe à chaleur, électrolyse au sel, volet immergé, régulation, sécurité."
+          "component": "Header",
+          "content_summary": "Identique au header global."
         },
         {
-          "component": "generic",
+          "cta": "Demander un devis détaillé",
+          "component": "Hero pleine largeur (image de fond sombre) (dérivée)",
+          "content_summary": "H1 'Équiper ou moderniser sa piscine à Montpellier', réponse directe filtration/PAC/électrolyse au sel/volet immergé/régulation/sécurité."
+        },
+        {
+          "component": "generic (dérivée)",
           "content_summary": "Filtration et hydraulique : dimensionnement et consommation."
         },
         {
-          "component": "generic",
-          "content_summary": "Chauffage : pompe à chaleur, saison de baignade allongée. Section « Comment nous chiffrons » à la place des ordres de grandeur de coût, sans montant (décision D1, point 5)."
+          "component": "generic (dérivée)",
+          "content_summary": "Chauffage : pompe à chaleur, saison de baignade allongée, section 'Comment nous chiffrons' sans montant."
         },
         {
-          "component": "generic",
-          "content_summary": "Traitement de l'eau : électrolyse au sel et régulation automatique, avec définition de « électrolyse au sel »."
+          "component": "generic (dérivée)",
+          "content_summary": "Traitement de l'eau : électrolyse au sel et régulation automatique, définition du terme à sa première occurrence."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Sécurité et mise aux normes : volet immergé, alarme, barrière."
         },
         {
-          "component": "MaterielCriteres",
-          "content_summary": "« Matériel que nous installons et critères de choix » : nous installons des équipements Pentair, Zodiac, Aqualux, formulation factuelle sans logo (décision D1, point 13)."
+          "component": "generic (dérivée)",
+          "content_summary": "'Matériel que nous installons et critères de choix' : formulation factuelle 'nous installons des équipements Pentair, Zodiac, Aqualux', sans logo ni mot partenaire/agréé (décision D1 point 13)."
         },
         {
-          "component": "FAQ",
-          "content_summary": "3 questions factuelles générales : compatibilité avec un bassin existant, durée de pose, entretien."
+          "component": "FAQ (dérivée)",
+          "content_summary": "3 questions factuelles générales : compatibilité bassin existant, durée de pose, entretien (décision D1 point 10)."
         },
         {
           "cta": "Demander un devis détaillé",
-          "component": "EtapesSuivantes",
-          "content_summary": "Étapes suivantes et demande de devis détaillé. Lien ajouté vers /etude-faisabilite-demarches-urbanisme (décision D1, point 7)."
+          "component": "generic (dérivée)",
+          "content_summary": "'Étapes suivantes' en 3 points, lien contact et lien vers /etude-faisabilite-demarches-urbanisme (décision D1 point 7)."
         }
       ]
     },
@@ -160,34 +200,38 @@
       "path": "/entretien-piscine-montpellier",
       "sections": [
         {
+          "component": "Header",
+          "content_summary": "Identique au header global."
+        },
+        {
           "cta": "Demander un contrat",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Contrat d'entretien de piscine à Montpellier : 4 à 12 passages par an ». Réponse directe : contrats annuels, ouverture, hivernage, dépannage, analyses d'eau."
+          "component": "Hero pleine largeur (image de fond sombre) (dérivée)",
+          "content_summary": "H1 'Contrat d'entretien de piscine à Montpellier : 4 à 12 passages par an', réponse directe."
         },
         {
-          "component": "generic",
-          "content_summary": "Section « Construire votre contrat : de 4 à 12 passages selon le bassin », sans nombre de formules (décision D1, point 6)."
+          "component": "generic (dérivée)",
+          "content_summary": "'Construire votre contrat : de 4 à 12 passages selon le bassin', sans nombre de formules (décision D1 point 6)."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Ouverture de saison et hivernage : calendrier héraultais."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Analyses d'eau et traitement : méthode et certification IHB."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Dépannages ponctuels : ce que nous prenons, ce que nous ne prenons pas."
         },
         {
-          "component": "FAQ",
-          "content_summary": "3 questions factuelles générales : engagement, absence du propriétaire, délai de dépannage en été."
+          "component": "FAQ (dérivée)",
+          "content_summary": "3 questions factuelles générales : engagement, absence du propriétaire, délai de dépannage en été (décision D1 point 10). Le segment locations saisonnières est retiré (décision D1 point 22)."
         },
         {
           "cta": "Demander un contrat",
-          "component": "EtapesSuivantes",
-          "content_summary": "Étapes suivantes et demande de contrat."
+          "component": "generic (dérivée)",
+          "content_summary": "'Étapes suivantes' en 3 points, lien vers /contact."
         }
       ]
     },
@@ -195,38 +239,42 @@
       "path": "/etude-faisabilite-demarches-urbanisme",
       "sections": [
         {
-          "cta": "Demander une étude",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Étude de faisabilité et démarches d'urbanisme pour votre piscine ». Réponse directe : faisabilité, plans d'implantation, étude de sol, dépôt du dossier d'urbanisme."
+          "component": "Header",
+          "content_summary": "Identique au header global."
         },
         {
-          "component": "generic",
+          "cta": "Demander une étude",
+          "component": "Hero pleine largeur (image de fond sombre) (dérivée)",
+          "content_summary": "H1 'Étude de faisabilité et démarches d'urbanisme pour votre piscine', réponse directe : faisabilité, plans d'implantation, étude de sol, dépôt du dossier d'urbanisme."
+        },
+        {
+          "component": "generic (dérivée)",
           "content_summary": "Ce que la faisabilité vérifie : accès, sol, exposition, réseaux, règles locales."
         },
         {
-          "component": "generic",
-          "content_summary": "Déclaration préalable ou permis : cas de figure et délais d'instruction, chaque affirmation citant sa source, articles du code de l'urbanisme (décision D1, point 11)."
+          "component": "generic (dérivée)",
+          "content_summary": "Déclaration préalable ou permis : cas de figure et délais d'instruction, chaque affirmation citant sa source (articles du code de l'urbanisme, décision D1 point 11)."
         },
         {
-          "component": "EncadreInformationGenerale",
-          "content_summary": "Encadré « information générale, ne vaut pas garantie d'obtention » (décision D1, point 11)."
+          "component": "generic (dérivée)",
+          "content_summary": "Encadré 'information générale, ne vaut pas garantie d'obtention' (décision D1 point 11)."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Étude de sol : quand elle est nécessaire et ce qu'elle change au chiffrage."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Conditions de facturation si le projet ne se concrétise pas, dites avant de commencer."
         },
         {
-          "component": "FAQ",
-          "content_summary": "3 questions factuelles générales : durée des démarches, refus de la mairie, terrain en zone contrainte."
+          "component": "FAQ (dérivée)",
+          "content_summary": "3 questions factuelles générales : durée des démarches, refus de la mairie, terrain en zone contrainte (décision D1 point 10)."
         },
         {
           "cta": "Demander une étude",
-          "component": "EtapesSuivantes",
-          "content_summary": "Étapes suivantes et demande d'étude. Lien ajouté vers la page zone /zone-intervention-montpellier (décision D1, point 8)."
+          "component": "generic (dérivée)",
+          "content_summary": "'Étapes suivantes' en 3 points, lien contact et lien vers /zone-intervention-montpellier (décision D1 point 8)."
         }
       ]
     },
@@ -234,26 +282,30 @@
       "path": "/zone-intervention-montpellier",
       "sections": [
         {
+          "component": "Header",
+          "content_summary": "Identique au header global."
+        },
+        {
           "cta": "Vérifier ma commune",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Où intervient Aurea Piscines autour de Montpellier ». Réponse directe : Montpellier et première couronne, rayon d'environ 30 km."
+          "component": "Hero pleine largeur (image de fond sombre) (dérivée)",
+          "content_summary": "H1 'Où intervient Aurea Piscines autour de Montpellier', réponse directe : Montpellier et première couronne, rayon d'environ 30 km."
         },
         {
-          "component": "ZoneCarte",
-          "content_summary": "Communes couvertes en intervention courante, en liste (12 communes selon décision D1, liste nominative non fournie, voir open_questions)."
+          "component": "generic (dérivée)",
+          "content_summary": "Communes couvertes en intervention courante, en liste (12 communes, liste nominative non fournie, voir open_questions)."
         },
         {
-          "component": "ZoneCarte",
-          "content_summary": "Entre 30 et 50 km, étude au cas par cas (Sète incluse) ; au-delà de 50 km, non couvert (décision D1, point 20)."
+          "component": "generic (dérivée)",
+          "content_summary": "Au-delà de 30 km : entre 30 et 50 km, étude au cas par cas, Sète incluse ; au-delà non couvert (décision D1 point 20)."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Siège et dépôt Pompignane : ce que la proximité change sur les délais de dépannage."
         },
         {
           "cta": "Demander un rappel",
-          "component": "CTA band devis",
-          "content_summary": "Vérifier votre commune : demander un rappel sous 24 h ouvrées (fictif, assumé pour le test)."
+          "component": "CTA band devis (dérivée)",
+          "content_summary": "Bandeau final : vérifier votre commune, rappel sous 24 h ouvrées."
         }
       ]
     },
@@ -261,37 +313,41 @@
       "path": "/a-propos",
       "sections": [
         {
+          "component": "Header",
+          "content_summary": "Identique au header global."
+        },
+        {
           "cta": "Demander un devis détaillé",
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009 » (décision D1, point 23). Réponse directe : SARL créée en 2009, 300+ projets, siège Pompignane à Montpellier."
+          "component": "Hero pleine largeur (image de fond sombre) (dérivée)",
+          "content_summary": "H1 'Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009' (décision D1 point 23), réponse directe SARL 2009, 300+ projets, siège Pompignane."
         },
         {
-          "component": "generic",
-          "content_summary": "L'équipe : 2 conducteurs de travaux, maçonnerie intégrée. Répartition écrite : gros œuvre et étanchéité par les salariés Aurea ; plages, pierre, électricité par des entreprises partenaires locales coordonnées par Aurea (décision D1, point 21)."
+          "component": "generic (dérivée)",
+          "content_summary": "L'équipe : 2 conducteurs de travaux ; répartition écrite noir sur blanc, gros œuvre et étanchéité par les salariés Aurea, plages/pierre/électricité par des entreprises partenaires locales coordonnées par Aurea (décision D1 point 21)."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Notre façon de travailler : prix contractualisé, date annoncée, un seul interlocuteur."
         },
         {
-          "component": "PreuveBlock",
-          "content_summary": "Qualifications et assurances : Qualibat 2181, Propiscines®, IHB, décennale MAAF Pro n° 8842-117-04 (fictif, assumé pour le test)."
+          "component": "PreuveBlock / FactList (dérivée)",
+          "content_summary": "Qualifications et assurances : Qualibat 2181, Propiscines®, IHB, décennale MAAF Pro n° 8842-117-04 (fictif assumé, décision D1 point 1)."
         },
         {
-          "component": "PreuveBlock",
-          "content_summary": "Chiffres de fiabilité datés : 96 % des chantiers livrés dans le délai annoncé (2024-2025), note Google 4,8/5 sur 87 avis avec lien vers la fiche, en texte sourcé, jamais en AggregateRating JSON-LD (décision D1, point 18)."
+          "component": "PreuveBlock / FactList (dérivée)",
+          "content_summary": "Chiffres de fiabilité datés : 96 % des chantiers livrés dans le délai annoncé (2024-2025), note Google 4,8/5 sur 87 avis en texte sourcé et daté avec lien vers la fiche, jamais en AggregateRating (décision D1 point 18)."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Ce que nous refusons de faire et pourquoi nous orientons parfois vers un confrère."
         },
         {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Informations légales : SIREN 512 340 887, RCS Montpellier, TVA FR 42 512340887, APE 4399C."
         },
         {
           "cta": "Demander un devis détaillé",
-          "component": "CTA band devis",
+          "component": "CTA band devis (dérivée)",
           "content_summary": "Lien vers /contact."
         }
       ]
@@ -300,28 +356,28 @@
       "path": "/contact",
       "sections": [
         {
-          "component": "Hero / Réponse directe",
-          "content_summary": "H1 « Demander un devis détaillé pour votre piscine ». Réponse directe : ce qu'il faut transmettre pour chiffrer, rappel sous 24 h ouvrées (fictif, assumé)."
+          "component": "Header",
+          "content_summary": "Identique au header global."
+        },
+        {
+          "component": "Hero pleine largeur (image de fond sombre) (dérivée, sans image d'après la page réalisations observée dans le HTML)",
+          "content_summary": "Fil d'Ariane Accueil / Contact, H1 'Demandez votre devis', paragraphe : décrivez votre projet en quelques lignes, rappel sous 24 h ouvrées, relevé gratuit si besoin."
         },
         {
           "cta": "Envoyer ma demande",
-          "component": "generic",
-          "content_summary": "Formulaire : type de projet, commune, budget indicatif, échéance, téléphone."
+          "component": "ContactForm",
+          "content_summary": "Formulaire : Nom*, Prénom*, Email*, Téléphone*, Type de projet* (select : Construction sur mesure, Rénovation, Équipements, Entretien, Autre), Message (textarea), mention RGPD, bouton 'Envoyer ma demande', message de confirmation conditionnel si sent."
         },
         {
-          "component": "generic",
-          "content_summary": "Coordonnées : 128 avenue de la Pompignane 34000 Montpellier, 04 67 00 00 00, contact@aurea-piscines.fr, en microdonnées cliquables tel: et mailto:."
+          "component": "InfoColonne contact",
+          "content_summary": "Coordonnées : téléphone 04 67 00 00 00 en grand, email contact@aurea-piscines.fr, adresse 128 avenue de la Pompignane 34000 Montpellier. Horaires en table (Lundi-Vendredi 8h30-18h30, Samedi 9h-12h30, Dimanche Fermé, à ajuster selon décision D1 point 15 : 8h-18h lundi-vendredi uniquement sur rendez-vous, pas de show-room, fermeture 2 semaines mi-août avec astreinte dépannage). Encart zone d'intervention avec image placeholder de carte et liste de 10 communes en pilules."
         },
         {
-          "component": "generic",
-          "content_summary": "Horaires d'atelier : 8h-18h du lundi au vendredi, uniquement sur rendez-vous, pas de show-room. Fermeture deux semaines mi-août avec astreinte dépannage pour les clients sous contrat (décision D1, point 15)."
+          "component": "generic (dérivée)",
+          "content_summary": "Ce qui est payant : étude, plans, dossier d'urbanisme si le projet ne se concrétise pas, à annoncer avant la demande de devis."
         },
         {
-          "component": "generic",
-          "content_summary": "Ce qui est payant : étude, plans, dossier d'urbanisme si le projet ne se concrétise pas."
-        },
-        {
-          "component": "generic",
+          "component": "generic (dérivée)",
           "content_summary": "Accès au dépôt et zone couverte."
         }
       ]
@@ -329,226 +385,275 @@
   ],
   "sources": [
     {
-      "value": "Aucune maquette (HTML/CSS/JS/screenshots) n'a été fournie : le champ mockup.notes est une chaîne vide.",
-      "source": "mockup.notes"
+      "value": "Couleurs, polices, structure des sections, espacements et rayons extraits littéralement du fichier Aurea Piscines.dc.html (styles inline et bloc <style>).",
+      "source": "Aurea Piscines.dc.html"
     },
     {
-      "value": "Suppression de la section « Chantiers réalisés par secteur » sur la page zone, aucune photo de chantier.",
-      "source": "decisions D1, points 4 et 19"
+      "value": "mockup_notes et mockup_map sont null, mockup_media est un tableau vide : aucun screenshot, aucune note complémentaire, aucune carte de correspondance fournie.",
+      "source": "mockup_notes ; mockup_map ; mockup_media"
     },
     {
-      "value": "Retrait de /journal de la page_matrix et de tous les links_to, phase 2.",
+      "value": "Le HTML fourni couvre les pages accueil, sur-mesure, réalisations et contact (via sc-if isHome/isCustom/isProjects/isContact), plus le header et le footer complets ; les pages rénovation, équipements, entretien, étude, zone et à-propos ne sont pas des sc-if distincts dans le HTML transmis (truncated: false, mais ces pages n'ont pas de bloc dédié) : leur structure est dérivée par analogie avec les composants observés.",
+      "source": "mockup_files[0].truncated = false ; absence de sc-if dédié à isRenovation/isEquipements/isEntretien/isEtude/isZone/isApropos"
+    },
+    {
+      "value": "Le contenu réel des balises <script> et <style> référencées [script] dans le head du document principal a été fourni séparément dans mockup_files[1] et mockup_files[2] (styles et logique de composant).",
+      "source": "Aurea Piscines.dc.html (styles) ; Aurea Piscines.dc.html (scripts)"
+    },
+    {
+      "value": "Décisions D1 (suppression photos de chantier, sections budget remplacées par Comment nous chiffrons, FAQ réduites à 3 questions génériques, formulation matériel factuelle, horaires, périmètre de zone, retrait /journal et locations saisonnières, etc.) priment sur le HTML de la maquette et sur le previous_design_spec.",
       "source": "decisions D1"
     },
     {
-      "value": "Sections budget remplacées par « Comment nous chiffrons », sans montant.",
-      "source": "decisions D1, point 5"
+      "value": "Structure des pages non couvertes par un bloc sc-if dédié dans le HTML (rénovation, équipements, entretien, étude, zone, à-propos) reconstruite par analogie avec les composants observés sur l'accueil et la page construction, et marquée (dérivée).",
+      "source": "page_matrix + composants observés dans Aurea Piscines.dc.html"
     },
     {
-      "value": "Section entretien reformulée en « Construire votre contrat : de 4 à 12 passages selon le bassin ».",
-      "source": "decisions D1, point 6"
-    },
-    {
-      "value": "Ajout de /etude-faisabilite-demarches-urbanisme aux links_to de l'accueil et de /equipements ; ajout de la page zone aux links_to de /etude.",
-      "source": "decisions D1, points 7 et 8"
-    },
-    {
-      "value": "Un seul LocalBusiness sur l'accueil avec @id stable, la page zone y fait référence par about @id.",
-      "source": "decisions D1, point 9"
-    },
-    {
-      "value": "FAQ réduites à 3 questions factuelles générales, sans chiffre spécifique à Aurea.",
-      "source": "decisions D1, point 10"
-    },
-    {
-      "value": "Encadré « information générale, ne vaut pas garantie d'obtention » avec citation des articles du code de l'urbanisme.",
-      "source": "decisions D1, point 11"
-    },
-    {
-      "value": "Formulation factuelle « nous installons des équipements Pentair, Zodiac, Aqualux », sans logo ni mot partenaire ou agréé.",
-      "source": "decisions D1, point 13"
-    },
-    {
-      "value": "Horaires 8h-18h du lundi au vendredi, uniquement sur rendez-vous, pas de show-room, fermeture deux semaines mi-août avec astreinte dépannage.",
-      "source": "decisions D1, point 15"
-    },
-    {
-      "value": "Note Google en texte sourcé et daté avec lien vers la fiche, jamais en AggregateRating dans le JSON-LD.",
-      "source": "decisions D1, point 18"
-    },
-    {
-      "value": "target_query de la page zone retenu = « pisciniste castelnau-le-lez lattes » selon décision D1 point 20 (diverge du target_query de la page_matrix fournie : « constructeur piscine castelnau-le-lez lattes pérols ») ; la décision prime sur la page_matrix. Intervention courante sur 12 communes (non nommées), 30 à 50 km étude au cas par cas (Sète incluse), au-delà non couvert.",
-      "source": "decisions D1, point 20 ; page_matrix"
-    },
-    {
-      "value": "Répartition gros œuvre/étanchéité par salariés Aurea, plages/pierre/électricité par partenaires locaux coordonnés par Aurea.",
-      "source": "decisions D1, point 21"
-    },
-    {
-      "value": "Suppression du segment locations saisonnières.",
-      "source": "decisions D1, point 22"
-    },
-    {
-      "value": "H1 de /a-propos = « Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009 » ; ajout de Montpellier au title de /etude.",
-      "source": "decisions D1, point 23"
-    },
-    {
-      "value": "Les chiffres, numéros de police, SIREN, téléphone, certifications et le délai de rappel sont fictifs et assumés comme tels pour le test ; deploy_production reste rouge.",
-      "source": "decisions D1, points 1, 2, 3, 12, 16"
-    },
-    {
-      "value": "Les pages /mentions-legales et /confidentialite existent dans le template et sont liées depuis le footer, sans être ajoutées à la page_matrix.",
-      "source": "decisions D1, point 17"
+      "value": "Les données de contenu (services, projets, étapes, preuves, avis, articles, FAQ, faits clés, types de piscines, options, zones) proviennent du script de mockup_files[2] (renderVals).",
+      "source": "Aurea Piscines.dc.html (scripts)"
     }
   ],
   "behaviors": [
     {
-      "name": "Header au scroll",
-      "source": "mockup.notes (vide) ; conversion_rules du site_constitution",
-      "values": "non fourni",
-      "description": "Aucune donnée JS ni CSS de comportement de scroll fournie dans la maquette (mockup.notes est une chaîne vide, aucun export HTML/CSS/JS transmis). Comportement standard retenu à défaut : header fixe en haut de page, visible en permanence, avec CTA devis et téléphone toujours accessibles conformément aux conversion_rules."
+      "name": "Header sticky au scroll",
+      "source": "Aurea Piscines.dc.html, balise <header> style inline",
+      "values": "position: sticky; top: 0; z-index: 50; background: rgba(251,248,244,0.93); backdrop-filter: blur(10px); border-bottom: 1px solid #E7DFD3",
+      "description": "Le header reste fixé en haut du viewport en permanence (position sticky, top 0), avec fond clair semi-transparent et flou d'arrière-plan appliqué en continu, pas seulement après un seuil de scroll. Aucun changement d'état (couleur, hauteur) déclenché par un seuil de scroll observé : le style est statique dès le chargement."
+    },
+    {
+      "name": "Menu mobile (toggle)",
+      "source": "Aurea Piscines.dc.html, bloc <sc-if value=\"{{ menuOpen }}\"> et bouton toggleMenu",
+      "values": "conteneur nav mobile : border-top 1px solid #E7DFD3, padding 10px clamp(18px,4vw,56px) 26px, flex-direction column ; liens : font-size 17px, padding 14px 0, border-bottom 1px solid #EFE8DD ; bouton hamburger : 44x44px, border 1px solid #E2DACE, border-radius 2px",
+      "description": "Sur mobile, un bouton hamburger (deux barres) ouvre/ferme un panneau de navigation qui s'insère sous le bandeau principal, à l'intérieur du header, en colonne. Chaque lien occupe toute la largeur avec séparateur. Le numéro de téléphone est répété en bas du panneau avec la mention des horaires jour. Rendu conditionnel simple (sc-if sur menuOpen) : aucune durée de transition ni courbe d'easing n'est déclarée dans le HTML/CSS fourni."
     },
     {
       "name": "FAQ accordéon",
-      "source": "mockup.notes (vide) ; aio_rules du site_constitution",
-      "values": "non fourni",
-      "description": "Aucun HTML/JS de maquette fourni pour observer le comportement réel (ouverture/fermeture, icône, durée d'animation, courbe d'easing). À défaut, on retient un accordéon simple : une question ouverte à la fois, contenu de chaque réponse présent intégralement dans le HTML servi (pas de rendu uniquement JS) conformément aux aio_rules."
+      "source": "Aurea Piscines.dc.html (sc-for list=\"{{ faq }}\", sc-for list=\"{{ customFaq }}\") et script (fonction mk, propriété sign)",
+      "values": "bouton : padding 22px 0 (accueil) / 20px 0 (page sur mesure), font-size 17px / 16.5px, gap 20px entre libellé et signe ; réponse : padding 0 0 24px / 22px, font-size 15.5px, color #5F6B67, max-width 64ch ; signe '+' fermé, '–' ouvert",
+      "description": "Chaque question est un bouton pleine largeur affichant le libellé et un signe à droite (piloté par q.sign, '+' fermé / '–' ouvert d'après le script). Le clic déclenche q.toggle qui bascule l'état q.open ; la réponse ne s'affiche dans le DOM que si q.open est vrai (rendu conditionnel), sans animation d'ouverture/fermeture visible (pas de max-height ni transition CSS). Comportement identique sur la FAQ accueil (5 questions, réduites à 3 selon décision D1) et la FAQ page sur mesure."
     },
     {
-      "name": "Formulaire de contact",
-      "source": "page_matrix /contact, section « Formulaire » ; conversion_rules",
-      "values": "5 champs, validation non fournie",
-      "description": "Champs requis listés dans la page_matrix et les conversion_rules : type de projet, commune, budget indicatif, échéance souhaitée, téléphone. Aucune règle de validation, message d'erreur ou état de chargement n'est visible dans une maquette (absente)."
+      "name": "Filtres de réalisations",
+      "source": "Aurea Piscines.dc.html (sc-if value=\"{{ filtersEnabled }}\", sc-for list=\"{{ filters }}\") + script (variable filters, cats)",
+      "values": "bouton : border-radius 999px, padding 11px 20px, font-size 13.5px ; actif : bg #1D5E63, color #FBF8F4, border #1D5E63 ; inactif : bg transparent, color #3C4A46, border #E2DACE",
+      "description": "Sur la page réalisations, une rangée de boutons pilules filtre la liste des projets affichés et met à jour un compteur de résultats. Chaque bouton change de fond, bordure et couleur de texte selon qu'il est actif ou non (variables f.border/f.bg/f.color résolues dans le script : actif = fond #1D5E63, texte #FBF8F4, bordure #1D5E63 ; inactif = fond transparent, texte #3C4A46, bordure #E2DACE)."
     },
     {
-      "name": "Menu mobile",
-      "source": "mockup.notes (vide)",
-      "values": "non fourni",
-      "description": "Aucun screenshot mobile ni export CSS fourni. À défaut, comportement standard retenu : menu principal replié en menu hamburger sous un seuil de largeur non spécifié, ouverture en panneau plein écran ou déroulant (non précisé)."
+      "name": "Effet hover liens et boutons",
+      "source": "Aurea Piscines.dc.html (styles), règle a:hover ; attributs style-hover sur CTA header, hero, ServiceCard, CTA band",
+      "values": "lien standard a:hover color #C1663F ; CTA devis header hover background #123F44 ; CTA clair sur fond foncé hover background #C1663F color #FBF8F4 ; ServiceCard hover border-color #1D5E63",
+      "description": "Les liens changent de couleur au survol (du vert primaire vers l'orange accent). Plusieurs boutons/CTA changent de fond au survol via l'attribut style-hover observé sur les CTA header, hero, cards service, CTA bands. Aucune durée de transition n'est déclarée dans le CSS fourni : le changement est instantané dans la maquette."
     }
   ],
   "components": [
     {
       "name": "Header",
-      "purpose": "Navigation principale, accès permanent au téléphone et au CTA devis, conforme à conversion_rules (« le téléphone et l'engagement de rappel sous 24 h ouvrées sont visibles en haut de chaque page »).",
+      "purpose": "Navigation principale sticky, logo, accès au téléphone (desktop) et au CTA devis, menu hamburger sur mobile.",
       "variants": [
-        "desktop (non fourni, à préciser)",
-        "mobile (non fourni, à préciser)"
+        "desktop (nav horizontale 8 items + téléphone visible)",
+        "mobile (bouton hamburger + panneau déroulant)"
       ]
     },
     {
-      "name": "Hero / Réponse directe",
-      "purpose": "Bloc d'ouverture de chaque page (accueil, pages service, zone, à-propos, contact) portant la réponse directe de 40 à 60 mots imposée par aeo_rules, le H1 et un CTA devis au-dessus de la ligne de flottaison.",
+      "name": "Hero pleine largeur (image de fond sombre)",
+      "purpose": "Bloc d'ouverture avec fond image (placeholder texte IMG dans la maquette), dégradé sombre superposé, surtitre, H1, paragraphe, CTA(s), et éventuel fil d'Ariane sur pages internes.",
       "variants": [
-        "accueil",
-        "page service",
-        "page zone",
-        "page à-propos",
-        "page contact"
+        "Hero accueil (min-height clamp(520px,80vh,760px), 2 CTA, ligne de confiance)",
+        "Hero page interne (min-height clamp(400px,58vh,560px), fil d'Ariane, 2 CTA)",
+        "Hero page listing sans image (bandeau clair, fil d'Ariane, H1, paragraphe, sans CTA visible, observé sur /realisations et /contact)"
+      ]
+    },
+    {
+      "name": "IntroSplit",
+      "purpose": "Section deux colonnes : petit libellé + H2 à gauche, texte(s) explicatifs à droite, utilisée pour le contenu éditorial (« Notre approche », « Une piscine dessinée pas choisie sur catalogue »).",
+      "variants": [
+        "avec badges pilules en bas (accueil)",
+        "avec liste de faits clé/valeur alignés à droite (page sur mesure, customFacts)"
       ]
     },
     {
       "name": "ServiceCard",
-      "purpose": "Présenter chacune des 5 prestations sur l'accueil avec lien vers la page dédiée.",
+      "purpose": "Carte cliquable présentant une prestation : zone image (placeholder sombre texturé, ratio 4/3), titre, texte, lien « Découvrir ».",
       "variants": [
-        "carte simple (structure interne non fournie : icône, image, texte seul indéterminé)"
+        "grille 4 colonnes auto-fit (accueil, section expertises)"
       ]
     },
     {
-      "name": "PreuveBlock",
-      "purpose": "Regrouper les preuves de fiabilité (nombre de projets, décennale, Qualibat, Propiscines®, note Google datée et sourcée) placées au contact de la demande de devis, conformément à conversion_rules.",
+      "name": "ProjectCard",
+      "purpose": "Carte de réalisation : zone image placeholder, méta (type + ville), titre, texte, specs optionnelles.",
       "variants": [
-        "bloc accueil",
-        "bloc à-propos"
+        "carte standard ratio 3/2 (grille secondaire accueil et page sur mesure)",
+        "carte large en avant (span 2 colonnes, ratio 16/9, texte superposé sur l'image, accueil)",
+        "carte listing réalisations avec ratio et span variables (p.ratio, p.span) et ligne specs supplémentaire (page réalisations)"
       ]
     },
     {
-      "name": "EtapesProjet",
-      "purpose": "Dérouler les 6 étapes d'un projet, du relevé à la mise en eau, sur l'accueil et la page construction.",
+      "name": "CTA card promotionnelle",
+      "purpose": "Carte de fin de grille de réalisations sur fond clair (#F3EEE6), incitant à la demande de devis, remplace une carte projet dans la grille.",
       "variants": [
-        "liste à 6 étapes"
+        "carte texte + CTA (page sur mesure, fin de grille réalisations)"
+      ]
+    },
+    {
+      "name": "EtapesProjet (bandeau numéroté)",
+      "purpose": "Grille de blocs représentant les étapes du projet, numéro en grand serif, titre, texte, sur fond sombre plein cadre (#123F44) avec bordures fines entre cellules.",
+      "variants": [
+        "5 étapes (accueil, min-height 210px)",
+        "5 étapes (page sur mesure, min-height 200px, tailles légèrement réduites)"
+      ]
+    },
+    {
+      "name": "PreuveBlock / FactList",
+      "purpose": "Colonne de faits/preuves numérotés avec titre et texte, utilisée pour les arguments de réassurance à côté d'un bloc de chiffres clés.",
+      "variants": [
+        "bloc chiffres clés (15+/300+/100%) + liste de preuves numérotées (accueil, section 'Pourquoi Aurea'), avec mention 'chiffres indicatifs à titre de démonstration'"
+      ]
+    },
+    {
+      "name": "Testimonial",
+      "purpose": "Citation client en grande typographie serif, avec légende (auteur, ville, projet), séparée par une bordure supérieure.",
+      "variants": [
+        "grille 3 colonnes (accueil)"
+      ]
+    },
+    {
+      "name": "ArticleRow",
+      "purpose": "Ligne cliquable pleine largeur pour un article de blog/conseil : numéro, tag + temps de lecture, titre, résumé, séparateur inférieur.",
+      "variants": [
+        "liste verticale (accueil, section Conseils)"
       ]
     },
     {
       "name": "FAQ",
-      "purpose": "Bloc de questions/réponses factuelles, réduit à 3 questions par page service selon décision D1, réponses de 40 à 80 mots, autonomes et citables hors contexte.",
+      "purpose": "Liste de questions/réponses en accordéon, bouton pleine largeur avec signe d'état, réponse conditionnelle.",
       "variants": [
-        "FAQ page service (3 questions)"
-      ]
-    },
-    {
-      "name": "EtapesSuivantes",
-      "purpose": "Bloc de fin de page service en 3 points avec lien vers /contact, obligatoire sur chaque page de service selon conversion_rules.",
-      "variants": [
-        "3 points + CTA"
-      ]
-    },
-    {
-      "name": "ZoneCarte",
-      "purpose": "Présenter la zone d'intervention : communes en intervention courante (12 communes selon décision D1), zone 30 à 50 km à l'étude au cas par cas (Sète incluse), au-delà non couvert.",
-      "variants": [
-        "liste de communes",
-        "encadré étude au cas par cas"
-      ]
-    },
-    {
-      "name": "MentionsLegalesFooter",
-      "purpose": "Footer présent sur toutes les pages avec coordonnées identiques (nom, adresse, téléphone, e-mail), liens vers /mentions-legales et /confidentialite (existantes dans le template selon décision D1 point 17), mentions SIREN/RCS/TVA/APE.",
-      "variants": [
-        "footer standard"
+        "FAQ accueil (5 questions dans le HTML, réduite à 3 par décision D1, colonne droite avec intro et téléphone à gauche)",
+        "FAQ page sur mesure (4 questions dans le HTML, réduite à 3 par décision D1, fond clair #F3EEE6, disposition 2 colonnes)"
       ]
     },
     {
       "name": "CTA band devis",
-      "purpose": "Bandeau d'appel à l'action pour la demande de devis détaillé, répété au-dessus de la ligne de flottaison et en bas de chaque page service et de l'accueil.",
+      "purpose": "Bandeau plein cadre de conversion, fond de couleur pleine texturée, titre H2, texte, 2 CTA, téléphone en grand, horaires.",
       "variants": [
-        "haut de page",
-        "bas de page"
+        "bandeau fin de page accueil (fond #1D5E63)"
       ]
     },
     {
-      "name": "EncadreInformationGenerale",
-      "purpose": "Encadré obligatoire sur la page étude de faisabilité : « information générale, ne vaut pas garantie d'obtention », avec citation des articles du code de l'urbanisme (décision D1, point 11).",
+      "name": "FactRow (fiche technique)",
+      "purpose": "Liste clé/valeur alignée en colonnes, séparateurs horizontaux, pour des données factuelles courtes.",
       "variants": [
-        "encadré page étude"
+        "colonne latérale page sur mesure (customFacts)"
       ]
     },
     {
-      "name": "MaterielCriteres",
-      "purpose": "Section « Matériel que nous installons et critères de choix » sur la page équipements, formulation factuelle sans logo ni mot « partenaire » ou « agréé » (décision D1, point 13).",
+      "name": "PoolTypeCard",
+      "purpose": "Carte présentant un type de piscine : image placeholder ratio 4/3, titre, texte, note courte.",
       "variants": [
-        "liste factuelle Pentair / Zodiac / Aqualux"
+        "grille 3 colonnes (page sur mesure, section types de piscines, fond #F3EEE6)"
+      ]
+    },
+    {
+      "name": "OptionList",
+      "purpose": "Liste de personnalisations : titre court souligné + texte, en grille responsive.",
+      "variants": [
+        "grille auto-fit 6 items (page sur mesure, section personnalisation)"
+      ]
+    },
+    {
+      "name": "FilterBar",
+      "purpose": "Rangée de boutons pilules pour filtrer une liste de réalisations, avec compteur de résultats sous la barre.",
+      "variants": [
+        "barre de filtres page réalisations (5 catégories : Tous, Construction, Rénovation, Équipements, Entretien)"
+      ]
+    },
+    {
+      "name": "ContactForm",
+      "purpose": "Formulaire de demande de devis : nom, prénom, email, téléphone, type de projet (select), message, mention RGPD, bouton d'envoi, message de confirmation conditionnel.",
+      "variants": [
+        "formulaire page contact (fond #FFFDFA, bordure #E7DFD3)"
+      ]
+    },
+    {
+      "name": "InfoColonne contact",
+      "purpose": "Colonne latérale de la page contact : coordonnées, horaires en table clé/valeur, encart zone d'intervention avec liste de communes en pilules.",
+      "variants": [
+        "bloc coordonnées + horaires + zone (page contact)"
+      ]
+    },
+    {
+      "name": "Footer",
+      "purpose": "Pied de page multi-colonnes : logo, réseaux sociaux, navigation, prestations, zones d'intervention, contact, mentions légales et liens juridiques en bas.",
+      "variants": [
+        "footer global (5 colonnes desktop, empilement mobile)"
       ]
     }
   ],
   "design_system": {
     "fonts": {
-      "body": "non fourni",
-      "heading": "non fourni"
+      "body": "'Work Sans', Helvetica, sans-serif (poids 300, 400, 500, 600)",
+      "heading": "'Cormorant Garamond', Georgia, serif (poids 400, 500, 600, italique 400)"
     },
     "colors": {
-      "text": "non fourni",
-      "muted": "non fourni",
-      "accent": "non fourni",
-      "primary": "non fourni",
-      "surface": "non fourni",
-      "secondary": "non fourni",
-      "background": "non fourni"
+      "text": "#16211F",
+      "muted": "#5F6B67",
+      "accent": "#C1663F",
+      "border": "#E7DFD3",
+      "primary": "#1D5E63",
+      "surface": "#F3EEE6",
+      "input_bg": "#FBF8F4",
+      "secondary": "#8FB6B2",
+      "background": "#FBF8F4",
+      "border_alt": "#E2DACE",
+      "faint_gray": "#8A9490",
+      "row_border": "#EFE8DD",
+      "accent_soft": "#F0C9B4",
+      "border_soft": "#D9CEBE",
+      "muted_light": "#6B7873",
+      "form_surface": "#FFFDFA",
+      "input_border": "#DFD6C8",
+      "primary_dark": "#123F44",
+      "text_on_dark": "#FBF8F4",
+      "faint_gray_alt": "#A8B3AF",
+      "primary_darker": "#0F2B2D"
     },
-    "radius": "non fourni",
-    "spacing_scale": []
+    "radius": "2px (boutons et champs de formulaire), 3px (cartes), 999px (badges pilules et filtres)",
+    "spacing_scale": [
+      "10px",
+      "12px",
+      "14px",
+      "16px",
+      "18px",
+      "22px",
+      "24px",
+      "26px",
+      "30px",
+      "clamp(18px,4vw,56px)",
+      "clamp(64px,8vw,124px)"
+    ]
   },
   "open_questions": [
-    "Aucun fichier de maquette (HTML, CSS, JS, screenshots) n'a été transmis : impossible de citer une seule valeur de design system (couleurs hex, polices, espacement, rayon de bordure) avec une source réelle. Il est nécessaire de recevoir l'export Claude Design (HTML/screenshots) pour compléter design_system.colors, fonts, spacing_scale et radius.",
-    "Aucune donnée de comportement (JS) n'a été fournie pour le header au scroll, l'accordéon FAQ, un éventuel carrousel ou des overlays : les behaviors listés sont des hypothèses standard à valider dès réception de la maquette.",
-    "Aucun screenshot mobile n'a été fourni : mobile_composition_overrides est vide et responsive_rules ne contient que des règles standard non sourcées à la maquette. À compléter dès réception des captures mobile.",
-    "Le composant ServiceCard (accueil) : structure exacte (icône, image, texte seul) non définie faute de maquette.",
-    "Les libellés exacts des 5 prestations pour le maillage « ancres explicites » (seo_rules) ne sont pas fournis littéralement : à récupérer dans l'entity bible mentionnée par geo_rules, qui n'a pas été transmise.",
-    "La liste nominative des 12 communes en intervention courante (décision D1, point 20) n'est pas fournie dans les données d'entrée : à obtenir avant rédaction finale de la page zone.",
-    "Le tel: exact et l'e-mail sont donnés une seule fois dans la page_matrix (/contact) : à confirmer qu'ils doivent être répétés identiquement en footer sur toutes les pages comme l'exige geo_rules, ce qui est supposé mais non illustré par une maquette de footer.",
-    "Divergence entre le target_query de la page zone dans la décision D1 (« pisciniste castelnau-le-lez lattes ») et celui de la page_matrix fournie (« constructeur piscine castelnau-le-lez lattes pérols ») : la décision D1 prime conformément à la règle de préséance, mais le point reste à documenter formellement dans le contenu publié."
+    "Les pages /renovation-piscine-montpellier, /equipements-piscine-montpellier, /entretien-piscine-montpellier, /etude-faisabilite-demarches-urbanisme, /zone-intervention-montpellier et /a-propos n'ont aucun bloc sc-if dédié dans le HTML fourni : leur structure exacte de section (ordre, composants réellement utilisés) n'est pas observable et reste dérivée par analogie. À faire valider dès qu'une maquette dédiée à ces pages existe.",
+    "Aucun screenshot mobile n'a été fourni (mockup_media vide) : le comportement exact du menu mobile (transition, plein écran ou déroulant, seuil de largeur en px autre que la variable isDesktop >= 1080 déduite du script) n'est pas visuellement confirmé.",
+    "Les couleurs des boutons de filtre (FilterBar) sur la page réalisations sont pilotées par variables (f.border, f.bg, f.color) résolues dans le script fourni pour l'état actif/inactif (bg #1D5E63/transparent, color #FBF8F4/#3C4A46, border #1D5E63/#E2DACE) : à confirmer que ce sont bien les seules deux valeurs utilisées, aucune variante supplémentaire (ex. hover) n'étant décrite.",
+    "Aucune valeur de durée de transition ou de courbe d'easing n'est présente dans le CSS/HTML fourni pour les effets hover, l'accordéon FAQ ou l'ouverture du menu mobile : ces comportements sont décrits comme des bascules d'affichage instantanées.",
+    "La liste nominative des 12 communes en intervention courante (décision D1 point 20) n'est fournie ni dans le HTML ni dans les données d'entrée : la page utilise pour l'instant la liste de 10 zones du script (Montpellier, Castelnau-le-Lez, Lattes, Pérols, Saint-Jean-de-Védas, Le Crès, Clapiers, Mauguio, Grabels, Juvignac) qui ne compte que 10 entrées, pas 12 : à compléter avant rédaction finale de la page zone.",
+    "Le hero de la page /contact dans le HTML fourni n'a pas de fond image sombre comme les autres pages internes (bandeau clair sans image) : à confirmer si c'est un choix voulu ou une omission de la maquette.",
+    "Les horaires affichés dans le HTML de /contact (Lundi-Vendredi 8h30-18h30, Samedi 9h-12h30) diffèrent de la décision D1 point 15 (8h-18h du lundi au vendredi uniquement sur rendez-vous, pas de samedi, fermeture 2 semaines mi-août avec astreinte) : la décision prime et doit remplacer le texte du HTML.",
+    "Les pages /mentions-legales et /confidentialite existent dans le template selon la décision D1 point 17 mais aucun HTML de ces pages n'a été fourni : leur contenu et structure ne peuvent pas être spécifiés ici."
   ],
   "editable_fields": [
+    {
+      "path": "/",
+      "type": "text",
+      "field": "logo_texte",
+      "section": "Header"
+    },
+    {
+      "path": "/",
+      "type": "text",
+      "field": "telephone",
+      "section": "Header"
+    },
     {
       "path": "/",
       "type": "text",
@@ -557,75 +662,111 @@
     },
     {
       "path": "/",
-      "type": "richtext",
-      "field": "texte_reponse_directe",
+      "type": "text",
+      "field": "surtitre",
       "section": "Hero / Réponse directe"
     },
     {
       "path": "/",
-      "type": "number",
-      "field": "nombre_projets",
-      "section": "Preuves"
+      "type": "richtext",
+      "field": "paragraphe_reponse_directe",
+      "section": "Hero / Réponse directe"
     },
     {
       "path": "/",
+      "type": "image",
+      "field": "image_fond_hero",
+      "section": "Hero / Réponse directe"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "services_liste",
+      "section": "Nos expertises"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "projet_mis_en_avant",
+      "section": "Réalisations"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "chiffres_cles",
+      "section": "Pourquoi Aurea"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "preuves_numerotees",
+      "section": "Pourquoi Aurea"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "avis_liste",
+      "section": "Ce qu'en disent nos clients"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "articles_liste",
+      "section": "Conseils"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "faq_liste",
+      "section": "Questions fréquentes"
+    },
+    {
+      "path": "/",
+      "type": "richtext",
+      "field": "texte_cta_final",
+      "section": "CTA band devis"
+    },
+    {
+      "path": "/construction-piscine-beton-montpellier",
       "type": "text",
-      "field": "note_google_avis",
-      "section": "Preuves"
+      "field": "h1",
+      "section": "Hero / Réponse directe"
     },
     {
       "path": "/construction-piscine-beton-montpellier",
       "type": "richtext",
-      "field": "texte_methode",
-      "section": "Comment nous chiffrons"
+      "field": "texte_beton_projete",
+      "section": "IntroSplit"
     },
     {
       "path": "/construction-piscine-beton-montpellier",
       "type": "richtext",
-      "field": "questions_reponses",
+      "field": "faits_cles",
+      "section": "IntroSplit"
+    },
+    {
+      "path": "/construction-piscine-beton-montpellier",
+      "type": "richtext",
+      "field": "pool_types_liste",
+      "section": "Types de piscines"
+    },
+    {
+      "path": "/construction-piscine-beton-montpellier",
+      "type": "richtext",
+      "field": "options_liste",
+      "section": "Personnalisation"
+    },
+    {
+      "path": "/construction-piscine-beton-montpellier",
+      "type": "richtext",
+      "field": "etapes_liste",
+      "section": "Étapes de votre projet"
+    },
+    {
+      "path": "/construction-piscine-beton-montpellier",
+      "type": "richtext",
+      "field": "faq_liste",
       "section": "FAQ"
-    },
-    {
-      "path": "/renovation-piscine-montpellier",
-      "type": "richtext",
-      "field": "texte_methode",
-      "section": "Comment nous chiffrons"
-    },
-    {
-      "path": "/equipements-piscine-montpellier",
-      "type": "text",
-      "field": "liste_marques",
-      "section": "Matériel que nous installons"
-    },
-    {
-      "path": "/entretien-piscine-montpellier",
-      "type": "richtext",
-      "field": "texte_contrat",
-      "section": "Construire votre contrat"
-    },
-    {
-      "path": "/etude-faisabilite-demarches-urbanisme",
-      "type": "richtext",
-      "field": "texte_encadre",
-      "section": "Encadré information générale"
-    },
-    {
-      "path": "/zone-intervention-montpellier",
-      "type": "richtext",
-      "field": "liste_communes",
-      "section": "Communes couvertes"
-    },
-    {
-      "path": "/a-propos",
-      "type": "text",
-      "field": "siren_rcs_tva_ape",
-      "section": "Informations légales"
-    },
-    {
-      "path": "/a-propos",
-      "type": "number",
-      "field": "taux_livraison_delai",
-      "section": "Chiffres de fiabilité"
     },
     {
       "path": "/contact",
@@ -638,12 +779,33 @@
       "type": "richtext",
       "field": "texte_horaires",
       "section": "Horaires"
+    },
+    {
+      "path": "/a-propos",
+      "type": "text",
+      "field": "siren_rcs_tva_ape",
+      "section": "Informations légales"
+    },
+    {
+      "path": "/a-propos",
+      "type": "richtext",
+      "field": "taux_livraison_note_google",
+      "section": "Chiffres de fiabilité"
+    },
+    {
+      "path": "/zone-intervention-montpellier",
+      "type": "richtext",
+      "field": "liste_communes",
+      "section": "Communes couvertes"
     }
   ],
   "responsive_rules": [
-    "Aucun export HTML/CSS ni screenshot mobile n'a été transmis (mockup.notes est une chaîne vide) : impossible de citer une règle responsive réelle avec sélecteur ou valeur source.",
-    "À défaut de maquette, appliquer les règles standard suivantes : menu principal replié en menu hamburger sous un seuil de largeur non spécifié, empilement vertical des ServiceCard et des blocs de preuve, CTA devis toujours visible en haut de page (bandeau ou header sticky).",
-    "Aucune famille de police n'étant fournie par la maquette, aucun équivalent Google Fonts ne peut être proposé sans invention (voir open_questions)."
+    "Header : desktop affiche nav horizontale (gap clamp(14px,1.9vw,28px)) + téléphone + CTA devis ; en dessous du seuil desktop (isMobile true à partir de largeur < 1080px selon le script), la nav horizontale et le téléphone disparaissent, remplacés par un bouton hamburger 44x44px.",
+    "Toutes les grilles principales utilisent display:grid avec grid-template-columns: repeat(auto-fit,minmax(Npx,1fr)) : le nombre de colonnes se réduit automatiquement selon la largeur disponible, jusqu'à 1 colonne sur mobile, sans breakpoint fixe déclaré (comportement natif CSS Grid observé sur ServiceCard, ProjectCard, EtapesProjet, Testimonial, ArticleRow, PoolTypeCard, OptionList).",
+    "La carte de réalisation en avant (grid-column: span 2) repasse en pleine largeur simple quand la grille passe à une colonne, par effet naturel du auto-fit (aucune règle explicite additionnelle trouvée).",
+    "Toutes les tailles de titres et paddings de section utilisent des clamp() (ex. font-size clamp(38px,6.4vw,76px) pour le H1 accueil), ce qui assure une réduction fluide continue plutôt que des paliers de breakpoint discrets.",
+    "Menu mobile ouvert : navigation en colonne pleine largeur avec liens empilés et séparateurs, téléphone répété en bas du panneau.",
+    "Les polices Cormorant Garamond et Work Sans sont chargées depuis Google Fonts dans le head de la maquette : aucune substitution nécessaire."
   ],
   "mobile_composition_overrides": []
 }

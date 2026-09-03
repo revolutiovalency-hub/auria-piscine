@@ -15,7 +15,7 @@ export default function BlogIndex() {
         {posts.map((p) => (
           <li key={p.slug}>
             <Link href={`/blog/${p.slug}`} className="text-xl font-heading text-primary hover:underline">{p.title}</Link>
-            <p className="text-secondary mt-1">{p.description}</p>
+            <p className="text-body mt-1">{p.description}</p>
           </li>
         ))}
         {posts.length === 0 && <li className="text-muted">Aucun article pour le moment.</li>}

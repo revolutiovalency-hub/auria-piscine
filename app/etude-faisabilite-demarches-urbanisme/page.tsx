@@ -37,14 +37,15 @@ export default function EtudeFaisabilite() {
   return (
     <>
       <Hero
+        breadcrumb="Étude et démarches d’urbanisme"
         title="Étude de faisabilité et démarches d’urbanisme pour votre piscine"
         lead="Avant de construire, Aurea Piscines vérifie que le projet tient sur votre terrain : accès, sol, exposition, réseaux et règles d’urbanisme de la commune. Nous établissons les plans d’implantation, faisons réaliser l’étude de sol quand elle est nécessaire, puis montons et déposons le dossier d’urbanisme."
         cta={{ label: "Demander une étude", href: "/contact" }}
       />
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Ce que la faisabilité vérifie</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Ce que la faisabilité vérifie</h2>
+        <div className="prose mt-4">
           <ul>
             <li>
               <strong>L’accès</strong> : largeur de passage, portail, pente, sol portant, présence d’un mur mitoyen. C’est le
@@ -74,8 +75,8 @@ export default function EtudeFaisabilite() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Déclaration préalable ou permis de construire</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Déclaration préalable ou permis de construire</h2>
+        <div className="prose mt-4">
           <p>Le régime applicable dépend de la surface du bassin et de la présence d’une couverture.</p>
           <ul>
             <li>
@@ -115,8 +116,8 @@ export default function EtudeFaisabilite() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">L’étude de sol</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">L’étude de sol</h2>
+        <div className="prose mt-4">
           <p>
             L’étude de sol est une reconnaissance du terrain menée par un bureau d’études géotechnique. Elle devient nécessaire
             lorsque des indices laissent penser que le sol ne se comportera pas comme prévu : terrain en pente, remblai récent,
@@ -137,8 +138,8 @@ export default function EtudeFaisabilite() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Ce qui est payant, dit avant de commencer</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Ce qui est payant, dit avant de commencer</h2>
+        <div className="prose mt-4">
           <p>
             L’étude de faisabilité, les plans d’implantation et le montage du dossier d’urbanisme représentent du temps de
             conducteur de travaux et de dessin. Nous vous disons avant de commencer ce qui est facturé et à quelles conditions.

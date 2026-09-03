@@ -5,6 +5,8 @@ import { site } from "@/site.config";
 export async function POST(req: Request) {
   const data = await req.formData();
   const name = String(data.get("name") ?? "").trim();
+  const firstname = String(data.get("firstname") ?? "").trim();
+  const project = String(data.get("project") ?? "").trim();
   const email = String(data.get("email") ?? "").trim();
   const phone = String(data.get("phone") ?? "").trim();
   const message = String(data.get("message") ?? "").trim();
@@ -18,8 +20,8 @@ export async function POST(req: Request) {
       from: `${site.name} <contact@${new URL(site.url).hostname}>`,
       to: [process.env.CONTACT_TO ?? site.business.email],
       reply_to: email,
-      subject: `Demande depuis ${site.name} : ${name}`,
-      text: `Nom : ${name}\nEmail : ${email}\nTéléphone : ${phone}\n\n${message}`,
+      subject: `Demande depuis ${site.name} : ${[firstname, name].filter(Boolean).join(" ")}`,
+      text: `Nom : ${name}\nPrénom : ${firstname}\nEmail : ${email}\nTéléphone : ${phone}\nType de projet : ${project}\n\n${message}`,
     }),
   });
   if (!res.ok) return NextResponse.json({ ok: false, error: "L'envoi a échoué, réessayez ou appelez-nous." }, { status: 500 });

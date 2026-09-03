@@ -1,17 +1,24 @@
-// Déroulé d'un projet, du relevé de terrain à la mise en eau. Liste ordonnée réelle (aio_rules).
+// Déroulé d'un projet. Grille de blocs numérotés sur aplat sombre, filets fins entre les cellules
+// (maquette, sections « Notre méthode » et « Les étapes de votre projet »). Liste ordonnée réelle (aio_rules).
 export type Etape = { titre: string; texte: string };
 
-export function EtapesProjet({ title, intro, etapes }: { title: string; intro?: string; etapes: Etape[] }) {
+export function EtapesProjet({ title, intro, eyebrow, etapes }: { title: string; intro?: string; eyebrow?: string; etapes: Etape[] }) {
   return (
     <div>
-      <h2 className="text-2xl sm:text-3xl font-heading text-primary">{title}</h2>
-      {intro && <p className="mt-4 text-secondary max-w-content">{intro}</p>}
-      <ol className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mb-[clamp(38px,4.6vw,64px)] max-w-[60ch]">
+        {eyebrow && <p className="eyebrow-on-dark mb-[18px]">{eyebrow}</p>}
+        <h2 className="h2-lg text-on-dark">{title}</h2>
+        {intro && <p className="mt-[18px] text-[16.5px] text-on-dark-78">{intro}</p>}
+      </div>
+      <ol className="grid list-none border-t border-on-dark p-0" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(210px,100%),1fr))" }}>
         {etapes.map((e, i) => (
-          <li key={e.titre} className="rounded bg-surface p-5">
-            <p className="text-sm text-muted">Étape {i + 1}</p>
-            <h3 className="mt-1 text-lg font-heading text-primary">{e.titre}</h3>
-            <p className="mt-2 text-secondary">{e.texte}</p>
+          <li
+            key={e.titre}
+            className="cell-etape flex min-h-[210px] flex-col gap-3 px-6 pb-[34px] pt-[30px]"
+          >
+            <span className="font-heading text-[30px] leading-none text-secondary">{String(i + 1).padStart(2, "0")}</span>
+            <h3 className="h3-sans text-on-dark">{e.titre}</h3>
+            <p className="text-[14.5px] leading-[1.6] text-on-dark-72">{e.texte}</p>
           </li>
         ))}
       </ol>

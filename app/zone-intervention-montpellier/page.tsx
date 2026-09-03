@@ -24,6 +24,7 @@ export default function ZoneIntervention() {
   return (
     <>
       <Hero
+        breadcrumb="Zone d’intervention"
         title="Où intervient Aurea Piscines autour de Montpellier"
         lead="Aurea Piscines construit des bassins béton, rénove et entretient les piscines de Montpellier et de sa première couronne, dans un rayon d’environ 30 km autour de son dépôt de la Pompignane. Au-delà, l’intervention dépend de l’accès au terrain et du calendrier des équipes, et se décide au cas par cas."
         cta={{ label: "Vérifier ma commune", href: "/contact" }}
@@ -32,7 +33,7 @@ export default function ZoneIntervention() {
       <Section tone="surface">
         <ZoneCarte
           title="Les communes couvertes en intervention courante"
-          intro="Douze communes de Montpellier et de sa première couronne sont desservies en intervention courante, pour la construction, la rénovation, les équipements et les contrats d’entretien."
+          intro="Douze communes de Montpellier et de sa première couronne sont desservies en intervention courante, pour la construction, la rénovation, les équipements et les contrats d’entretien. Voici celles que nous nommons aujourd’hui."
           paliers={[
             {
               titre: "Montpellier et première couronne",
@@ -73,8 +74,8 @@ export default function ZoneIntervention() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Siège et dépôt de la Pompignane</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Siège et dépôt de la Pompignane</h2>
+        <div className="prose mt-4">
           <p>
             Notre siège et notre dépôt se trouvent au {b.address.street}, {b.address.postalCode} {b.address.city}. Le matériel,
             les pièces d’usure courantes et les véhicules d’intervention y sont stockés.
@@ -89,21 +90,19 @@ export default function ZoneIntervention() {
             dépôt, sur rendez-vous, du lundi au vendredi de 8h à 18h.
           </p>
         </div>
-        <h3 className="mt-10 text-lg font-heading text-primary">Nos prestations sur cette zone</h3>
-        <ul className="mt-3 grid gap-1 text-secondary">
+        <h3 className="mt-10 h3-sans">Nos prestations sur cette zone</h3>
+        <ul className="mt-3 grid list-none gap-2 p-0 text-[15px]">
           {services.map((s) => (
             <li key={s.href}><Link href={s.href} className="tap underline">{s.label}</Link></li>
           ))}
         </ul>
       </Section>
 
-      <Section>
-        <CtaBand
+      <CtaBand
           title="Vérifier votre commune"
           text="Indiquez votre commune et votre projet. Nous vous rappelons sous 24 h ouvrées pour vous dire si nous intervenons et à quelles conditions."
           cta={{ label: "Demander un rappel", href: "/contact" }}
-        />
-      </Section>
+      />
 
       <JsonLd
         data={[
