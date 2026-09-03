@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { Section } from "@/components/Section";
+import { JsonLd } from "@/components/JsonLd";
 import { getPosts } from "@/lib/content";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, breadcrumbJsonLd } from "@/lib/seo";
 
 export const generateMetadata = () => buildMetadata({ title: "Blog", description: "Conseils et actualités.", path: "/blog" });
 
@@ -19,6 +20,7 @@ export default function BlogIndex() {
         ))}
         {posts.length === 0 && <li className="text-muted">Aucun article pour le moment.</li>}
       </ul>
+      <JsonLd data={breadcrumbJsonLd([{ name: "Blog", path: "/blog" }])} />
     </Section>
   );
 }

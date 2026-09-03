@@ -1,0 +1,72 @@
+{
+  "aeo_rules": [
+    "Chaque page de service ouvre par une réponse directe de 40 à 60 mots qui nomme le service, la zone et le mode d'intervention",
+    "Chaque page de service porte une FAQ de 3 à 5 questions issues de vraies questions clients (délai, budget, autorisation, garantie, entretien)",
+    "Réponses de FAQ de 40 à 80 mots, autonomes, citables hors contexte, sans renvoi du type « voir ci-dessus »",
+    "Chaque chiffre avancé est daté et rattaché à sa source (année, période, nombre d'avis)",
+    "Une définition courte du vocabulaire technique employé (béton armé projeté, membrane armée, électrolyse au sel) dès sa première occurrence"
+  ],
+  "aio_rules": [
+    "Un seul H1, un H2 par section, hiérarchie de titres sans saut de niveau",
+    "JSON-LD sur chaque page : LocalBusiness sur l'accueil et la page zone, Service sur chaque page service, FAQPage sur les FAQ, Article sur le blog, BreadcrumbList partout",
+    "HTML sémantique strict : header, nav, main, article, section, footer ; listes réelles en ul/ol ; tableaux pour les données comparables",
+    "Coordonnées en microdonnées cliquables (tel:, mailto:) et adresse en PostalAddress",
+    "Aucune information essentielle rendue uniquement par image, script ou interaction : tout est présent dans le HTML servi"
+  ],
+  "forbidden": [
+    "Afficher un prix sans mention « à partir de » ni périmètre précis de la prestation",
+    "Publier une photo de piscine qui n'est pas un chantier réalisé par Aurea Piscines",
+    "Se comparer à un concurrent nommé ou revendiquer une position de marché",
+    "Promettre un résultat, un délai ou une économie non contractualisés",
+    "Laisser croire qu'Aurea vend des coques polyester, des piscines en kit ou dispose d'un show-room",
+    "Annoncer une intervention garantie hors rayon de 30 km sans mentionner l'étude au cas par cas",
+    "Publier un avis client, un chiffre ou un numéro de certification non vérifié par le client",
+    "Donner un conseil juridique ou d'urbanisme présenté comme une garantie d'obtention d'autorisation",
+    "Utiliser des mentions du type « devis gratuit et sans engagement » ou « satisfaction garantie »"
+  ],
+  "geo_rules": [
+    "Nom exact « Aurea Piscines », adresse 128 avenue de la Pompignane 34000 Montpellier, téléphone 04 67 00 00 00 et e-mail identiques sur toutes les pages, en pied de page et dans le JSON-LD",
+    "La liste des services et la zone d'intervention sont formulées à l'identique partout (mêmes libellés que l'entity bible)",
+    "Chaque page rappelle explicitement le lien entité / service / zone en une phrase (« Aurea Piscines construit des bassins béton à Montpellier et dans un rayon de 30 km »)",
+    "Certifications, partenaires et mentions légales (SIREN, RCS, TVA, décennale) déclarés en clair et repris dans le Schema",
+    "Ce que l'entreprise ne fait pas est écrit noir sur blanc pour éviter toute inférence erronée par les modèles"
+  ],
+  "seo_rules": [
+    "Une intention unique par page, aucune duplication de requête cible entre deux pages",
+    "Title de 55 à 60 signes contenant le service et « Montpellier », meta description de 150 à 160 signes avec un bénéfice concret et un appel à l'action",
+    "URL courte en minuscules avec tirets, jamais modifiée après publication sans redirection 301",
+    "H1 unique par page reprenant la requête cible en formulation naturelle",
+    "Maillage interne descriptif : chaque page service pointe vers 2 pages sœurs, la page zone et l'accueil, avec des ancres explicites",
+    "Images en WebP, nommées service-ville, avec alt décrivant le chantier réel photographié",
+    "Une page par service principal, jamais de page par commune tant que le contenu n'est pas différencié"
+  ],
+  "positioning": "Le constructeur-pisciniste de Montpellier qui construit lui-même ses bassins en béton armé projeté, avec un interlocuteur unique, un prix contractualisé et une date tenue — pour des propriétaires qui achètent d'abord la tranquillité.",
+  "forbidden_words": [
+    "rêve",
+    "paradis",
+    "oasis",
+    "évasion",
+    "clé en main",
+    "au meilleur prix",
+    "leader",
+    "n° 1",
+    "incontournable",
+    "révolutionnaire",
+    "expérience unique",
+    "solution innovante",
+    "nous mettons l'humain au cœur de",
+    "satisfaction garantie",
+    "devis gratuit et sans engagement",
+    "point d'exclamation",
+    "emoji",
+    "superlatif non chiffré"
+  ],
+  "conversion_rules": [
+    "Objectif unique par page : la demande de devis détaillé, avec un bouton visible dès le premier écran",
+    "Formulaire court : type de projet, commune, budget indicatif, échéance souhaitée, téléphone",
+    "Le téléphone et l'engagement de rappel sous 24 h ouvrées sont visibles en haut de chaque page",
+    "Chaque page de service se termine par un bloc « étapes suivantes » en 3 points et un lien vers la page contact",
+    "Preuves placées au contact de la demande : nombre de projets, décennale, Qualibat, note Google",
+    "Annoncer clairement ce qui est payant (étude, plans, dossier d'urbanisme si le projet ne se concrétise pas) avant la demande de devis"
+  ]
+}

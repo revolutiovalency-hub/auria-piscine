@@ -1,0 +1,71 @@
+{
+  "generate": [
+    {
+      "alt": "Piscine à débordement en béton armé construite par Aurea Piscines dans un jardin à Montpellier",
+      "size": "1536x1024",
+      "where": "/ (Hero / Réponse directe)",
+      "prompt": "Piscine en béton armé projeté récemment achevée, dans un jardin résidentiel à Montpellier, style contemporain, margelles en pierre claire, eau turquoise calme, terrasse en bois clair, fin d'après-midi, lumière naturelle rasante et chaude, ciel méditerranéen dégagé, ambiance sobre et haut de gamme. Palette dominante à ajuster sur les tons du design_system (actuellement non fourni : à harmoniser avec bleu piscine, pierre claire et vert méditerranéen). Photo réaliste, cadrage large légèrement en plongée, aucune personne visible, aucun texte, aucun logo, pas de mobilier de marque identifiable.",
+      "filename": "hero-piscine-beton-montpellier.jpg"
+    },
+    {
+      "alt": "Structure de piscine en béton armé projeté en cours de construction sur un chantier",
+      "size": "1536x1024",
+      "where": "/construction-piscine-beton-montpellier (section béton armé projeté)",
+      "prompt": "Chantier de construction de piscine en cours, structure en béton armé projeté brut visible dans une fouille de terrain, ferraillage apparent partiellement recouvert de béton projeté gris, équipement de chantier professionnel au sol, lumière de journée naturelle et neutre, ambiance technique et rigoureuse. Photo réaliste type reportage BTP, cadrage moyen en légère plongée, aucune personne identifiable (silhouette de dos floue tolérée mais évitée si possible), aucun texte, aucun logo d'entreprise ou de marque.",
+      "filename": "construction-chantier-beton-projete.jpg"
+    },
+    {
+      "alt": "Piscine ancienne présentant fissures et revêtement dégradé avant travaux de rénovation",
+      "size": "1536x1024",
+      "where": "/renovation-piscine-montpellier (section signes qui imposent une rénovation)",
+      "prompt": "Ancien bassin de piscine extérieure présentant des signes d'usure : revêtement fissuré et décoloré, margelles descellées, eau trouble, entouré d'une terrasse ancienne en dalles, lumière de fin de matinée douce et neutre, ambiance factuelle et sobre sans dramatisation excessive. Photo réaliste, cadrage large légèrement de biais, aucune personne, aucun texte, aucun logo, éviter tout élément de marque visible sur les équipements.",
+      "filename": "renovation-piscine-avant-travaux.jpg"
+    },
+    {
+      "alt": "Local technique de piscine avec système de filtration et de régulation",
+      "size": "1024x1024",
+      "where": "/equipements-piscine-montpellier (section filtration et hydraulique)",
+      "prompt": "Local technique de piscine avec pompe de filtration, canalisations PVC, coffret de régulation et système de traitement de l'eau, installation propre et ordonnée, éclairage artificiel neutre de local technique, ambiance technique et précise. Photo réaliste, cadrage serré sur l'installation, aucune personne, aucun texte, aucun logo de marque visible sur les appareils, flouter ou éviter toute étiquette de fabricant lisible.",
+      "filename": "equipements-local-technique-filtration.jpg"
+    },
+    {
+      "alt": "Piscine équipée d'un volet immergé de sécurité",
+      "size": "1024x1024",
+      "where": "/equipements-piscine-montpellier (section sécurité et mise aux normes)",
+      "prompt": "Piscine résidentielle équipée d'un volet immergé partiellement fermé sur l'eau, margelles en pierre claire, jardin méditerranéen en arrière-plan flou, lumière de milieu de journée, ambiance sécurité et sobriété. Photo réaliste, cadrage moyen sur le volet et une portion du bassin, aucune personne, aucun texte, aucun logo de marque.",
+      "filename": "equipements-volet-immerge-securite.jpg"
+    },
+    {
+      "alt": "Matériel d'analyse de la qualité de l'eau au bord d'une piscine",
+      "size": "1024x1024",
+      "where": "/entretien-piscine-montpellier (section analyses d'eau et traitement)",
+      "prompt": "Kit d'analyse de l'eau de piscine posé au bord d'un bassin : bandelettes de test, petit flacon de réactif, eau turquoise claire en arrière-plan, lumière naturelle de journée, ambiance méthodique et professionnelle. Photo réaliste, cadrage rapproché sur le matériel d'analyse, aucune personne, aucun texte, aucun logo de marque.",
+      "filename": "entretien-analyse-eau-piscine.jpg"
+    },
+    {
+      "alt": "Plan d'implantation et outils de relevé pour une étude de faisabilité de piscine",
+      "size": "1536x1024",
+      "where": "/etude-faisabilite-demarches-urbanisme (section ce que la faisabilité vérifie)",
+      "prompt": "Plan d'implantation de piscine déroulé sur une table extérieure avec mètre ruban, crayon et jalons topographiques posés à côté, jardin résidentiel flou en arrière-plan, lumière naturelle douce du matin, ambiance étude technique et préparatoire. Photo réaliste, cadrage en plongée sur le plan et les outils, aucune personne identifiable (mains éventuellement présentes mais non identifiables), aucun texte lisible sur le plan, aucun logo.",
+      "filename": "etude-plan-implantation-terrain.jpg"
+    },
+    {
+      "alt": "Vue générale de la périphérie résidentielle de Montpellier et de sa première couronne",
+      "size": "1536x1024",
+      "where": "/zone-intervention-montpellier (Hero / Réponse directe)",
+      "prompt": "Vue générale de toits de mas et villas résidentielles avec jardins arborés dans la région de Montpellier, paysage périurbain méditerranéen, végétation de pins et cyprès, lumière de fin de journée chaude, ambiance sereine et géographique. Photo réaliste, cadrage large en légère hauteur, aucune personne, aucun texte, aucun panneau ou logo identifiable.",
+      "filename": "zone-montpellier-vue-generale.jpg"
+    }
+  ],
+  "use_existing": [],
+  "to_request_from_client": [
+    "Photos réelles des chantiers de construction achevés (au moins 3 à 5 réalisations récentes) pour remplacer à terme les visuels génériques, avec autorisation de publication des clients concernés.",
+    "Photos avant/après de rénovations réalisées par Aurea Piscines.",
+    "Photo de l'équipe (conducteurs de travaux, équipe maçonnerie) si un visuel institutionnel est souhaité pour /a-propos, dans le respect du choix de ne montrer aucune personne identifiable sans accord explicite.",
+    "Photo du siège et dépôt situé 128 avenue de la Pompignane, Montpellier, pour illustrer /a-propos et /contact.",
+    "Visuels ou schéma des marques d'équipements installés (Pentair, Zodiac, Aqualux, Renolit Alkorplan) si le client souhaite les illustrer, en respectant l'absence de logo tiers imposée par les règles.",
+    "Carte ou visuel officiel de la zone d'intervention (les 12 communes) si le client dispose d'un support graphique dédié.",
+    "Logo Aurea Piscines en haute résolution pour le header et le footer.",
+    "Toute icône ou pictogramme de marque pour les 5 ServiceCard de l'accueil, la structure exacte du composant n'étant pas définie faute de maquette."
+  ]
+}
