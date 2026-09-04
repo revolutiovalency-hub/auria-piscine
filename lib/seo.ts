@@ -17,7 +17,15 @@ export function buildMetadata(p: PageSeo): Metadata {
     title: { absolute: p.title },
     description: p.description,
     alternates: { canonical: url },
-    openGraph: { title: p.title, description: p.description, url, siteName: site.name, locale: site.locale, type: "website", images: p.image ? [p.image] : undefined },
+    openGraph: {
+      title: p.title,
+      description: p.description,
+      url,
+      siteName: site.name,
+      locale: site.locale,
+      type: "website",
+      ...(p.image ? { images: [p.image] } : {}),
+    },
   };
 }
 

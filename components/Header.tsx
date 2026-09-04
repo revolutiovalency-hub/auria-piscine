@@ -28,7 +28,7 @@ export function Header() {
           <a href={`tel:${b.telephoneE164}`} className="hidden min-h-11 items-center whitespace-nowrap text-sm tracking-[0.02em] text-text min-[1080px]:inline-flex">
             {b.telephone}
           </a>
-          <Link href={contactPage.href} className="btn btn-sm btn-primary whitespace-nowrap">Demander un devis</Link>
+          <Link href={contactPage.href} className="btn btn-sm btn-primary hidden whitespace-nowrap min-[1080px]:inline-flex">Demander un devis</Link>
 
           <details className="min-[1080px]:hidden">
             <summary

@@ -19,7 +19,6 @@ import {
   chiffresCles,
   projets,
   avisClients,
-  communesCourantes,
   MENTION_CHIFFRES,
   MENTION_PROJETS,
   MENTION_AVIS,
@@ -139,25 +138,13 @@ export default function Home() {
         <p className="mt-8 text-[12.5px] text-faint">{MENTION_AVIS}</p>
       </Section>
 
-      <Section>
+      <Section size="sm">
         <h2 className="h2-md max-w-[24ch]">Où nous intervenons.</h2>
-        <div className="mt-6 grid gap-[clamp(30px,4vw,72px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(300px,100%),1fr))" }}>
-          <div>
-            <p className="text-[16.5px] leading-[1.75] text-body">
-              Aurea Piscines construit des bassins béton à Montpellier et dans un rayon d’environ 30 km, depuis son dépôt du
-              {" "}{b.address.street}. Entre 30 et 50 km, Sète incluse, l’intervention est étudiée au cas par cas. Au-delà de
-              50 km, nous n’intervenons pas et nous le disons dès le premier échange.
-            </p>
-            <p className="mt-6">
-              <Link href={zonePage.href} className="link-underline">{zonePage.label}</Link>
-            </p>
-          </div>
-          <ul className="flex list-none flex-wrap gap-2.5 self-start p-0">
-            {communesCourantes.map((c) => (
-              <li key={c} className="pill">{c}</li>
-            ))}
-          </ul>
-        </div>
+        <p className="mt-6 max-w-[62ch] text-[16.5px] leading-[1.75] text-body">
+          Aurea Piscines construit des bassins béton à Montpellier et dans un rayon d’environ 30 km depuis son dépôt du
+          {" "}{b.address.street}.{" "}
+          <Link href={zonePage.href} className="link-underline">{zonePage.label}</Link>
+        </p>
       </Section>
 
       <Section>

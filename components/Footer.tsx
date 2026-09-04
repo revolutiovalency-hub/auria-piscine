@@ -26,7 +26,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-on-dark">Navigation</h2>
+            <h2 className="mb-4 font-body text-[11.5px] font-medium uppercase leading-[1.7] tracking-[0.22em] text-on-dark">Navigation</h2>
             <div className="flex flex-col">
               {navItems.map((n) => (
                 <Link key={n.href} href={n.href} className="tap text-[14.5px] text-on-dark-78 hover:text-accent">{n.label}</Link>
@@ -35,7 +35,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-on-dark">Prestations</h2>
+            <h2 className="mb-4 font-body text-[11.5px] font-medium uppercase leading-[1.7] tracking-[0.22em] text-on-dark">Prestations</h2>
             <div className="flex flex-col">
               {services.map((s) => (
                 <Link key={s.href} href={s.href} title={s.label} className="tap text-[14.5px] text-on-dark-78 hover:text-accent">
@@ -46,7 +46,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-on-dark">Zones d’intervention</h2>
+            <h2 className="mb-4 font-body text-[11.5px] font-medium uppercase leading-[1.7] tracking-[0.22em] text-on-dark">Zones d’intervention</h2>
             <p className="text-[14.5px] leading-[1.9]">{communesCourantes.join(" · ")}</p>
             <p className="mt-3 text-[14.5px] leading-[1.9]">
               <Link href={zonePage.href} className="text-on-dark-78 underline hover:text-accent">{zonePage.label}</Link>
@@ -54,7 +54,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="mb-4 text-[11.5px] font-medium uppercase tracking-[0.22em] text-on-dark">Contact</h2>
+            <h2 className="mb-4 font-body text-[11.5px] font-medium uppercase leading-[1.7] tracking-[0.22em] text-on-dark">Contact</h2>
             <address className="not-italic">
               <p className="mb-2.5 text-[14.5px] leading-[1.7]">
                 {b.address.street}
@@ -76,8 +76,8 @@ export function Footer() {
             © {new Date().getFullYear()} {site.name} — {l.legalForm} · SIREN {l.siren} · {l.rcs} · TVA {l.vatNumber} · APE {l.ape} · {l.insurance}
           </span>
           <span className="flex flex-wrap gap-[18px]">
-            <Link href="/mentions-legales" className="tap text-on-dark-72 hover:text-accent">Mentions légales</Link>
-            <Link href="/confidentialite" className="tap text-on-dark-72 hover:text-accent">Politique de confidentialité</Link>
+            <Link href="/mentions-legales" className="tap text-on-dark-55 hover:text-accent">Mentions légales</Link>
+            <Link href="/confidentialite" className="tap text-on-dark-55 hover:text-accent">Politique de confidentialité</Link>
           </span>
         </div>
       </div>

@@ -108,7 +108,7 @@ input, select, textarea { font-size: 16px; }
   .btn {
     display: inline-flex; align-items: center; justify-content: center;
     min-height: 44px; padding: 16px 30px; border-radius: var(--radius);
-    font-size: 15px; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; cursor: pointer;
+    font-size: 15px; font-weight: 500; letter-spacing: normal; text-decoration: none; cursor: pointer;
   }
   .btn-sm { padding: 13px 22px; font-size: 14px; }
   .btn-primary { background: var(--color-primary); color: var(--color-on-dark); border: 0; }
@@ -147,6 +147,7 @@ input, select, textarea { font-size: 16px; }
   .text-on-dark { color: var(--color-on-dark); }
   .text-on-dark-86 { color: var(--on-dark-86); }
   .text-on-dark-78 { color: var(--on-dark-78); }
+  .text-on-dark-55 { color: var(--on-dark-55); }
   .text-on-dark-72 { color: var(--on-dark-72); }
   .text-primary-dark { color: var(--color-primary-dark); }
   .bg-primary-dark { background-color: var(--color-primary-dark); }

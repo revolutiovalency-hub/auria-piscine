@@ -25,7 +25,7 @@ export default function APropos() {
       <Hero
         breadcrumb="À propos"
         title="Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009"
-        lead="Aurea Piscines est une SARL créée en 2009, dont le siège et le dépôt se trouvent 128 avenue de la Pompignane à Montpellier. Plus de 300 projets de construction et de rénovation ont été menés depuis, à Montpellier et dans un rayon d’environ 30 km, avec une équipe de maçonnerie salariée."
+        lead="Aurea Piscines est une SARL créée en 2009, dont le siège et le dépôt se trouvent 128 avenue de la Pompignane à Montpellier. Plus de 300 projets de construction et de rénovation ont été menés depuis, à Montpellier et dans un rayon d’environ 30 km, avec une équipe de maçonnerie salariée et une note de 4,8 sur 5 sur les avis clients Google."
         cta={{ label: "Demander un devis détaillé", href: "/contact" }}
       />
 

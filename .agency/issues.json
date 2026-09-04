@@ -1,369 +1,402 @@
 [
   {
-    "id": "5621b575-e97b-4ca0-a32b-06e96fcda8e1",
+    "id": "2c0e3f2e-0492-4645-8672-f4f966386326",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "geo_qa",
+    "source": "tech_qa",
     "severity": "blocking",
-    "page": "toutes (entity_bible vs pages)",
-    "description": "Les preuves publiées sur le site (300+ projets, décennale MAAF Pro n°8842-117-04, note Google 4,8/5 sur 87 avis, Qualibat 2181, Propiscines®, IHB) sont explicitement qualifiées de placeholders fictifs dans l'entity_bible (\"CHIFFRES À VALIDER\") et la décision D1 confirme qu'il s'agit de données de test non destinées à la production (deploy_production reste rouge). Un moteur génératif qui lit ces pages présentera comme vraies des preuves non vérifiées (numéro de police d'assurance, SIREN, avis Google), ce qui est un risque de désinformation et de confiance non fondée tant que la mise en production n'a pas eu lieu avec des données validées.",
-    "suggested_fix": "Ne pas publier ces pages en production tant que les chiffres, numéros de certification et coordonnées n'ont pas été vérifiés et confirmés par le client, conformément à la décision D1. Conserver un blocage explicite (deploy_production rouge) jusqu'à validation.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.305384+00:00"
-  },
-  {
-    "id": "809a9068-4161-43ce-8d02-61f737877ffb",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "geo_qa",
-    "severity": "warning",
-    "page": "/ (accueil, JSON-LD LocalBusiness)",
-    "description": "Le JSON-LD LocalBusiness ne contient aucun champ sameAs vers des profils externes (fiche Google, réseaux professionnels), alors que le texte visible renvoie explicitement vers la fiche Google (\"Consulter la fiche Google d'Aurea Piscines\"). L'absence de sameAs empêche un moteur génératif de relier formellement l'entité structurée à ses profils externes.",
-    "suggested_fix": "Ajouter une propriété sameAs dans le JSON-LD LocalBusiness pointant vers l'URL de la fiche Google Business (et tout autre profil officiel existant).",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.305384+00:00"
-  },
-  {
-    "id": "ba3eb9ce-e9d6-46a7-bce7-a85b2b501702",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "geo_qa",
-    "severity": "warning",
-    "page": "/a-propos",
-    "description": "L'entity_bible mentionne \"9 personnes dont 2 conducteurs de travaux et une équipe maçonnerie intégrée\" comme preuve differentiante, mais le texte de la page /a-propos ne mentionne que \"deux conducteurs de travaux\" sans jamais indiquer l'effectif total de 9 personnes. Cette preuve de taille d'équipe, utile pour la crédibilité, est absente du contenu réellement publié.",
-    "suggested_fix": "Si la maquette le permet (D2 : la maquette fait foi), vérifier si l'effectif total de l'entreprise doit être ajouté explicitement au texte pour renforcer la preuve documentée ; sinon signaler l'écart entre entity_bible et contenu réel comme à trancher côté contenu.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.305384+00:00"
-  },
-  {
-    "id": "baac5849-0c65-4f2c-822d-0214c98a54a5",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "geo_qa",
-    "severity": "warning",
-    "page": "/a-propos et / (JSON-LD LocalBusiness)",
-    "description": "Le JSON-LD LocalBusiness ne porte pas de propriété hasCredential structurée reprenant explicitement l'assurance décennale (numéro de police), alors que le texte visible la cite en détail (MAAF Pro, police n°8842-117-04). Seules les qualifications (Qualibat, Propiscines, IHB) sont dans hasCredential ; l'assurance décennale, preuve de confiance majeure, n'est pas reprise dans le JSON-LD.",
-    "suggested_fix": "Ajouter l'assurance décennale (assureur, numéro de police) comme propriété structurée du JSON-LD (par exemple via hasCredential ou une extension dédiée), pour cohérence entre texte visible et données structurées.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.305384+00:00"
-  },
-  {
-    "id": "ba1b16b7-28e2-4cc9-a09d-f9bd1d4ed8fa",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "geo_qa",
-    "severity": "warning",
-    "page": "/etude-faisabilite-demarches-urbanisme",
-    "description": "La page cite de nombreux articles de code (R.421-2, R.421-9, R.423-23, articles du code civil sur les garanties) sans lien ou référence externe vers le texte officiel (Légifrance ou équivalent), ce qui limite la vérifiabilité directe par un moteur génératif malgré la bonne pratique de citer la source.",
-    "suggested_fix": "Ajouter des liens vers Légifrance pour chaque article de code cité, afin de renforcer la vérifiabilité et l'attribution des affirmations juridiques.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.305384+00:00"
-  },
-  {
-    "id": "2013ffd9-c3c5-4f7c-88ce-c8b30bda0fc0",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "seo_qa",
-    "severity": "warning",
     "page": "/",
-    "description": "Title « Constructeur de piscine béton à Montpellier | Aurea Piscines » fait 60 caractères, dans la fourchette haute, mais le H1 dit « piscines » (pluriel) alors que le title dit « piscine » (singulier) : léger écart de formulation avec la target_query « pisciniste montpellier », qui n'apparaît littéralement nulle part (ni title, ni H1, ni premier paragraphe, qui parlent de « constructeur-pisciniste » et « constructeur de piscines béton »).",
-    "suggested_fix": "Vérifier que la formulation « pisciniste » ou une variante proche apparaît clairement dans le title ou le H1 pour bien cibler la requête « pisciniste montpellier », par exemple en conservant « constructeur-pisciniste » dans le H1 tel qu'il figure dans le premier paragraphe.",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
     "resolved": false,
-    "created_at": "2026-09-04T10:37:32.021282+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "baec0c9c-bbcf-4397-a109-0467b8caa791",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "seo_qa",
-    "severity": "warning",
-    "page": "/a-propos",
-    "description": "Le H1 réel de la page est « Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009 » (conforme à la décision D1 point 23), mais la page_matrix indique encore l'ancien H1 « Aurea Piscines : 9 personnes, une équipe maçonnerie, un interlocuteur par chantier ». La target_query « aurea piscines montpellier avis entreprise » n'apparaît pas explicitement dans le title, le H1 ni le premier paragraphe (le mot « avis » n'apparaît que plus loin via la note Google).",
-    "suggested_fix": "Mettre à jour la page_matrix pour refléter le H1 réellement publié (déjà fait dans le contenu, à aligner dans le référentiel), et envisager d'intégrer un mot-clé lié à la réputation/avis dès le premier paragraphe si cette requête reste ciblée.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.021282+00:00"
-  },
-  {
-    "id": "f7a15e33-397d-4d5e-b915-0878b6a396d9",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "seo_qa",
-    "severity": "warning",
-    "page": "/equipements-piscine-montpellier",
-    "description": "Target_query « installation pompe à chaleur et volet piscine montpellier » très longue et composite. Le H1 (« Équiper ou moderniser sa piscine à Montpellier ») et le title (« Équipements de piscine à Montpellier : filtration, sel, PAC ») ne reprennent pas cette formulation précise ; le premier paragraphe mentionne bien pompe à chaleur et volet immergé mais pas sous cette expression combinée.",
-    "suggested_fix": "Soit simplifier la target_query pour qu'elle corresponde à une requête réaliste couverte naturellement (ex. « équipements piscine montpellier »), soit renforcer le premier paragraphe avec la formulation exacte si cette requête composite est réellement visée.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.021282+00:00"
-  },
-  {
-    "id": "1106469e-8465-4e4b-bf44-9085bcbf5441",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "seo_qa",
-    "severity": "warning",
-    "page": "/etude-faisabilite-demarches-urbanisme",
-    "description": "Meta description de la page fait environ 152 caractères, correcte, mais le title « Étude de faisabilité et urbanisme piscine à Montpellier » ne commence pas par la requête cible « déclaration préalable piscine montpellier faisabilité terrain » ; il s'en approche mais l'ordre des mots diffère fortement de la requête indiquée en page_matrix.",
-    "suggested_fix": "Si la requête cible réelle est centrée sur « déclaration préalable », faire apparaître ce terme en tête de title ou de H1 ; sinon ajuster la target_query dans la page_matrix pour qu'elle corresponde à la formulation effectivement travaillée (faisabilité/urbanisme).",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.021282+00:00"
-  },
-  {
-    "id": "d989a313-5160-49dc-8c5a-449f879b1f76",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "seo_qa",
-    "severity": "warning",
-    "page": "/zone-intervention-montpellier",
-    "description": "La décision D1 (point 20) fixe target_query = « pisciniste castelnau-le-lez lattes », mais la page_matrix fournie en entrée indique encore « constructeur piscine castelnau-le-lez lattes pérols ». Le title réel de la page (« Pisciniste à Castelnau-le-Lez, Lattes, Pérols et Montpellier ») couvre bien la requête décidée en D1, mais il y a une incohérence documentaire entre la décision et la page_matrix.",
-    "suggested_fix": "Mettre à jour la page_matrix pour que target_query corresponde exactement à la décision D1 (« pisciniste castelnau-le-lez lattes »), afin d'éviter toute confusion pour le suivi de positionnement.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.021282+00:00"
-  },
-  {
-    "id": "ec1fa323-6a4e-46d3-b853-86fa74622dcd",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "seo_qa",
-    "severity": "warning",
-    "page": "/",
-    "description": "Le H2 « Nos références, avec leur date et leur source » contient une note Google « 4,8 sur 5 » présentée en texte, ce qui est conforme à la décision D1 (point 18, pas d'AggregateRating en JSON-LD), mais le JSON-LD LocalBusiness ne reprend aucune trace de cette preuve sociale alors que d'autres attributs (hasCredential) y figurent : cohérence à vérifier mais pas anormal puisque la décision l'interdit explicitement en JSON-LD.",
-    "suggested_fix": "Aucune action requise, ceci est conforme à D1 point 18 ; conserver la note Google uniquement en texte sourcé et daté, jamais en AggregateRating.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.021282+00:00"
-  },
-  {
-    "id": "4c528cb5-e0c6-4b12-b223-0a4a9b1bf73b",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "seo_qa",
-    "severity": "warning",
-    "page": "toutes les pages de service",
-    "description": "Le maillage interne recommandé par la page_matrix (5 liens sortants distincts par page service) est bien respecté dans le texte (« À lire aussi »), mais chaque page comptabilise aussi de nombreux liens dupliqués (nav, footer) vers les mêmes URL, ce qui dilue le poids sémantique des ancres principales sans que ce soit bloquant : la répétition massive des mêmes 10 URL en footer et nav sur chaque page est normale pour un site vitrine mais mérite un contrôle du nombre de liens uniques réellement utiles au maillage thématique.",
-    "suggested_fix": "Vérifier que les ancres de nav/footer ne cannibalisent pas le texte d'ancrage des liens contextuels « À lire aussi », qui doivent rester les plus descriptifs pour le maillage sémantique interne.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.021282+00:00"
-  },
-  {
-    "id": "6f55d82a-7422-4aa6-927a-3cd2c67e0999",
+    "id": "e4d6c9d4-0606-40eb-b09b-ae83cb732e13",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
     "page": "/",
-    "description": "Favicon absent",
+    "description": "15 cibles tactiles sous 44px à 360px",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "16c19938-5e04-429f-ba91-053f9f446e63",
+    "id": "46329c5c-17c7-4e39-b715-67ec2ac1652c",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
+    "source": "tech_qa",
     "severity": "warning",
     "page": "/",
-    "description": "Le JSON-LD LocalBusiness ne comporte pas de champ 'sameAs' vers la fiche Google mentionnée en texte (note 4,8/5 sur 87 avis, avec lien vers la fiche Google), ni de champ 'aggregateRating' (ce qui est cohérent avec la décision D1 point 18 excluant AggregateRating). Cependant le lien 'Consulter la fiche Google d'Aurea Piscines' n'apparaît dans aucune liste de liens ou CTA fournie : son URL cible n'est pas vérifiable, ce qui empêche un agent IA de suivre cette action.",
-    "suggested_fix": "Vérifier que le lien 'Consulter la fiche Google d'Aurea Piscines' est bien un <a href> avec une URL stable vers la fiche Google Business Profile, et l'ajouter à la liste des liens sortants de la page.",
+    "description": "15 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "41e32649-0098-4080-9549-46ede719e7b6",
+    "id": "0ace2a0c-3b07-4dcb-b58d-f9739e4ba100",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
-    "severity": "warning",
-    "page": "toutes les pages",
-    "description": "Le téléphone (04 67 00 00 00) et l'e-mail sont présents en texte brut dans le contenu ('text') mais ne sont pas confirmés comme des liens tel: et mailto: dans le corps de page (hors CTA en pied de page où mailto: est bien présent). Le numéro de téléphone n'apparaît dans aucun cta_links en tel:, alors que la règle AIO exige des coordonnées balisées cliquables partout.",
-    "suggested_fix": "Ajouter un lien tel:+33467000000 explicite en en-tête ou pied de page sur chaque gabarit, en plus du mailto: déjà présent, conformément à la règle 'coordonnées en microdonnées cliquables (tel:, mailto:)'.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
-  },
-  {
-    "id": "60a8fa22-b748-4917-9209-99389cc0cc7e",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
+    "source": "tech_qa",
     "severity": "warning",
     "page": "/",
-    "description": "Le premier paragraphe et le JSON-LD LocalBusiness donnent l'adresse complète, mais le champ 'telephone' du JSON-LD ('04 67 00 00 00') n'est pas au format E.164 international recommandé par Schema.org pour une meilleure exploitation machine.",
-    "suggested_fix": "Passer le champ telephone du JSON-LD au format international, par exemple '+33467000000', tout en conservant l'affichage local en texte visible.",
+    "description": "15 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "d7e88438-bf2f-42ce-9982-ef1480560da4",
+    "id": "20ea84a2-f287-4260-b089-4fd142f35461",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
-    "severity": "warning",
-    "page": "/zone-intervention-montpellier",
-    "description": "Le JSON-LD est de type WebPage alors que le schema_type prévu dans la page_matrix pour cette page est 'LocalBusiness'. La page ne porte pas de balisage LocalBusiness propre ni de duplication du business, seulement une référence 'about' à l'@id de l'accueil, ce qui est cohérent avec la décision D1 point 9 (un seul LocalBusiness avec @id stable) mais ne correspond pas strictement au schema_type attendu par la page_matrix.",
-    "suggested_fix": "Confirmer que la référence 'about': {'@id': '.../#business'} au sein d'un WebPage est acceptée comme équivalent au schema_type LocalBusiness prévu, ou ajuster la page_matrix pour indiquer WebPage comme type réel, afin d'éviter toute ambiguïté pour les agents IA qui liraient schema_type comme une promesse de type exact.",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/construction-piscine-beton-montpellier",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
     "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "6c6701fe-d1b9-4b2f-83c3-1c125747b34a",
+    "id": "fc740a69-d8f3-40e1-b5a5-64492e81d8ae",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
-    "severity": "warning",
-    "page": "/a-propos",
-    "description": "Le JSON-LD est de type AboutPage, conforme au schema_type de la page_matrix, mais le H1 réel de la page ('Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009', imposé par la décision D1 point 23) diffère du h1 indiqué initialement dans la page_matrix ('Aurea Piscines : 9 personnes...'). Le contenu livré respecte bien la décision, donc pas de bloquant, mais l'incohérence résiduelle dans la page_matrix pourrait dérouter un agent IA qui croiserait les deux sources.",
-    "suggested_fix": "Mettre à jour le champ h1 de la page_matrix pour /a-propos afin qu'il reflète exactement le H1 livré, conformément à la décision D1 point 23.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
-  },
-  {
-    "id": "baa50dc2-f467-4b3f-9b3b-d2df8af764ad",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
-    "severity": "warning",
-    "page": "/contact",
-    "description": "Le formulaire de contact (Nom, Email, Téléphone, Votre besoin) est décrit uniquement par ses labels dans le texte structuré, sans indication de méthode de soumission (action, method) ni d'URL stable de traitement. Un agent IA qui souhaite actionner la demande de devis ne peut pas déterminer si l'action principale est un vrai formulaire HTML soumissible ou un composant JavaScript opaque.",
-    "suggested_fix": "Exposer le formulaire en HTML natif avec attributs action/method explicites, ou à défaut documenter une alternative texte (mailto: ou tel:) immédiatement à côté du bouton 'Envoyer la demande' pour garantir une action de secours sans JavaScript.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
-  },
-  {
-    "id": "a590c76c-a307-4b77-9c30-461f82a96859",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
-    "severity": "warning",
-    "page": "/construction-piscine-beton-montpellier, /renovation-piscine-montpellier, /equipements-piscine-montpellier, /entretien-piscine-montpellier, /etude-faisabilite-demarches-urbanisme",
-    "description": "Les blocs FAQ visibles en HTML (H2 Questions fréquentes, questions/réponses en texte) ne sont pas confirmés comme balisés en <dl> ou en éléments sémantiques dédiés (details/summary) dans les semantic_tags fournis (seulement nav, main, section, ul listés) : la présence de <ul> pour des questions/réponses n'est pas la structure la plus adaptée pour une FAQ.",
-    "suggested_fix": "Vérifier que chaque question/réponse de la FAQ est structurée en éléments sémantiques appropriés (par exemple <details>/<summary> ou une liste de définitions <dl>/<dt>/<dd>), en plus du JSON-LD FAQPage déjà correct.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
-  },
-  {
-    "id": "62fae22c-03c8-404c-8951-e1622b2bad6e",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
-    "severity": "warning",
-    "page": "toutes les pages sauf /",
-    "description": "Le breadcrumb JSON-LD (BreadcrumbList) est présent sur toutes les pages mais la balise <nav> visible pour le fil d'Ariane n'est pas explicitement confirmée dans semantic_tags (seul 'nav' générique listé, probablement le menu principal). Un agent IA cherchant la navigation contextuelle hiérarchique pourrait ne trouver que le JSON-LD sans équivalent visible en HTML.",
-    "suggested_fix": "Confirmer la présence d'un fil d'Ariane visible en HTML (nav aria-label='fil d'Ariane') correspondant exactement au BreadcrumbList du JSON-LD, pour que l'information soit lisible autant par un humain que par un agent.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
-  },
-  {
-    "id": "6e38cf28-9f6a-4d09-a35d-7603d558cc9f",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aio_qa",
-    "severity": "warning",
-    "page": "/",
-    "description": "La section 'Nos références, avec leur date et leur source' contient un lien texte 'Consulter la fiche Google d'Aurea Piscines' dont l'URL cible n'apparaît dans aucune liste de liens internes ou externes fournie, alors qu'il s'agit d'une source citée pour un chiffre (note 4,8/5).",
-    "suggested_fix": "Lister explicitement l'URL externe de la fiche Google Business Profile dans les données de liens de la page, pour permettre à un agent de vérifier la source du chiffre annoncé.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.398601+00:00"
-  },
-  {
-    "id": "3df00810-22ab-4339-b078-8e0ba2c36375",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/",
-    "description": "L'accueil (page LocalBusiness, pas une page de service au sens strict) n'ouvre pas par une réponse directe autonome de 40 à 60 mots citable telle quelle : le premier paragraphe (environ 50 mots) répond bien à l'intention mais mélange identité, adresse et méthode sans jamais mentionner explicitement les cinq prestations ni citer une donnée datée, ce qui limite sa citabilité isolée par un moteur de réponse.",
-    "suggested_fix": "Conserver le texte (contrainte D2 sur la maquette), mais s'assurer que le paragraphe reste autonome hors contexte : il l'est globalement, donc pas de changement de texte requis, seulement une vigilance à ce que les futures pages respectent ce format.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "a7865d6d-1dbe-402e-87c8-27a4fd267edf",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/",
-    "description": "Aucune FAQ sur la page d'accueil. Ce n'est pas strictement une page de service listée dans le barème mais elle agrège les cinq prestations sans répondre aux questions les plus fréquentes (zone, prix, délai), ce qui prive les moteurs de réponse d'un bloc Q/R facilement extractible à ce niveau de l'arborescence.",
-    "suggested_fix": "Optionnel : envisager en V2 un court bloc de 2 à 3 questions transverses (zone, méthode de chiffrage, délai de rappel) avec JSON-LD FAQPage, sans dupliquer les FAQ des pages service.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "88eee973-618c-4abc-86cd-8d37253eb675",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
+    "source": "tech_qa",
     "severity": "warning",
     "page": "/construction-piscine-beton-montpellier",
-    "description": "La FAQ ne compte que 3 questions alors que la règle générale demande 3 à 5 questions réelles par page de service. Le nombre a été volontairement réduit à 3 par la décision D1 (point 10), donc le format est conforme au journal des décisions, mais cela reste le plancher bas de la fourchette recommandée par les règles AEO, ce qui limite la couverture des intentions de recherche (budget, terrain en pente, chantier en été, absents du corpus).",
-    "suggested_fix": "Aucune action requise : la décision D1 prime. Signalé pour information uniquement, ne pas modifier sans nouvelle décision du client.",
+    "description": "14 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "e1500120-d0e7-433b-8fb2-0200787d627a",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/renovation-piscine-montpellier",
-    "description": "Idem : FAQ limitée à 3 questions (contrainte D1), alors que le page_matrix d'origine prévoyait des questions sur le bassin d'origine inconnue non reprises dans le texte final.",
-    "suggested_fix": "Aucune action requise, conforme à D1. Point de vigilance uniquement.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "c754d43f-9150-4375-81b4-860e8f9ccda9",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/equipements-piscine-montpellier",
-    "description": "FAQ à 3 questions (conforme à D1) mais aucune n'aborde la consommation électrique de façon chiffrée ou datable alors que le sujet évolue (tarifs de l'énergie) ; le texte reste qualitatif, ce qui est cohérent avec l'absence de prix imposée par D1, mais laisse une question fréquente (coût de fonctionnement) sans réponse citable.",
-    "suggested_fix": "Si une donnée chiffrée devient disponible et validée par le client, ajouter une question FAQ dédiée à la consommation avec une donnée datée. En l'état, aucune modification sans nouvelle validation.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "4ba37ac1-dbe0-4ee9-8c1b-8fc95cb5758c",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/entretien-piscine-montpellier",
-    "description": "La section d'ouverture de contrat et les repères de température (12°C) sont de bonnes réponses citables, mais aucune n'est datée alors que la règle AEO demande de dater les réponses quand le sujet évolue (ici, les seuils climatiques sont présentés comme stables, ce qui est acceptable, mais le repère '96% des chantiers livrés dans le délai' présent sur /a-propos n'est pas repris ici alors qu'il renforcerait la FAQ sur les délais de dépannage).",
-    "suggested_fix": "Envisager de citer le chiffre daté 96% (2024-2025) déjà validé dans l'entity bible si pertinent pour renforcer la réponse sur les délais, sous réserve de cohérence avec D1 sur les données fictives assumées.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "8b08471b-592c-437e-9cc2-25cd8255b3cb",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/etude-faisabilite-demarches-urbanisme",
-    "description": "Les réponses citent bien les articles du code de l'urbanisme et l'encadré 'information générale' est présent (conforme à D1 point 11), mais aucune date de rédaction n'est explicitement indiquée dans le texte visible pour ancrer la fraîcheur de l'information réglementaire, alors que la réglementation d'urbanisme est un sujet qui évolue.",
-    "suggested_fix": "Ajouter une date de dernière vérification du contenu réglementaire (ex. 'à la date de rédaction, septembre 2026') si la maquette le permet, sinon la mention actuelle 'à la date de rédaction' reste un minimum acceptable et est déjà présente dans le texte : vérifier qu'elle figure bien visible avant publication.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "44f9902f-d83b-473d-85a3-cde6f97c2c0b",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/a-propos",
-    "description": "Page non listée comme page de service au sens du barème AEO strict, mais elle contient des chiffres de fiabilité datés (96% 2024-2025, note Google septembre 2026) qui sont bien datés, correct. Toutefois aucune question fréquente ni structure FAQ n'y figure alors que des questions naturelles ('qui construit vraiment le bassin ?', 'quelles garanties ?') y trouveraient leur place la plus autonome.",
-    "suggested_fix": "Non bloquant, la maquette ne prévoit pas de FAQ ici (D2). Signalé pour information seulement.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "283c9493-0e8d-4e01-b52a-934c80b67bd6",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "aeo_qa",
-    "severity": "warning",
-    "page": "/contact",
-    "description": "Page de conversion sans réponse directe de type snippet ni FAQ, ce qui est cohérent avec sa fonction, mais le premier paragraphe (liste des 5 éléments à transmettre) est correct et citable ; aucun souci majeur, listé ici uniquement pour confirmer qu'aucune FAQ n'est attendue sur cette page transactionnelle.",
-    "suggested_fix": "Aucune action requise.",
-    "resolved": false,
-    "created_at": "2026-09-04T10:37:32.14411+00:00"
-  },
-  {
-    "id": "36184029-26af-4a41-bedc-b7f3f2e3f502",
+    "id": "b85bc189-bf01-43c1-8449-0128f0cecbcc",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
-    "page": "/",
-    "description": "Image de partage (og:image) absente",
+    "page": "/construction-piscine-beton-montpellier",
+    "description": "14 cibles tactiles sous 44px à 390px",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "60fe9cfa-416d-4040-8187-a4421b083d02",
+    "id": "50e84462-68f9-444f-b8d9-32101cafb440",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "geo_qa",
+    "source": "tech_qa",
     "severity": "warning",
-    "page": "Toutes les pages de service (Service JSON-LD)",
-    "description": "Les schémas Service ne portent pas de propriété 'name' de l'organisation provider en clair (uniquement un @id de référence), ce qui est correct techniquement mais rend chaque Service JSON-LD dépendant du bon rendu de l'@id pour identifier l'entité ; en l'absence de test de résolution fourni, c'est un point de vigilance mineur plutôt qu'une erreur avérée.",
-    "suggested_fix": "Vérifier en production que la résolution de l'@id '#business' fonctionne bien depuis chaque page Service (même domaine, JSON-LD LocalBusiness bien présent sur la page d'accueil accessible).",
+    "page": "/construction-piscine-beton-montpellier",
+    "description": "14 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:37:32.305384+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "e7d20666-125c-43a4-acae-66f29a64a150",
+    "id": "bd295b3a-5562-4f93-8cc5-20529078af76",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/renovation-piscine-montpellier",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "6142f1e6-4a4a-41ea-b9dc-8c1448e8c96b",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/renovation-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "ab5b31a5-183d-440e-9677-0efb49d9d79d",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/renovation-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "ad2c9977-f046-4640-a30a-4d660857d2f7",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/renovation-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "fb7b7da3-bf7c-4d6b-b725-b5698455896d",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/equipements-piscine-montpellier",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "e6f4e1f7-f302-499f-ab10-e4a00bf0bf95",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/equipements-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "52e48c3f-e17d-4270-95ad-2ff71072ba5e",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/equipements-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "fe444edc-8157-462b-b091-0b3f56a1a5dc",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/equipements-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "8abd4ac0-72c6-4f0c-b0e5-f97c8b350d8f",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/entretien-piscine-montpellier",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "cb91770f-003b-4d32-880b-a6c75b960a52",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/entretien-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "23f19a4d-3d81-434d-af3c-76138e00cec0",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/entretien-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "70dac103-6474-4c56-b502-f165681baebb",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/entretien-piscine-montpellier",
+    "description": "14 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "61f68925-a68d-48d0-8777-8bb71074ecf0",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/etude-faisabilite-demarches-urbanisme",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "89ba2a81-7fa9-4aae-b6ed-87ce90b66808",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/etude-faisabilite-demarches-urbanisme",
+    "description": "14 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "a698c591-474e-4407-b1d3-17d228ee0402",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/etude-faisabilite-demarches-urbanisme",
+    "description": "14 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "a40d2f0b-145a-4fc0-baae-a9263882794e",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/etude-faisabilite-demarches-urbanisme",
+    "description": "14 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "0083e356-67d8-43f2-9d14-dff10f3d091c",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/zone-intervention-montpellier",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "cd6571c8-8cb0-49d1-a5bf-eadee4416158",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/zone-intervention-montpellier",
+    "description": "14 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "04f7a6ff-5322-4b9e-9021-1a91e072fcf5",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/zone-intervention-montpellier",
+    "description": "14 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "e0e945b9-f02a-4498-923f-cbb0b8c1e754",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/zone-intervention-montpellier",
+    "description": "14 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "ad2001a0-f483-43ac-9c49-ae4183c73704",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/a-propos",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "a30bc69a-59e2-436c-9c6d-c2b50f434816",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "15 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "2c3cbe46-64ba-41ee-a90e-9cb4537f2b62",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "16 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "851b5e9d-c3ec-42a4-9668-db0909223bbd",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "16 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "4f40dd0f-c7df-4fb1-b15b-7037a3f4b6cc",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/contact",
+    "description": "Débordement horizontal à 360px",
+    "suggested_fix": "Chercher l'élément plus large que le viewport",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "416e55a0-eea2-42a4-9173-1d4135cb0a37",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/contact",
+    "description": "16 cibles tactiles sous 44px à 360px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "9adfddb3-e09c-4325-983b-9399f7dba880",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/contact",
+    "description": "16 cibles tactiles sous 44px à 390px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "8ca58334-ac39-4c34-95a0-e3b201f966fa",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/contact",
+    "description": "16 cibles tactiles sous 44px à 414px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "97ef8414-6066-47fb-974c-b857be33bbcd",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -371,32 +404,131 @@
     "description": "Atteignable seulement par le gabarit (header/footer), absente du maillage de contenu",
     "suggested_fix": "Ajouter un lien dans le corps d'une page sœur",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "8e1d2063-6587-4e6f-81e5-38906530862b",
+    "id": "9ae0b040-0b18-4c56-9a65-9906433750c9",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Votre piscine, pensée pour votre maison. » de la maquette absente du rendu (1440px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "e207db09-740f-4a17-ac0f-c6f4c7b29cc0",
+    "id": "ce40d172-85e5-4036-9578-4a05c224a4e9",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/construction-piscine-beton-montpellier",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "424f6858-1202-44dc-b6f3-c72d95256450",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/renovation-piscine-montpellier",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "6a7746c7-7d62-420a-a84b-5f170762588b",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/equipements-piscine-montpellier",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "d0ecdb1c-fea2-4df9-b275-d982824bdbc0",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/entretien-piscine-montpellier",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "4178b0d0-1774-479a-ac6c-431b44efc53a",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/etude-faisabilite-demarches-urbanisme",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "04ca1a58-2f0b-41ae-85c0-c0e56266a631",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/zone-intervention-montpellier",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "b018d3e2-93d1-4a63-a3d0-7e5b64257d2b",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/a-propos",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 23px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "73d800e1-5dde-447b-8fc3-fcc09233ca88",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "blocking",
+    "page": "/contact",
+    "description": "[audit-responsive.mjs] WebKit @360px : débordement horizontal 25px",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "f23fe758-888c-4e99-9055-a283262fdf5c",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "[conformity.mjs] Section « Votre piscine, pensée pour votre maison. » à 1440px : 1 écart(s). « Demander un devis » : letterSpacing maquette normal · rendu 0.3px ; police/largeur maquette « Work Sans » 130px · rendu « Work Sans » 149px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "54ce496e-cd45-4426-b83a-2eaa421452be",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Un projet de piscine ne commence pas par un bassin. » de la maquette absente du rendu (1440px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Un projet de piscine ne commence pas par un bassin. » à 1440px : 5 écart(s). « Un projet de piscine ne commence pas par » : police/largeur maquette « Cormorant Garamond » 404px · rendu « Cormorant Garamond » 397px | « Conception » : police/largeur maquette « Work Sans » 66px · rendu « Work Sans » 73px | « Construction » : police/largeur maquette « Work Sans » 73px · rendu « Work Sans » 83px ; x maquette 883 · rendu 890 | « Rénovation » : x maquette 1000 · rendu 1017 | « Entretien » : police/largeur maquette « Work Sans » 52px · rendu « Work Sans » 61px ; x maquette 1110 · rendu 1133",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "83a069e2-95a4-405a-854c-afe8c3920eae",
+    "id": "88ba6ff2-9db5-451f-b723-0e9eefb3cd9f",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -404,21 +536,21 @@
     "description": "[conformity.mjs] Section « Quatre métiers, une même exigence. » de la maquette absente du rendu (1440px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "65939a8b-0602-456c-b76b-767d243a7167",
+    "id": "e27579c0-62e6-42c2-a02a-9cff39b24bbd",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Des bassins dessinés pour un lieu précis. » de la maquette absente du rendu (1440px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Des bassins dessinés pour un lieu précis. » à 1440px : 4 écart(s). « Des bassins dessinés pour un lieu précis » : police/largeur maquette « Cormorant Garamond » 414px · rendu « Cormorant Garamond » 384px | « Construction sur mesure · Castelnau-le-L » : color maquette rgba(251, 248, 244, 0.75) · rendu rgba(251, 248, 244, 0.72) | « Bassin miroir sur terrain en pente » : lineHeight maquette 64.6px · rendu 47.5px | « Couloir de nage en bord de garrigue » : lineHeight maquette 39.1px · rendu 28.75px ; police/largeur maquette « Cormorant Garamond » 237px · rendu « Cormorant Garamond » 252px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "32eedc3b-367c-4216-b3ff-366c9dee0da2",
+    "id": "762cfb33-42c7-44cd-b1cb-ef961886c5e5",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -426,10 +558,10 @@
     "description": "[conformity.mjs] Section « Cinq étapes, aucune zone d'ombre. » de la maquette absente du rendu (1440px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "0202dbeb-63c8-4b51-8450-4d5ba7c99671",
+    "id": "c65acc48-326b-44eb-9b3c-76b7f9f30c4c",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -437,10 +569,340 @@
     "description": "[conformity.mjs] Section « Une entreprise que l'on peut appeler en août. » de la maquette absente du rendu (1440px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "dff99aa4-f7f9-488a-be33-bddbc1f97631",
+    "id": "072d4731-435e-4d83-9f51-6f9ec8d3b129",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "geo_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "L'entity_bible et la décision D1 (point 23) précisent que le H1 de /a-propos doit être « Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009 » ; c'est effectivement le H1 livré. En revanche le page_matrix.json indique un H1 différent (« Aurea Piscines : 9 personnes, une équipe maçonnerie, un interlocuteur par chantier ») qui n'a pas été mis à jour pour refléter la décision. Ce n'est pas bloquant pour le rendu final mais crée une incohérence documentaire qui pourrait induire un modèle génératif en erreur s'il consulte le page_matrix comme source de vérité secondaire.",
+    "suggested_fix": "Mettre à jour le champ h1 du page_matrix pour /a-propos afin qu'il corresponde exactement au H1 réellement publié, conformément à D1.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.640557+00:00"
+  },
+  {
+    "id": "b5c4c3cc-73b5-487c-a395-8b7a753418f5",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "seo_qa",
+    "severity": "blocking",
+    "page": "/",
+    "description": "Cannibalisation potentielle avec /zone-intervention-montpellier : la page d'accueil cible « pisciniste montpellier » et contient une section « Où nous intervenons » qui liste les mêmes 12 communes que la page zone (target_query « pisciniste castelnau-le-lez lattes »). Les deux pages partagent aussi un contenu de zone quasi identique dans le texte (rayon 30 km, communes, Sète entre 30 et 50 km), ce qui dilue le signal pour les deux requêes.",
+    "suggested_fix": "Alléger la section « Où nous intervenons » de l'accueil à un résumé très court (une phrase + lien), en renvoyant tout le détail (liste des communes, cas particuliers 30-50 km) vers /zone-intervention-montpellier.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.451551+00:00"
+  },
+  {
+    "id": "ffe8d758-39be-4304-a859-038a2ea96f87",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "seo_qa",
+    "severity": "blocking",
+    "page": "/a-propos",
+    "description": "Le H1 réel de la page (« Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009 ») ne correspond pas à la target_query de la page_matrix (« aurea piscines montpellier avis entreprise »). Le mot « avis » n'apparaît nulle part dans le H1 ni en tête de texte, alors que la page_matrix attend cette requête cible en tête de contenu.",
+    "suggested_fix": "Le H1 est fixé par la décision D2 (maquette fait foi) : conserver le H1, mais vérifier auprès du client si la target_query de la page_matrix doit être révisée pour refléter ce H1, ou enrichir le premier paragraphe avec une mention explicite des avis clients pour rapprocher le contenu de la requête cible sans changer le H1.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.451551+00:00"
+  },
+  {
+    "id": "cc0c7e49-5558-4681-ba17-c41c5be404c8",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "seo_qa",
+    "severity": "warning",
+    "page": "/etude-faisabilite-demarches-urbanisme",
+    "description": "Title « Étude de faisabilité et urbanisme piscine à Montpellier » fait 55 caractères mais ne place pas la target_query telle que définie dans la page_matrix (« déclaration préalable piscine montpellier faisabilité terrain ») en tête ; le title commence par « Étude de faisabilité » ce qui est cohérent avec le H1 mais éloigné de la requête cible SEO officielle.",
+    "suggested_fix": "Rapprocher le title de la requête cible, par exemple en intégrant « déclaration préalable » ou en confirmant avec le client si la target_query doit être ajustée au contenu réel de la page.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.451551+00:00"
+  },
+  {
+    "id": "241f49a2-4177-4c72-8a0f-710b623d8f3c",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "seo_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "Meta description de 154 caractères environ, correcte en longueur, mais la target_query « pisciniste montpellier » n'apparaît pas telle quelle : le title utilise « Constructeur de piscine béton à Montpellier » et le H1 « Votre piscine, pensée pour votre maison » ne contient ni « pisciniste » ni « constructeur » de façon exploitable pour matcher précisément la requête cible.",
+    "suggested_fix": "Le H1 étant fixé par la maquette (D2), envisager d'ajouter la formulation « pisciniste » dans le premier paragraphe visible (actuellement « Constructeur de piscines · Hérault ») pour renforcer le signal, sous validation du client.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.451551+00:00"
+  },
+  {
+    "id": "62193328-586f-4121-9a5d-6881dfc4d5f0",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "seo_qa",
+    "severity": "warning",
+    "page": "/construction-piscine-beton-montpellier",
+    "description": "Title « Construction de piscine béton sur mesure à Montpellier (34) » fait 61 caractères, dans la fourchette, mais la mention « (34) » alourdit sans bénéfice SEO et pousse la requête cible « construction piscine béton montpellier » en début, ce qui est correct ; toutefois la meta description commence par « Aurea Piscines construit votre bassin... » et non par un bénéfice concret en ouverture, réduisant le taux de clic potentiel.",
+    "suggested_fix": "Réordonner la meta description pour ouvrir sur le bénéfice concret (date tenue, maçons salariés) avant le nom de l'entreprise.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.451551+00:00"
+  },
+  {
+    "id": "2fc7fa24-43cd-4d60-9afd-296e015e6509",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "seo_qa",
+    "severity": "warning",
+    "page": "/zone-intervention-montpellier",
+    "description": "Le H1 de la page (« Où intervient Aurea Piscines autour de Montpellier ») et le title (« Pisciniste à Castelnau-le-Lez, Lattes, Pérols et Montpellier ») ne reprennent pas exactement la target_query « pisciniste castelnau-le-lez lattes » fixée par la décision D1 (point 20) ; le H1 est générique et ne contient pas les noms de communes.",
+    "suggested_fix": "Conformément à la décision D1, aligner le H1 sur la requête cible en ajoutant les communes principales, par exemple « Pisciniste à Castelnau-le-Lez, Lattes et Montpellier : notre zone d'intervention », sous réserve que la maquette (D2) l'autorise ou soit mise à jour.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.451551+00:00"
+  },
+  {
+    "id": "106436b6-cb0a-4df6-988e-53302fe43ffb",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "seo_qa",
+    "severity": "warning",
+    "page": "/entretien-piscine-montpellier",
+    "description": "Meta description de 158 caractères, dans la fourchette haute mais correcte. Le title « Entretien de piscine à Montpellier : contrat 4 à 12 passages » (60 caractères) est bon, cependant le premier paragraphe ne mentionne pas explicitement la target_query « contrat entretien piscine montpellier » de façon groupée, elle est éclatée sur plusieurs phrases.",
+    "suggested_fix": "Ajouter la formulation compacte « contrat d'entretien de piscine à Montpellier » dès la première phrase du premier paragraphe pour un matching plus net.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.451551+00:00"
+  },
+  {
+    "id": "913d7518-cb6e-4bb4-aa0f-fedcf0d022b0",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aio_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "Le H1 réel de la page (\"Aurea Piscines, constructeur-pisciniste à Montpellier depuis 2009\") est conforme à la décision D1 (point 23), mais le JSON-LD AboutPage porte le même texte en \"name\", ce qui est cohérent. En revanche, la page_matrix propose un H1 différent (\"Aurea Piscines : 9 personnes, une équipe maçonnerie, un interlocuteur par chantier\") qui n'a pas été appliqué : c'est correct selon D1, mais l'écart matrix/page peut désorienter un futur audit automatisé qui compare aux specs sans connaître la décision.",
+    "suggested_fix": "Aucune action requise sur le contenu (la décision prime), mais documenter dans la page_matrix elle-même la correction actée par D1 pour éviter toute re-discussion future.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.709962+00:00"
+  },
+  {
+    "id": "6bace074-dd13-4e4d-948e-bf4dd30d5ae3",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aio_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "Le JSON-LD LocalBusiness contient des identifiants sensibles (SIREN, TVA, police décennale MAAF Pro n° 8842-117-04) explicitement qualifiés de fictifs par le journal de décisions (D1, points 1/2/3/12/16). Ces valeurs restent injectées dans le Schema structuré, donc tout agent IA lisant le JSON-LD les traitera comme des données réelles et actionnables.",
+    "suggested_fix": "Aucun changement de contenu requis avant mise en production réelle (deploy_production reste rouge selon D1), mais s'assurer que le pipeline de publication bloque bien la mise en ligne tant que ces identifiants ne sont pas validés par le client, conformément à la décision.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.709962+00:00"
+  },
+  {
+    "id": "211b9902-8e30-4231-a60f-3e75e2f9bb96",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aio_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "La page affiche une note Google \"4,8 sur 5, sur 87 avis\" en texte avec un lien vers la fiche Google, mais le lien \"Consulter la fiche Google d'Aurea Piscines\" n'apparaît dans aucune liste cta_links ni internal_links fournie, donc son URL cible n'est pas vérifiable comme un lien stable et actionnable.",
+    "suggested_fix": "Vérifier que ce lien texte est bien un <a href> avec une URL absolue stable vers la fiche Google Business Profile, et l'ajouter aux internal_links/cta_links pour traçabilité.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.709962+00:00"
+  },
+  {
+    "id": "29f7f1bb-7c1e-4989-8213-996c9459a7fc",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aio_qa",
+    "severity": "warning",
+    "page": "toutes les pages de service",
+    "description": "Le premier paragraphe (réponse directe AEO) est correct et présent en HTML, mais aucun tableau <table> n'est utilisé pour les données comparables pourtant présentes (ex. types de bassins et dimensions sur /construction-piscine-beton-montpellier, garanties et durées sur plusieurs pages), alors que la règle interne demande des tableaux pour les données comparables.",
+    "suggested_fix": "Convertir les blocs de données comparables (dimensions de bassins, durées de garanties, formules d'entretien) en <table> avec en-têtes explicites plutôt qu'en paragraphes ou listes de cartes.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.709962+00:00"
+  },
+  {
+    "id": "103c2486-0695-4373-8429-73d841cd2f37",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aio_qa",
+    "severity": "warning",
+    "page": "/contact",
+    "description": "Le formulaire de demande de devis (nom, prénom, email, téléphone, type de projet, message) est décrit uniquement comme des champs de saisie ; rien n'indique une action de secours ou un lien mailto/tel équivalent si le JavaScript du formulaire échoue, alors que le texte mentionne bien tel: et mailto: par ailleurs en pied de page.",
+    "suggested_fix": "Confirmer que le formulaire fonctionne avec un <form> HTML natif (action/method) et non uniquement via un script côté client, afin qu'un agent IA sans exécution JS puisse quand même soumettre une demande ; sinon ajouter une alternative texte tel:/mailto: bien visible juste au-dessus du formulaire.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.709962+00:00"
+  },
+  {
+    "id": "07f85e85-b947-495c-9b7c-83dc77fe748d",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aio_qa",
+    "severity": "warning",
+    "page": "/, /construction-piscine-beton-montpellier, /renovation-piscine-montpellier, /equipements-piscine-montpellier, /entretien-piscine-montpellier, /etude-faisabilite-demarches-urbanisme, /zone-intervention-montpellier, /a-propos, /contact",
+    "description": "Le sitemap.xml fourni liste 11 URLs mais aucune balise <lastmod>, <changefreq> ni <priority> n'est présente, ce qui limite la capacité d'un agent IA à prioriser le recrawl des pages modifiées.",
+    "suggested_fix": "Ajouter au minimum <lastmod> par URL dans le sitemap pour permettre aux agents et moteurs de détecter les mises à jour.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.709962+00:00"
+  },
+  {
+    "id": "aa997578-581e-4c08-9bfa-aa0c3c9f108d",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "Le H1 « Votre piscine, pensée pour votre maison. » et le premier paragraphe ne forment pas une réponse directe citable de 40 à 60 mots : le texte qui suit immédiatement (« Aurea Piscines construit des bassins en béton armé projeté à Montpellier... premier bain. ») est correct sur le fond mais dépasse le format attendu et mélange promesse commerciale et réponse factuelle. Il fait cependant environ 55 mots et reste globalement conforme ; à surveiller car il n'est pas isolé typographiquement comme un paragraphe de réponse autonome (pas de citation claire hors contexte, il est précédé du H1 et suivi de CTA).",
+    "suggested_fix": "Isoler visuellement la réponse directe (balise dédiée) pour qu'elle soit citable seule par un moteur de réponse, sans dépendre du H1 qui la précède.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "dbfe47dd-0ea7-46ee-92f2-683bbc1aebe2",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "La FAQ de la page d'accueil ne contient que 3 questions alors que la page cumule un rôle de page d'accueil et de synthèse de toutes les prestations (construction, rénovation, équipements, entretien, urbanisme). Pour une page qui répond à autant d'intentions différentes, 3 questions généralistes limitent la couverture des questions réellement posées (délai, zone, entretien ne sont pas couverts ici alors qu'ils le sont sur les pages service).",
+    "suggested_fix": "Conserver 3 questions selon la décision D1 (pas de collecte FAQ possible), mais vérifier qu'elles couvrent bien les intentions transverses (matériau, faisabilité terrain, traitement) plutôt que de dupliquer une question déjà traitée ailleurs.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "d2255ff9-3902-4b49-a223-a30abe308323",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/construction-piscine-beton-montpellier",
+    "description": "La réponse directe en tête de page (premier paragraphe) fait environ 47 mots et remplit le format demandé, mais elle est suivie immédiatement d'un CTA et d'un bandeau de preuves avant tout H2 de question : c'est conforme AEO. Le point d'attention est que le H2 « Ce que nous ne faisons pas » est une affirmation utile mais formulée en creux (négation) plutôt qu'en question ou affirmation claire répondant à une intention de recherche ; cela reste lisible pour un humain mais moins optimisé pour l'extraction en snippet de type « qu'est-ce qu'Aurea Piscines fait/ne fait pas ».",
+    "suggested_fix": "Aucune action requise si la maquette prime (D2) ; à titre de suivi, une phrase introductive sous ce H2 pourrait résumer la position en une phrase autonome citable.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "9a6f85fc-9797-437f-8bcb-6eb9ed3613a9",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/construction-piscine-beton-montpellier",
+    "description": "La FAQ contient 3 questions (conforme à D1, réduites à 3 sujets factuels généraux), bien datées par les articles du code cités, mais la question sur les garanties combine trois garanties différentes dans une seule réponse de plus de 80 mots (la réponse mesure environ 75-85 mots), ce qui est à la limite haute de la fourchette 40-80 mots recommandée pour une réponse autonome et citable.",
+    "suggested_fix": "Vérifier la longueur exacte de la réponse sur les garanties et la resserrer si elle dépasse 80 mots, ou scinder en sous-listes plus courtes tout en gardant une seule question.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "7b10872b-d6c7-4765-9468-fd438928395e",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/renovation-piscine-montpellier",
+    "description": "Les listes à puces (signes de rénovation, postes du devis, ce que nous prenons/ne prenons pas) sont bien structurées en listes, ce qui est conforme. Cependant les comparatifs « rénover ou reconstruire » et les critères de décision restent en paragraphes/listes simples plutôt qu'en tableau comparatif, alors que la règle demande que les comparaisons soient en tableau quand c'est pertinent (ici deux options avec plusieurs critères communs).",
+    "suggested_fix": "Si une évolution future est possible, transformer la section « Rénover ou reconstruire » en tableau à deux colonnes (critère / rénovation / reconstruction) pour faciliter l'extraction par les moteurs de réponse ; sous contrainte de la maquette actuelle (D2), ce n'est pas bloquant.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "2ced8940-6a02-4842-828d-b12871cc82d9",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/equipements-piscine-montpellier",
+    "description": "La section « Matériel que nous installons et critères de choix » énumère six critères en sous-titres H3 avec un paragraphe chacun, ce qui est plus proche d'une liste développée que d'une liste ou d'un tableau strict. Pour une page qui compare implicitement plusieurs équipements et marques, l'absence de tableau récapitulatif (marque / usage / critère) limite la citabilité directe par un assistant IA cherchant une comparaison synthétique.",
+    "suggested_fix": "Envisager un tableau récapitulatif des critères de choix par équipement si une itération de contenu est prévue ; non bloquant sous la maquette actuelle.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "7b8913ea-00d0-43c3-9ce5-661899caeb45",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/entretien-piscine-montpellier",
+    "description": "La réponse directe d'ouverture mentionne bien « 4 à 12 passages » et la zone, mais ne date pas l'information alors que le sujet (fréquence de passages, tarification implicite) est de nature à évoluer ; aucune date de dernière mise à jour n'est associée à cette page contrairement aux chiffres de la page /a-propos qui sont eux bien datés (2024-2025, septembre 2026).",
+    "suggested_fix": "Ajouter une date ou une période de référence sur les informations de calendrier (ouverture/hivernage à 12°C) si elles sont amenées à évoluer, ou préciser qu'il s'agit d'une règle générale valable sous climat méditerranéen sans date requise si intemporelle.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "b1c53737-8c7e-4c82-8106-4d7877739a31",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/etude-faisabilite-demarches-urbanisme",
+    "description": "Le contenu réglementaire (seuils de surface, délais d'instruction, articles du code de l'urbanisme) est correctement sourcé par article de loi, ce qui répond à la règle AEO de databilité des sujets réglementaires. Cependant aucune date de rédaction ou de dernière vérification n'est indiquée explicitement dans le texte visible (seulement dans le JSON-LD implicite), alors que la page elle-même précise que les règles sont « issues du code de l'urbanisme à la date de rédaction » sans donner cette date.",
+    "suggested_fix": "Ajouter la date de rédaction ou de dernière vérification juridique en clair dans le texte visible, par exemple à côté de la mention « information générale, ne vaut pas garantie d'obtention ».",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "df26a5e6-3e28-4f0f-9bd0-80f1324ab980",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "Le chiffre « Note Google 4,8 sur 5, sur 87 avis, relevé en septembre 2026 » est bien daté et sourcé, conforme à la règle AEO. Toutefois cette page n'est pas une page de service au sens strict de la grille de notation, donc l'absence de FAQ n'est pas pénalisée, mais elle ne contient aucune réponse directe de 40-60 mots isolée en tête répondant à une question type (« qui est Aurea Piscines ») formulée explicitement comme telle ; le premier paragraphe fait cependant ce travail de façon acceptable (~50 mots).",
+    "suggested_fix": "Aucune action bloquante requise ; conserver la formulation actuelle qui remplit déjà le rôle de réponse directe.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "29a21e2e-9bd4-4fd3-ac99-dd78fe7697d8",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "aeo_qa",
+    "severity": "warning",
+    "page": "/zone-intervention-montpellier",
+    "description": "Page de type LocalBusiness/WebPage plutôt que Service selon le schema_type déclaré, donc l'absence de FAQ dédiée n'est pas pénalisée comme une page de service. La liste des communes est bien en liste, ce qui est conforme. Le H2 « Au-delà de 30 km » et ses sous-sections sont formulés comme des affirmations claires, ce qui est conforme aux règles AEO de titres.",
+    "suggested_fix": "Aucune action requise.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.563473+00:00"
+  },
+  {
+    "id": "bf5c42f3-1e92-4b7f-87fc-7dc007d00301",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "geo_qa",
+    "severity": "warning",
+    "page": "/a-propos",
+    "description": "Les chiffres de preuve (300+ projets, 96 % de chantiers livrés dans le délai, note Google 4,8/5 sur 87 avis, n° de police décennale MAAF Pro 8842-117-04, SIREN, Qualibat 2181) sont présentés en clair et datés sur la page, mais le journal des décisions (D1) rappelle explicitement qu'il s'agit de placeholders fictifs à faire valider par le client avant toute mise en production. Un moteur génératif lisant uniquement la page ne peut pas savoir que ces preuves ne sont pas encore vérifiées, ce qui crée un risque de désinformation si le contenu était repris tel quel.",
+    "suggested_fix": "Avant mise en production réelle (deploy_production), faire confirmer par le client chaque chiffre et numéro (SIREN, décennale, Qualibat, note Google, taux de livraison) et ne publier que des valeurs vérifiées. En l'état pour ce test, le point est acceptable puisque la décision D1 l'assume, mais il doit être tracé comme non définitif.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.640557+00:00"
+  },
+  {
+    "id": "fbc4ca35-3114-4b60-9e43-63f7bc7b96fa",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "geo_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "Le JSON-LD LocalBusiness ne contient pas de propriété sameAs vers des profils externes (Google Business Profile, réseaux sociaux, annuaires professionnels). La page /a-propos mentionne un lien vers la fiche Google mais ce lien n'est pas repris dans le sameAs du schema, ce qui limite la capacité des moteurs génératifs à corroborer l'identité de l'entité via des sources tierces.",
+    "suggested_fix": "Ajouter une propriété sameAs au LocalBusiness JSON-LD listant au minimum l'URL de la fiche Google Business Profile mentionnée sur /a-propos, et tout autre profil officiel existant (réseaux sociaux, annuaires).",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.640557+00:00"
+  },
+  {
+    "id": "2b43dd81-735a-4691-87f8-fe091f177164",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "geo_qa",
+    "severity": "warning",
+    "page": "toutes les pages de service",
+    "description": "Les preuves globales de l'entreprise (300+ projets, décennale, Qualibat, Propiscines, IHB, note Google) sont concentrées sur l'accueil et /a-propos, mais absentes du texte visible des pages de service individuelles (construction, rénovation, équipements, entretien, étude). Cela affaiblit l'attribution directe de la preuve au service concerné pour un moteur qui indexerait la page isolément.",
+    "suggested_fix": "Ajouter sur chaque page Service au moins un rappel court et sourcé d'une preuve pertinente au service (ex. décennale pour construction/rénovation, IHB pour entretien), avec un lien vers /a-propos pour le détail complet.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.640557+00:00"
+  },
+  {
+    "id": "590b6beb-5285-4607-b060-093b95d306dc",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "geo_qa",
+    "severity": "warning",
+    "page": "/equipements-piscine-montpellier",
+    "description": "Les marques Pentair, Zodiac et Aqualux sont citées comme du matériel installé, ce qui est conforme à D1 (pas de mention « partenaire » ou de logo). Cependant, aucune relation explicite n'est établie entre l'entité et une preuve tierce vérifiable (ex. distributeur agréé), ce qui est correct selon la règle mais laisse la section factuellement peu étayée pour un moteur cherchant à vérifier la crédibilité de ce choix matériel.",
+    "suggested_fix": "Aucune action requise si la décision D1 est maintenue ; point mineur, à laisser en l'état tant qu'aucune preuve vérifiée supplémentaire n'est disponible.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.640557+00:00"
+  },
+  {
+    "id": "b59874a1-a0fd-4c5b-9ab4-40a0b7faec48",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "geo_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "Le nom de l'entité est cohérent partout (« Aurea Piscines », nom légal identique, adresse identique, téléphone identique dans le texte et le JSON-LD). Toutefois le premier paragraphe de l'accueil dit « Constructeur de piscines · Hérault » sans nommer immédiatement l'entité dans le H1 lui-même (« Votre piscine, pensée pour votre maison »), ce qui retarde légèrement l'identification explicite de qui parle, contrairement à la règle AEO de réponse directe dès l'ouverture.",
+    "suggested_fix": "Selon D2 la maquette fait foi pour le H1 ; ce point reste un avertissement mineur lié à la clarté d'identification immédiate, à signaler sans modifier le texte sans validation du client.",
+    "resolved": false,
+    "created_at": "2026-09-04T10:54:17.640557+00:00"
+  },
+  {
+    "id": "de6af7b1-9dc8-45b1-baec-5da9c2343d6c",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "Image de partage (og:image) absente",
+    "suggested_fix": null,
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "3e1fe08c-2c61-4c08-9141-c289e6da8b4f",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -448,10 +910,10 @@
     "description": "[conformity.mjs] Section « Ce qu'en disent nos clients. » de la maquette absente du rendu (1440px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "ceb52d2b-f106-4cdd-bdc8-662b2c551742",
+    "id": "7f8aa034-1ba8-4d98-b867-1e13fc468c56",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -459,10 +921,10 @@
     "description": "[conformity.mjs] Section « Comprendre avant de se lancer. » de la maquette absente du rendu (1440px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "1078a588-0c35-41c9-b31b-27e2c3799f54",
+    "id": "2e543eaa-a69e-4607-a216-7bce174d5e8f",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -470,76 +932,76 @@
     "description": "[conformity.mjs] Section « Les réponses que l'on nous demande le plus. » de la maquette absente du rendu (1440px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "0eebd1db-61d7-4b1c-b7b4-d8bdcb6fcb4d",
+    "id": "58692021-3130-4f80-a310-3a831b858af6",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Parlons de votre projet. » de la maquette absente du rendu (1440px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Parlons de votre projet. » à 1440px : 4 écart(s). « Parlons de votre projet. » : lineHeight maquette 102px · rendu 64.8px ; police/largeur maquette « Cormorant Garamond » 560px · rendu « Cormorant Garamond » 541px | « Demander un devis » : letterSpacing maquette normal · rendu 0.3px ; police/largeur maquette « Work Sans » 130px · rendu « Work Sans » 149px | « 04 67 00 00 00 » : police/largeur maquette « Cormorant Garamond » 180px · rendu « Cormorant Garamond » 167px | « PISCINES » : color maquette rgba(251, 248, 244, 0.6) · rendu rgba(251, 248, 244, 0.72)",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "2eb97a92-7377-4666-9ae7-51c68288391b",
+    "id": "bb2aeab5-4f3e-4cab-a51f-1a4d55318c02",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Navigation » de la maquette absente du rendu (1440px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Navigation » à 1440px : 4 écart(s). « Navigation » : lineHeight maquette 19.55px · rendu 12.88px | « Rénovation » : police/largeur maquette « Work Sans » 73px · rendu « Work Sans » 80px | « Entretien » : police/largeur maquette « Work Sans » 58px · rendu « Work Sans » 67px | « À propos » : police/largeur maquette « Work Sans » 58px · rendu « Work Sans » 66px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "5005076d-b6c4-4b60-832f-1e077ed13ddb",
+    "id": "d8b2c569-197a-429b-a30d-aab47bab38bc",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "[conformity.mjs] Section « Prestations » à 1440px : 2 écart(s). « Prestations » : lineHeight maquette 19.55px · rendu 12.88px ; police/largeur maquette « Work Sans » 107px · rendu « Cormorant Garamond » 99px | « Rénovation de piscine » : police/largeur maquette « Work Sans » 143px · rendu « Work Sans » 158px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "fcbfc830-1fb5-4ec6-8517-f4430a19ada9",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Prestations » de la maquette absente du rendu (1440px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Contact » à 1440px : 5 écart(s). « Contact » : lineHeight maquette 19.55px · rendu 12.88px | « 04 67 00 00 00 » : police/largeur maquette « Work Sans » 97px · rendu « Work Sans » 110px | « contact@aurea-piscines.fr » : police/largeur maquette « Work Sans » 169px · rendu « Work Sans » 187px | « Mentions légales » : color maquette rgba(251, 248, 244, 0.55) · rendu rgba(251, 248, 244, 0.72) ; police/largeur maquette « Work Sans » 94px · rendu « Work Sans » 106px ; x maquette 1064 · rendu 1091 | « Politique de confidentialité » : color maquette rgba(251, 248, 244, 0.55) · rendu rgba(251, 248, 244, 0.72) ; police/largeur maquette « Work Sans » 145px · rendu « Work Sans » 169px ; x maquette 1176 · rendu 1215",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "46b89cbb-0d30-4cba-9784-ea634454e7ce",
+    "id": "62a8a74d-148a-4e6b-8f6b-0ec2102a41c3",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "[conformity.mjs] Section « Votre piscine, pensée pour votre maison. » à 390px : 1 écart(s). « Demander un devis » : letterSpacing maquette normal · rendu 0.3px ; police/largeur maquette « Work Sans » 130px · rendu « Work Sans » 149px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "b879791c-f813-4bd9-b457-a6590cdf248e",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Contact » de la maquette absente du rendu (1440px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Un projet de piscine ne commence pas par un bassin. » à 390px : 4 écart(s). « Conception » : police/largeur maquette « Work Sans » 66px · rendu « Work Sans » 73px | « Construction » : police/largeur maquette « Work Sans » 73px · rendu « Work Sans » 83px ; x maquette 145 · rendu 152 | « Rénovation » : x maquette 262 · rendu 279 | « Entretien » : police/largeur maquette « Work Sans » 52px · rendu « Work Sans » 61px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "89ff2836-1620-44c1-9c79-b82ad3f42ff8",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "tech_qa",
-    "severity": "blocking",
-    "page": "/",
-    "description": "[conformity.mjs] Section « Votre piscine, pensée pour votre maison. » de la maquette absente du rendu (390px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
-    "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
-  },
-  {
-    "id": "90bbad2f-cc0f-48e1-b80b-6a7865ba63be",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "tech_qa",
-    "severity": "blocking",
-    "page": "/",
-    "description": "[conformity.mjs] Section « Un projet de piscine ne commence pas par un bassin. » de la maquette absente du rendu (390px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
-    "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
-  },
-  {
-    "id": "45c21eba-e44e-4f44-b4c0-c22bcbbec1cc",
+    "id": "5417cc47-b4a9-45d2-a045-0d3a60e2d8ca",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -547,21 +1009,21 @@
     "description": "[conformity.mjs] Section « Quatre métiers, une même exigence. » de la maquette absente du rendu (390px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "13963e76-5fef-4079-8a15-cfbdc0aba55a",
+    "id": "bffee271-3042-42fc-92e1-ff8d36020c9f",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Des bassins dessinés pour un lieu précis. » de la maquette absente du rendu (390px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Des bassins dessinés pour un lieu précis. » à 390px : 5 écart(s). « Des bassins dessinés pour un lieu précis » : police/largeur maquette « Cormorant Garamond » 248px · rendu « Cormorant Garamond » 235px | « Construction sur mesure · Castelnau-le-L » : color maquette rgba(251, 248, 244, 0.75) · rendu rgba(251, 248, 244, 0.72) | « Bassin miroir sur terrain en pente » : lineHeight maquette 44.2px · rendu 32.5px ; police/largeur maquette « Cormorant Garamond » 285px · rendu « Cormorant Garamond » 276px | « Couloir de nage en bord de garrigue » : lineHeight maquette 39.1px · rendu 28.75px ; police/largeur maquette « Cormorant Garamond » 237px · rendu « Cormorant Garamond » 252px | « Rénovation · Lattes » : police/largeur maquette « Work Sans » 95px · rendu « Work Sans » 164px ; x maquette 359 · rendu 43",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "9faa0b13-3bd0-488f-9e56-e6f3b24e6f26",
+    "id": "0f57d5b5-011f-4051-9222-7212df1aedf7",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -569,10 +1031,10 @@
     "description": "[conformity.mjs] Section « Cinq étapes, aucune zone d'ombre. » de la maquette absente du rendu (390px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "11be43de-a4b9-492f-ab02-4c491babe197",
+    "id": "9c3ca229-631d-44f3-a3ab-a90e70e8fb5e",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -580,10 +1042,10 @@
     "description": "[conformity.mjs] Section « Une entreprise que l'on peut appeler en août. » de la maquette absente du rendu (390px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "32383ecd-a7ef-4a54-a5a3-402a886c9975",
+    "id": "ae02f2e8-c6fa-4ab2-89c7-89f19a1cb900",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -591,10 +1053,10 @@
     "description": "[conformity.mjs] Section « Ce qu'en disent nos clients. » de la maquette absente du rendu (390px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "5c36305b-69bf-4358-8267-83bb90a6568e",
+    "id": "4fee24fa-c53b-479a-9320-4c136388cc8f",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -602,10 +1064,10 @@
     "description": "[conformity.mjs] Section « Comprendre avant de se lancer. » de la maquette absente du rendu (390px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "3c47048d-b652-43ba-88ac-fe5aefdc04d3",
+    "id": "dcf0fb23-23a7-4049-9ad5-cd213079dca0",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
@@ -613,54 +1075,54 @@
     "description": "[conformity.mjs] Section « Les réponses que l'on nous demande le plus. » de la maquette absente du rendu (390px)",
     "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "b823a9fd-8e1a-4980-9e90-77fd58d480d1",
+    "id": "19233b22-24a0-43a2-866c-c1d5c15ea71a",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Parlons de votre projet. » de la maquette absente du rendu (390px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Parlons de votre projet. » à 390px : 4 écart(s). « Parlons de votre projet. » : lineHeight maquette 57.8px · rendu 36.72px ; police/largeur maquette « Cormorant Garamond » 317px · rendu « Cormorant Garamond » 308px | « Demander un devis » : letterSpacing maquette normal · rendu 0.3px ; police/largeur maquette « Work Sans » 130px · rendu « Work Sans » 149px | « 04 67 00 00 00 » : police/largeur maquette « Cormorant Garamond » 180px · rendu « Cormorant Garamond » 167px | « PISCINES » : color maquette rgba(251, 248, 244, 0.6) · rendu rgba(251, 248, 244, 0.72)",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "10a68613-61d3-41f8-b3a8-561f0d85a350",
+    "id": "1e642034-fcd8-4c5c-96aa-af9be07ab3a3",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Navigation » de la maquette absente du rendu (390px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Navigation » à 390px : 4 écart(s). « Navigation » : lineHeight maquette 19.55px · rendu 12.88px | « Rénovation » : police/largeur maquette « Work Sans » 73px · rendu « Work Sans » 80px | « Entretien » : police/largeur maquette « Work Sans » 58px · rendu « Work Sans » 67px | « À propos » : police/largeur maquette « Work Sans » 58px · rendu « Work Sans » 66px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "dbf31c8e-3344-477c-8ee0-7a38193e5919",
+    "id": "6a7b6905-ea6b-42ba-ae21-6976e1ef168d",
+    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
+    "source": "tech_qa",
+    "severity": "warning",
+    "page": "/",
+    "description": "[conformity.mjs] Section « Prestations » à 390px : 2 écart(s). « Prestations » : lineHeight maquette 19.55px · rendu 12.88px ; police/largeur maquette « Work Sans » 107px · rendu « Cormorant Garamond » 99px | « Rénovation de piscine » : police/largeur maquette « Work Sans » 143px · rendu « Work Sans » 158px",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
+    "resolved": false,
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
+  },
+  {
+    "id": "1c8471e2-fd58-4690-8f31-a7fd388b2554",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "blocking",
     "page": "/",
-    "description": "[conformity.mjs] Section « Prestations » de la maquette absente du rendu (390px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
+    "description": "[conformity.mjs] Section « Contact » à 390px : 5 écart(s). « Contact » : lineHeight maquette 19.55px · rendu 12.88px | « 04 67 00 00 00 » : police/largeur maquette « Work Sans » 97px · rendu « Work Sans » 110px | « contact@aurea-piscines.fr » : police/largeur maquette « Work Sans » 169px · rendu « Work Sans » 187px ; x maquette 18 · rendu 128 | « Mentions légales » : color maquette rgba(251, 248, 244, 0.55) · rendu rgba(251, 248, 244, 0.72) ; police/largeur maquette « Work Sans » 94px · rendu « Work Sans » 106px | « Politique de confidentialité » : color maquette rgba(251, 248, 244, 0.55) · rendu rgba(251, 248, 244, 0.72) ; police/largeur maquette « Work Sans » 145px · rendu « Work Sans » 169px ; x maquette 130 · rendu 142",
+    "suggested_fix": "Reprendre les valeurs de la maquette (styles calculés), pas des valeurs déduites",
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "012463b9-b0d0-4c71-9cde-58f44cbf48f9",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "tech_qa",
-    "severity": "blocking",
-    "page": "/",
-    "description": "[conformity.mjs] Section « Contact » de la maquette absente du rendu (390px)",
-    "suggested_fix": "Vérifier l'ordre des sections dans design_spec.json et la composition mobile",
-    "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
-  },
-  {
-    "id": "eacd38c1-d7dd-44aa-927b-24a856f3bd91",
+    "id": "46ea2f25-a53c-4d1d-988e-1109c448a01d",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -668,10 +1130,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "30641854-9e2f-4f03-9e8e-d380ce3bc451",
+    "id": "fdf831ba-0b6f-421e-b485-4d146db53b33",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -679,10 +1141,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "1a8404ac-aa1b-4d35-86f7-5802765e0dda",
+    "id": "ab9d5b88-fa65-4037-af17-7d9c3504a68d",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -690,10 +1152,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "2aa623a9-d9b6-48c0-9b80-6b3be5d705c9",
+    "id": "5178ce26-37c8-49af-9858-43d3c80961af",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -701,10 +1163,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "79d9b4f0-25af-478e-86cd-3782bf8ff0ce",
+    "id": "98212d2e-930c-49df-8a8e-c088405b08a6",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -712,10 +1174,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "979642e9-5b99-4c83-bf67-2ab9fae9ee9c",
+    "id": "41b9c92d-4157-43a0-85a8-aa802a19d764",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -723,10 +1185,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "cc44bb38-4a67-473d-b3de-5ab0b0f25182",
+    "id": "4ff82548-7ca1-4e80-8dc5-1531bbcc16a8",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -734,10 +1196,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "0be33d41-a0c4-418d-b036-60a930554566",
+    "id": "d09f2f5a-1c22-4923-9da4-a64d93645d62",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -745,32 +1207,10 @@
     "description": "[conformity.mjs] Aucune maquette trouvée pour cette page (nom de fichier non reconnu, ou page dérivée)",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   },
   {
-    "id": "b7fe2b24-3e9e-461b-88e3-0f3c9514fc09",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "tech_qa",
-    "severity": "blocking",
-    "page": "/robots.txt",
-    "description": "[seo-technique.mjs] robots.txt ne répond pas",
-    "suggested_fix": "Ajouter app/robots.ts",
-    "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
-  },
-  {
-    "id": "f28cfd81-f4a4-40ca-9734-fa318a4baec8",
-    "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
-    "source": "tech_qa",
-    "severity": "blocking",
-    "page": "/sitemap.xml",
-    "description": "[seo-technique.mjs] sitemap.xml ne répond pas",
-    "suggested_fix": "Ajouter app/sitemap.ts qui liste la page_matrix et les articles",
-    "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
-  },
-  {
-    "id": "879e3979-fc4e-4c6a-8fc6-5ad04691dc7b",
+    "id": "985633c4-f41c-42e7-b5b3-0f507fb60200",
     "site_id": "f9f49dcb-1859-46c9-85ad-06092a612d3c",
     "source": "tech_qa",
     "severity": "warning",
@@ -778,6 +1218,6 @@
     "description": "[seo-technique.mjs] JSON-LD : type LocalBusiness attendu par la page_matrix, trouvé WebPage, BreadcrumbList",
     "suggested_fix": null,
     "resolved": false,
-    "created_at": "2026-09-04T10:34:30.72929+00:00"
+    "created_at": "2026-09-04T10:51:28.436535+00:00"
   }
 ]
