@@ -34,9 +34,9 @@ export function Hero({
       <section className="gutter border-b border-line pb-[clamp(24px,3vw,40px)] pt-[clamp(48px,7vw,96px)]">
         <div className="shell">
           {breadcrumb && (
-            <p className="breadcrumb mb-[18px] text-faint">
+            <nav aria-label="Fil d’Ariane" className="breadcrumb mb-[18px] text-faint">
               <Link href="/" className="text-faint">Accueil</Link> / {breadcrumb}
-            </p>
+            </nav>
           )}
           <h1 className="h1-plain max-w-[18ch]">{title}</h1>
           <p className="mt-5 max-w-[64ch] text-[17px] leading-[1.7] text-muted">{lead}</p>
@@ -69,9 +69,9 @@ export function Hero({
       <div className="shell gutter relative pb-[clamp(44px,7vw,92px)]">
         {eyebrow && <p className="eyebrow-dark mb-[22px]">{eyebrow}</p>}
         {breadcrumb && (
-          <p className="breadcrumb mb-[18px] text-on-dark-72">
+          <nav aria-label="Fil d’Ariane" className="breadcrumb mb-[18px] text-on-dark-72">
             <Link href="/" className="text-on-dark-72 hover:text-accent">Accueil</Link> / {breadcrumb}
-          </p>
+          </nav>
         )}
         <h1 className={`${isHome ? "h1-home max-w-[15ch]" : "h1-page max-w-[17ch]"} text-on-dark`}>{title}</h1>
         <p className="mt-6 max-w-[60ch] text-[clamp(16px,1.5vw,19px)] leading-[1.65] text-on-dark-86">{lead}</p>

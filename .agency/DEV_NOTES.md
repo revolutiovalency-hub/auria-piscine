@@ -69,3 +69,41 @@ visible, aucun id dupliqué. `next build` passe (le `npm` de la machine est cass
   maquette, `#3C4A46`, n'est dans aucune liste du spec et a été ajoutée sous `--color-body` (utilitaire `.text-body`).
 - **`site.url` = `https://aurea-piscines.fr`**, déduit du domaine de `contact@aurea-piscines.fr`. À confirmer.
   `legal.director` et `legal.capital` restent vides, absents du brief. `deploy_production` reste rouge (décision D1).
+
+# DEV_NOTES — mission fix (2026-09-04)
+
+## Ce que j'ai fait
+La majorité des issues `tech_qa` « Section absente du rendu » (accueil, 1440 et 390px) et l'issue `aio_qa` sur le
+lien `tel:` manquant en gabarit se sont révélées déjà résolues dans le code livré : vérifié section par section sur
+le HTML produit par `next build`, tous les titres cités y figurent mot pour mot (dont les liens `tel:` du Header et
+du Footer), sauf les deux signalées ci-dessous. Je n'ai rien touché à ces sections pour ne pas refaire un travail
+déjà fait (règle « ne pas refactorer » du mode fix). Corrigé les issues restantes qui étaient réellement actives :
+`app/robots.ts` et `app/sitemap.ts` (absents, blocking), le téléphone du JSON-LD LocalBusiness passé au format
+E.164 déjà présent dans `site.config.ts` (`b.telephoneE164` au lieu de `b.telephone`), l'assurance décennale ajoutée
+à `hasCredential` dans `lib/seo.ts` (donnée déjà dans `site.legal.insurance`), le fil d'Ariane visible passé de
+`<p>` à `<nav aria-label="Fil d'Ariane">` dans `Hero.tsx` pour correspondre au `BreadcrumbList` JSON-LD, et l'ajout
+d'un favicon (`app/icon.tsx`) et d'une image de partage (`app/opengraph-image.tsx`) générés avec `next/og` à partir
+des couleurs et du nom du design system, faute de visuel fourni. `next build` passe (`.next`, `yarn.lock` et
+`next-env.d.ts` retirés pour laisser le repo propre, comme lors du build initial).
+
+## Ce que je n'ai pas pu faire
+- **Effectif « 9 personnes »** (issue `ba3eb9ce`) et toute correction de `page_matrix` (issues `d989a313`,
+  `1106469e`, `6c6701fe`, `d7e88438`, `f7a15e33`, `2013ffd9`, `baec0c9c`) : ces issues citent un `entity_bible` et un
+  `page_matrix` qui ne sont pas dans `.agency/` de cette mission (seuls `design_spec.json`, `decisions.json`,
+  `site_constitution.json`, `image_plan.json` sont fournis). Impossible de vérifier ou reprendre ces chiffres et
+  libellés sans inventer une donnée absente du brief (règle 1).
+- **`sameAs` vers la fiche Google** (issues `809a9068`, `6e38cf28`, `16c19938`) : aucune URL réelle de fiche Google
+  Business fournie ; le lien texte pointe toujours vers une recherche Google Maps plutôt qu'une URL inventée
+  (limitation déjà notée à la mission précédente).
+- **Sections de maquette non reproductibles** : « Quatre métiers, une même exigence. » et « Comprendre avant de se
+  lancer. » (issues `32eedc3b`, `45c21eba`) n'existent dans aucune source disponible ici (ni `design_spec.json`, ni
+  maquette, absente de ce dossier `.agency/`). La section services actuelle compte 5 métiers (« Cinq métiers, une
+  même exigence. ») parce que la 5ᵉ prestation (étude et démarches d'urbanisme) a été ajoutée après la maquette
+  d'origine, décision déjà actée dans le code (`lib/nav.ts`) ; je n'ai pas renommé le titre en « Quatre » pour ne
+  pas revenir sur ce choix. Je n'ai pas non plus inventé une section « Comprendre avant de se lancer. » : aucune
+  source ne dit ce qu'elle doit contenir.
+
+## Choix que j'ai dû faire seul
+- Favicon et image de partage générés en code (fond `#0F2B2D`, wordmark AUREA/PISCINES) plutôt que par un fichier
+  image : aucune photo ni maquette de logo n'est disponible dans `.agency/images/`, et le brief interdit le
+  placeholder gris, pas un visuel généré à partir du design system.
