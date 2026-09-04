@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { Section } from "@/components/Section";
 import { ContactForm } from "@/components/ContactForm";
+import { InfoContact } from "@/components/InfoContact";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, webPageJsonLd, breadcrumbJsonLd } from "@/lib/seo";
 import { site } from "@/site.config";
@@ -23,58 +24,28 @@ export default function Contact() {
   return (
     <>
       <Hero
-        title="Demander un devis détaillé pour votre piscine"
-        lead="Pour chiffrer un projet, nous avons besoin du type de projet, de votre commune, de votre budget indicatif, de l’échéance souhaitée et d’un téléphone. Indiquez ces cinq éléments dans votre message : nous vous rappelons sous 24 h ouvrées pour convenir du relevé de terrain ou du diagnostic."
+        variant="plain"
+        breadcrumb="Contact"
+        title="Demandez votre devis détaillé"
+        lead="Décrivez votre projet en quelques lignes : type de projet, commune, budget indicatif, échéance souhaitée et téléphone. Nous vous rappelons sous 24 h ouvrées et, si besoin, nous passons sur place pour un relevé de terrain, qui n’est pas facturé."
       />
 
-      <Section tone="surface">
-        <div className="grid gap-12 lg:grid-cols-2">
+      <Section size="sm" className="pt-[clamp(28px,3vw,44px)]">
+        <div
+          className="grid items-start gap-[clamp(28px,3.4vw,56px)]"
+          style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(300px,100%),1fr))" }}
+        >
           <div>
-            <h2 className="text-2xl sm:text-3xl font-heading text-primary">Votre demande</h2>
-            <p className="mt-4 text-secondary max-w-content">
-              Reprenez ces cinq points dans le champ « votre besoin » : type de projet, commune, budget indicatif, échéance
-              souhaitée et téléphone. Plus votre message est précis, plus notre réponse l’est.
-            </p>
-            <div className="mt-8">
-              <ContactForm />
-            </div>
+            <h2 className="sr-only">Formulaire de demande de devis</h2>
+            <ContactForm />
           </div>
-          <div>
-            <h2 className="text-2xl sm:text-3xl font-heading text-primary">Nos coordonnées</h2>
-            <address className="mt-4 not-italic text-secondary">
-              <p className="font-heading text-primary">{site.name}</p>
-              <p className="mt-2">
-                {b.address.street}
-                <br />
-                {b.address.postalCode} {b.address.city}
-              </p>
-              <p className="mt-2">
-                <a href={`tel:${b.telephoneE164}`} className="tap underline text-primary">{b.telephone}</a>
-              </p>
-              <p className="mt-1">
-                <a href={`mailto:${b.email}`} className="tap underline text-primary">{b.email}</a>
-              </p>
-            </address>
-
-            <h3 className="mt-10 text-lg font-heading text-primary">Horaires d’atelier</h3>
-            <div className="mt-3 text-secondary max-w-content">
-              <p>Du lundi au vendredi, de 8h à 18h, uniquement sur rendez-vous.</p>
-              <p className="mt-2">
-                Nous n’avons pas de show-room : les rendez-vous se tiennent sur votre terrain, ou au dépôt lorsqu’il s’agit de
-                voir du matériel.
-              </p>
-              <p className="mt-2">
-                L’atelier ferme deux semaines à la mi-août. Une astreinte de dépannage est assurée pendant cette période pour
-                les clients sous contrat d’entretien.
-              </p>
-            </div>
-          </div>
+          <InfoContact />
         </div>
       </Section>
 
-      <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Ce qui est payant</h2>
-        <div className="mt-4 prose text-secondary">
+      <Section tone="surface" size="sm">
+        <h2 className="h2-md max-w-[20ch]">Ce qui est payant</h2>
+        <div className="prose mt-4">
           <p>Nous l’annonçons avant de commencer, pas au moment de la facture.</p>
           <ul>
             <li>Le premier échange, la visite de terrain et le devis de travaux ne sont pas facturés.</li>
@@ -92,17 +63,18 @@ export default function Contact() {
         </div>
       </Section>
 
-      <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Accès au dépôt et zone couverte</h2>
-        <div className="mt-4 prose text-secondary">
+      <Section size="sm">
+        <h2 className="h2-md max-w-[20ch]">Accès au dépôt et zone couverte</h2>
+        <div className="prose mt-4">
           <p>
             Le siège et le dépôt d’Aurea Piscines se trouvent {b.address.street}, {b.address.postalCode} {b.address.city}, dans
-            le quartier de la Pompignane. L’accès se fait sur rendez-vous, aux horaires d’atelier.
+            le quartier de la Pompignane. L’accès se fait sur rendez-vous, aux horaires d’atelier. Le dépôt n’est pas un
+            show-room.
           </p>
           <p>
             Nous construisons, rénovons et entretenons les piscines de Montpellier et de sa première couronne, dans un rayon
-            d’environ 30 km, notamment à {communesCourantes.filter((c) => c !== "Montpellier").join(", ")}. Entre 30 et 50 km, Sète incluse, l’intervention est
-            étudiée au cas par cas. Au-delà de 50 km, nous n’intervenons pas.
+            d’environ 30 km, notamment à {communesCourantes.filter((c) => c !== "Montpellier").join(", ")}. Entre 30 et 50 km,
+            Sète incluse, l’intervention est étudiée au cas par cas. Au-delà de 50 km, nous n’intervenons pas.
           </p>
           <p>
             <Link href={zonePage.href}>Voir le détail de la zone d’intervention autour de Montpellier</Link>.

@@ -1,15 +1,29 @@
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
-import { Section } from "@/components/Section";
+import { Section, SectionHead } from "@/components/Section";
+import { IntroSplit } from "@/components/IntroSplit";
 import { ServiceCard } from "@/components/ServiceCard";
-import { PreuveBlock } from "@/components/PreuveBlock";
+import { ProjectCard } from "@/components/ProjectCard";
 import { EtapesProjet } from "@/components/EtapesProjet";
-import { ZoneCarte } from "@/components/ZoneCarte";
+import { PreuveBlock } from "@/components/PreuveBlock";
+import { Testimonial } from "@/components/Testimonial";
+import { Faq } from "@/components/Faq";
 import { CtaBand } from "@/components/CtaBand";
 import { JsonLd } from "@/components/JsonLd";
 import { buildMetadata, businessJsonLd, breadcrumbJsonLd } from "@/lib/seo";
+import { site } from "@/site.config";
 import { services, zonePage } from "@/lib/nav";
-import { etapesProjet, preuves, communesCourantes } from "@/lib/site-content";
+import {
+  etapesProjet,
+  preuvesAurea,
+  chiffresCles,
+  projets,
+  avisClients,
+  communesCourantes,
+  MENTION_CHIFFRES,
+  MENTION_PROJETS,
+  MENTION_AVIS,
+} from "@/lib/site-content";
 
 export const generateMetadata = () =>
   buildMetadata({
@@ -19,91 +33,153 @@ export const generateMetadata = () =>
     path: "/",
   });
 
+const faq = [
+  {
+    q: "Quelle solution de traitement de l’eau choisir ?",
+    a: "L’électrolyse au sel produit le désinfectant en continu à partir du sel dissous dans l’eau : elle convient aux bassins familiaux utilisés régulièrement. Le chlore apporté manuellement reste adapté aux petits volumes peu fréquentés. Le choix se décide sur le volume du bassin, son exposition, la dureté de l’eau et la fréquence d’usage réelle.",
+  },
+  {
+    q: "Peut-on construire une piscine sur un terrain en pente ?",
+    a: "Oui, à condition de dimensionner la structure et les soutènements à partir d’une étude de sol. La pente impose de reprendre les poussées des terres et d’organiser le drainage autour du bassin. Autour de Montpellier, la configuration est courante, et souvent l’occasion d’un bassin à débordement dont la lame d’eau prolonge la vue.",
+  },
+  {
+    q: "Quelle différence entre un bassin en béton projeté et une coque polyester ?",
+    a: "Le béton armé projeté est mis en œuvre sur place sur une armature en acier : la forme, la profondeur et les dimensions sont libres, et le bassin se rénove indéfiniment. Une coque polyester est moulée en usine et posée en quelques jours, mais ses dimensions et sa forme sont imposées. Aurea Piscines construit uniquement des bassins béton.",
+  },
+];
+
 export default function Home() {
+  const b = site.business;
   return (
     <>
       <Hero
-        title="Constructeur de piscines béton à Montpellier depuis 2009"
-        lead="Aurea Piscines est un constructeur-pisciniste installé 128 avenue de la Pompignane à Montpellier. Nous construisons des bassins en béton armé projeté à Montpellier et dans un rayon d’environ 30 km, avec nos propres équipes de maçonnerie et un seul interlocuteur, du relevé de terrain à la mise en eau."
-        cta={{ label: "Demander un devis détaillé", href: "/contact" }}
+        variant="home"
+        eyebrow="Constructeur de piscines · Hérault"
+        title="Votre piscine, pensée pour votre maison."
+        lead="Aurea Piscines construit des bassins en béton armé projeté à Montpellier et dans un rayon d’environ 30 km, à Castelnau-le-Lez, Lattes, Pérols et alentours. Nous concevons, construisons, rénovons, équipons et entretenons le bassin avec nos propres équipes de maçonnerie, et un seul interlocuteur du premier croquis au premier bain."
+        cta={{ label: "Demander un devis", href: "/contact" }}
         secondary={{ label: "Voir la zone d’intervention", href: zonePage.href }}
+        trust="Entreprise locale · Plus de 15 ans d’expérience · Intervention autour de Montpellier"
       />
 
+      <Section>
+        <IntroSplit eyebrow="Notre approche" title="Un projet de piscine ne commence pas par un bassin." badges={["Conception", "Construction", "Rénovation", "Entretien"]}>
+          <p className="m-0 text-[17px] leading-[1.75] text-body">
+            Il commence par une maison, un terrain, une exposition, une manière de vivre dehors. Avant de parler dimensions ou
+            revêtement, nous regardons comment vous occupez votre extérieur : où passe le soleil en fin de journée, où l’on
+            s’assoit, ce que l’on voit depuis le salon.
+          </p>
+          <p className="m-0 text-[17px] leading-[1.75] text-body">
+            De cette lecture naît une implantation juste, puis un bassin dessiné pour elle. Nous assurons ensuite le gros œuvre
+            et l’étanchéité avec nos salariés, nous coordonnons les plages, la pierre et l’électricité avec des entreprises
+            locales, et nous restons présents une fois l’eau remplie : mise en route, réglages, entretien saisonnier.
+          </p>
+        </IntroSplit>
+      </Section>
+
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Nos cinq prestations</h2>
-        <p className="mt-4 text-secondary max-w-content">
-          Construire, rénover, équiper, entretenir un bassin et préparer le dossier d’urbanisme : chaque prestation a sa page,
-          avec la méthode et les conditions.
-        </p>
-        <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <SectionHead
+          eyebrow="Nos expertises"
+          title="Cinq métiers, une même exigence."
+          aside={
+            <p className="m-0 max-w-[42ch] text-[16px] text-muted">
+              Que votre projet parte de zéro ou d’un bassin existant, nous intervenons avec les mêmes équipes et le même niveau
+              de suivi.
+            </p>
+          }
+        />
+        <div className="grid gap-[clamp(18px,2vw,30px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(258px,100%),1fr))" }}>
           {services.map((s) => (
-            <ServiceCard key={s.href} title={s.label} description={s.description} href={s.href} />
+            <ServiceCard key={s.href} title={s.short} description={s.description} href={s.href} />
           ))}
         </div>
       </Section>
 
       <Section>
-        <PreuveBlock
-          title="Ce que nous faisons et ce que nous ne faisons pas"
-          intro="Notre métier est la construction de bassins en béton armé projeté, coulés sur place, et leur suivi dans le temps. Le reste, nous ne le vendons pas."
-          items={[
-            { label: "Bassins en béton armé projeté", detail: "Structure construite sur place par nos salariés, forme libre, dimensions adaptées au terrain." },
-            { label: "Rénovation de bassins existants", detail: "Diagnostic de structure et d’étanchéité, reprise, nouveau revêtement, margelles et plages." },
-            { label: "Équipements et entretien", detail: "Filtration, chauffage, traitement de l’eau, sécurité, puis contrat d’entretien annuel." },
-          ]}
-        >
-          <h3 className="mt-10 text-lg font-heading text-primary">Ce que nous ne faisons pas</h3>
-          <ul className="mt-3 grid gap-2 text-secondary max-w-content list-disc pl-5">
-            <li>Nous ne vendons pas de coques polyester.</li>
-            <li>Nous ne vendons pas de piscines en kit et nous n’assistons pas les chantiers montés par le particulier.</li>
-            <li>Nous n’avons pas de show-room : les rendez-vous se tiennent sur votre terrain ou au dépôt, sur rendez-vous.</li>
-          </ul>
-        </PreuveBlock>
-      </Section>
-
-      <Section tone="surface">
-        <PreuveBlock
-          title="Nos références, avec leur date et leur source"
-          intro="Les qualifications, assurances et chiffres ci-dessous sont ceux que nous pouvons documenter. Chacun porte sa date ou son organisme."
-          items={preuves}
+        <SectionHead
+          eyebrow="Réalisations"
+          title="Des bassins dessinés pour un lieu précis."
+          aside={<Link href="/contact" className="link-underline">Parler d’un projet similaire</Link>}
         />
+        <div className="grid gap-[clamp(16px,1.8vw,26px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(300px,100%),1fr))" }}>
+          <ProjectCard projet={projets[0]} featured />
+          {projets.slice(1, 3).map((p) => (
+            <ProjectCard key={p.titre} projet={p} />
+          ))}
+        </div>
+        <p className="mt-6 text-[12.5px] text-faint">{MENTION_PROJETS}</p>
       </Section>
 
-      <Section>
+      <Section tone="dark">
         <EtapesProjet
-          title="Le déroulé d’un projet, du relevé à la mise en eau"
-          intro="Six étapes, un interlocuteur unique, un prix contractualisé avant le démarrage et une date de chantier annoncée."
+          eyebrow="Notre méthode"
+          title="Cinq étapes, aucune zone d’ombre."
+          intro="Vous savez à chaque instant où en est votre projet, qui intervient et ce qui reste à valider. Chaque étape se termine par un document écrit."
           etapes={etapesProjet}
         />
       </Section>
 
-      <Section tone="surface">
-        <ZoneCarte
-          title="Où nous intervenons"
-          intro="Aurea Piscines construit des bassins béton à Montpellier et dans un rayon d’environ 30 km, depuis son dépôt de la Pompignane."
-          paliers={[
-            { titre: "Intervention courante", texte: "Montpellier et sa première couronne, soit douze communes desservies depuis le dépôt.", communes: communesCourantes },
-            { titre: "Entre 30 et 50 km", texte: "Étude au cas par cas selon l’accès au terrain et le calendrier des équipes, Sète incluse." },
-            { titre: "Au-delà de 50 km", texte: "Nous n’intervenons pas et nous vous le disons dès le premier échange." },
-          ]}
-          lien={{ label: "Voir le détail de la zone d’intervention autour de Montpellier", href: zonePage.href }}
+      <Section>
+        <PreuveBlock
+          eyebrow="Pourquoi Aurea"
+          title="Une entreprise que l’on peut appeler en août."
+          items={preuvesAurea}
+          chiffres={chiffresCles}
+          note={MENTION_CHIFFRES}
         />
       </Section>
 
-      <Section>
-        <CtaBand
-          title="Demander un devis détaillé"
-          text="Décrivez votre projet, votre commune et votre échéance. Nous vous rappelons sous 24 h ouvrées pour convenir du relevé de terrain."
-          cta={{ label: "Demander un devis détaillé", href: "/contact" }}
-        />
-        <p className="mt-6 text-secondary">
-          Vous préparez un dossier de mairie ?{" "}
-          <Link href="/etude-faisabilite-demarches-urbanisme" className="tap underline">
-            Voir l’étude de faisabilité et les démarches d’urbanisme
-          </Link>
-          .
-        </p>
+      <Section tone="surface">
+        <h2 className="h2-md mb-[clamp(30px,3.6vw,52px)] max-w-[22ch]">Ce qu’en disent nos clients.</h2>
+        <div className="grid gap-[clamp(20px,2.4vw,36px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(280px,100%),1fr))" }}>
+          {avisClients.map((a) => (
+            <Testimonial key={a.auteur} avis={a} />
+          ))}
+        </div>
+        <p className="mt-8 text-[12.5px] text-faint">{MENTION_AVIS}</p>
       </Section>
+
+      <Section>
+        <h2 className="h2-md max-w-[24ch]">Où nous intervenons.</h2>
+        <div className="mt-6 grid gap-[clamp(30px,4vw,72px)]" style={{ gridTemplateColumns: "repeat(auto-fit,minmax(min(300px,100%),1fr))" }}>
+          <div>
+            <p className="text-[16.5px] leading-[1.75] text-body">
+              Aurea Piscines construit des bassins béton à Montpellier et dans un rayon d’environ 30 km, depuis son dépôt du
+              {" "}{b.address.street}. Entre 30 et 50 km, Sète incluse, l’intervention est étudiée au cas par cas. Au-delà de
+              50 km, nous n’intervenons pas et nous le disons dès le premier échange.
+            </p>
+            <p className="mt-6">
+              <Link href={zonePage.href} className="link-underline">{zonePage.label}</Link>
+            </p>
+          </div>
+          <ul className="flex list-none flex-wrap gap-2.5 self-start p-0">
+            {communesCourantes.map((c) => (
+              <li key={c} className="pill">{c}</li>
+            ))}
+          </ul>
+        </div>
+      </Section>
+
+      <Section>
+        <Faq
+          eyebrow="Questions fréquentes"
+          title="Les réponses que l’on nous demande le plus."
+          items={faq}
+          intro={
+            <p className="m-0">
+              Une question qui n’apparaît pas ici ? Appelez-nous au{" "}
+              <a href={`tel:${b.telephoneE164}`}>{b.telephone}</a>, nous répondons sous 24 h ouvrées.
+            </p>
+          }
+        />
+      </Section>
+
+      <CtaBand
+        title="Parlons de votre projet."
+        text="Décrivez votre extérieur, votre commune et votre échéance : nous vous rappelons sous 24 h ouvrées pour cadrer le besoin, le budget et le calendrier."
+        cta={{ label: "Demander un devis", href: "/contact" }}
+        secondary={{ label: "Voir l’étude et les démarches d’urbanisme", href: "/etude-faisabilite-demarches-urbanisme" }}
+      />
 
       <JsonLd data={[businessJsonLd(), breadcrumbJsonLd([])]} />
     </>

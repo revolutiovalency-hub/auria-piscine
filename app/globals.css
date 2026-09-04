@@ -2,33 +2,165 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Design system : l'agent Dev remplace ces valeurs par celles de .agency/design_spec.json. Nulle part ailleurs. */
+/* Design system : valeurs relevées dans .agency/design_spec.json (design_system) et dans la maquette
+   .agency/mockup/Aurea Piscines.dc.html. Les couleurs, polices, rayons et espacements ne vivent qu'ici. */
 :root {
-  --color-primary: #1f2937;
-  --color-secondary: #4b5563;
-  --color-accent: #2563eb;
-  --color-background: #ffffff;
-  --color-surface: #f3f4f6;
-  --color-text: #111827;
-  --color-muted: #6b7280;
-  --font-heading: system-ui, sans-serif;
-  --font-body: system-ui, sans-serif;
-  --radius: 8px;
-  --space-section: clamp(3rem, 8vw, 6rem);
+  /* Couleurs (design_spec.design_system.colors) */
+  --color-primary: #1D5E63;
+  --color-primary-dark: #123F44;
+  --color-primary-darker: #0F2B2D;
+  --color-secondary: #8FB6B2;
+  --color-accent: #C1663F;
+  --color-accent-soft: #F0C9B4;
+  --color-background: #FBF8F4;
+  --color-surface: #F3EEE6;
+  --color-form-surface: #FFFDFA;
+  --color-text: #16211F;
+  --color-body: #3C4A46;
+  --color-muted: #5F6B67;
+  --color-muted-light: #6B7873;
+  --color-faint: #8A9490;
+  --color-faint-alt: #A8B3AF;
+  --color-on-dark: #FBF8F4;
+  --color-border: #E7DFD3;
+  --color-border-alt: #E2DACE;
+  --color-border-soft: #D9CEBE;
+  --color-row-border: #EFE8DD;
+  --color-input-bg: #FBF8F4;
+  --color-input-border: #DFD6C8;
+  --color-underline: #B9CFCE;
+  /* Voiles et bordures sur fond sombre, relevés dans la maquette */
+  --on-dark-86: rgba(251, 248, 244, 0.86);
+  --on-dark-78: rgba(251, 248, 244, 0.78);
+  --on-dark-72: rgba(251, 248, 244, 0.72);
+  --on-dark-62: rgba(251, 248, 244, 0.62);
+  --on-dark-55: rgba(251, 248, 244, 0.55);
+  --on-dark-border: rgba(251, 248, 244, 0.22);
+  --on-dark-border-soft: rgba(251, 248, 244, 0.14);
+
+  /* Typographie : polices chargées par next/font dans app/layout.tsx */
+  --font-heading: var(--font-cormorant), Georgia, serif;
+  --font-body: var(--font-work-sans), Helvetica, sans-serif;
+
+  /* Rayons : 2px boutons et champs, 3px cartes, 999px pilules */
+  --radius: 2px;
+  --radius-card: 3px;
+
+  /* Rythme : padding vertical de section, gouttière et largeur de contenu de la maquette */
+  --space-section: clamp(64px, 8vw, 124px);
+  --space-section-sm: clamp(56px, 7vw, 110px);
+  --gutter: clamp(18px, 4vw, 56px);
+  --shell: 1360px;
 }
 
 html { scroll-behavior: smooth; }
-body { background: var(--color-background); color: var(--color-text); font-family: var(--font-body); }
-h1, h2, h3 { font-family: var(--font-heading); line-height: 1.15; }
-.prose { max-width: 72ch; line-height: 1.7; }
-.prose h2 { margin-top: 2.5rem; margin-bottom: 1rem; font-size: 1.5rem; }
-.prose h3 { margin-top: 1.75rem; margin-bottom: .5rem; font-size: 1.2rem; }
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2 { font-family: var(--font-heading); font-weight: 500; line-height: 1.12; }
+a { color: var(--color-primary); text-decoration: none; }
+a:hover { color: var(--color-accent); }
+summary::-webkit-details-marker { display: none; }
+
+.prose { max-width: 72ch; line-height: 1.75; color: var(--color-body); }
+.prose h3 { font-family: var(--font-body); font-size: 17px; font-weight: 600; color: var(--color-text); margin-top: 2rem; margin-bottom: .75rem; }
 .prose p, .prose ul, .prose ol { margin-bottom: 1rem; }
 .prose ul { list-style: disc; padding-left: 1.25rem; }
-.prose a { color: var(--color-accent); text-decoration: underline; }
+.prose li { margin-bottom: .35rem; }
+.prose a { color: var(--color-primary); text-decoration: underline; }
+.prose strong { color: var(--color-text); font-weight: 600; }
+
 /* Champs de formulaire : 16px minimum, sinon zoom automatique sur iOS. */
 input, select, textarea { font-size: 16px; }
-/* Cibles tactiles : 44px minimum. */
-.tap { min-height: 44px; display: inline-flex; align-items: center; }
 :focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { animation: none !important; transition: none !important; } }
+
+@layer components {
+  /* Conteneur et gouttière de la maquette : max-width 1360px, padding clamp(18px,4vw,56px). */
+  .shell { width: 100%; max-width: var(--shell); margin-inline: auto; }
+  .gutter { padding-inline: var(--gutter); }
+
+  /* Texture rayée des aplats sombres de la maquette (repeating-linear-gradient 128deg). */
+  .texture { background-image: repeating-linear-gradient(128deg, rgba(255, 255, 255, 0.05) 0 2px, transparent 2px 10px); }
+  .texture-soft { background-image: repeating-linear-gradient(128deg, rgba(255, 255, 255, 0.06) 0 2px, transparent 2px 10px); }
+
+  /* Échelle typographique : tout en clamp(), aucune rupture de breakpoint. */
+  .eyebrow { font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--color-primary); }
+  .eyebrow-dark { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--on-dark-72); }
+  .eyebrow-on-dark { font-size: 11.5px; letter-spacing: 0.26em; text-transform: uppercase; color: var(--on-dark-62); }
+  .breadcrumb { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; }
+  .h1-home { font-size: clamp(38px, 6.4vw, 76px); line-height: 1.04; text-wrap: balance; }
+  .h1-page { font-size: clamp(34px, 5.4vw, 64px); line-height: 1.06; text-wrap: balance; }
+  .h1-plain { font-size: clamp(34px, 5vw, 60px); line-height: 1.08; text-wrap: balance; }
+  .h2-lg { font-size: clamp(30px, 3.9vw, 50px); line-height: 1.12; text-wrap: balance; }
+  .h2-md { font-size: clamp(28px, 3.4vw, 44px); line-height: 1.12; text-wrap: balance; }
+  .h2-cta { font-size: clamp(34px, 4.6vw, 60px); line-height: 1.08; text-wrap: balance; }
+  .h3-serif { font-family: var(--font-heading); font-weight: 600; font-size: 24px; line-height: 1.2; }
+  .h3-sans { font-family: var(--font-body); font-weight: 600; font-size: 17px; line-height: 1.4; }
+  .stat { font-family: var(--font-heading); font-size: 44px; line-height: 1; color: var(--color-primary); }
+
+  /* Boutons et liens : mêmes valeurs de padding, rayon et couleurs de survol que la maquette. */
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    min-height: 44px; padding: 16px 30px; border-radius: var(--radius);
+    font-size: 15px; font-weight: 500; letter-spacing: 0.02em; text-decoration: none; cursor: pointer;
+  }
+  .btn-sm { padding: 13px 22px; font-size: 14px; }
+  .btn-primary { background: var(--color-primary); color: var(--color-on-dark); border: 0; }
+  .btn-primary:hover { background: var(--color-primary-dark); color: var(--color-on-dark); }
+  .btn-light { background: var(--color-background); color: var(--color-primary-dark); }
+  .btn-light:hover { background: var(--color-accent); color: var(--color-on-dark); }
+  .btn-outline-light { border: 1px solid var(--on-dark-55); color: var(--color-on-dark); }
+  .btn-outline-light:hover { background: rgba(251, 248, 244, 0.12); color: var(--color-on-dark); }
+  .link-underline {
+    display: inline-block; font-size: 14px; font-weight: 500; color: var(--color-primary);
+    border-bottom: 1px solid var(--color-underline); padding-bottom: 4px;
+  }
+  .pill { border: 1px solid var(--color-border-alt); border-radius: 999px; padding: 8px 16px; font-size: 13px; color: var(--color-body); }
+
+  /* Champs : fond, bordure et rayon du formulaire de la maquette. */
+  .field {
+    font-family: inherit; width: 100%; padding: 13px 14px;
+    border: 1px solid var(--color-input-border); border-radius: var(--radius);
+    background: var(--color-input-bg); color: var(--color-text); line-height: 1.6;
+  }
+  /* Cellule du bandeau d'étapes : filet bas franc, filet droit plus discret (maquette). */
+  .cell-etape {
+    border-bottom: 1px solid var(--on-dark-border);
+    border-right: 1px solid var(--on-dark-border-soft);
+  }
+  .field-label { display: flex; flex-direction: column; gap: 8px; font-size: 13.5px; letter-spacing: 0.04em; color: var(--color-body); }
+}
+
+@layer utilities {
+  /* Cibles tactiles : 44px minimum. */
+  .tap { min-height: 44px; display: inline-flex; align-items: center; }
+  .text-body { color: var(--color-body); }
+  .text-muted-light { color: var(--color-muted-light); }
+  .text-faint { color: var(--color-faint); }
+  .text-faint-alt { color: var(--color-faint-alt); }
+  .text-on-dark { color: var(--color-on-dark); }
+  .text-on-dark-86 { color: var(--on-dark-86); }
+  .text-on-dark-78 { color: var(--on-dark-78); }
+  .text-on-dark-72 { color: var(--on-dark-72); }
+  .text-primary-dark { color: var(--color-primary-dark); }
+  .bg-primary-dark { background-color: var(--color-primary-dark); }
+  .bg-primary-darker { background-color: var(--color-primary-darker); }
+  .bg-form { background-color: var(--color-form-surface); }
+  .border-line { border-color: var(--color-border); }
+  .border-line-alt { border-color: var(--color-border-alt); }
+  .border-line-soft { border-color: var(--color-border-soft); }
+  .border-row { border-color: var(--color-row-border); }
+  .border-on-dark { border-color: var(--on-dark-border); }
+  .border-on-dark-soft { border-color: var(--on-dark-border-soft); }
+  .rounded-card { border-radius: var(--radius-card); }
+  /* Carte de réalisation en avant : elle occupe deux colonnes dès que la grille en a deux
+     (responsive_rules), et repasse en pleine largeur simple en dessous. */
+  .span-2 { grid-column: span 2; }
+  @media (max-width: 719px) { .span-2 { grid-column: auto; } }
+}

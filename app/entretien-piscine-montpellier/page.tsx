@@ -36,14 +36,15 @@ export default function EntretienPiscine() {
   return (
     <>
       <Hero
+        breadcrumb="Entretien de piscine"
         title="Contrat d’entretien de piscine à Montpellier : 4 à 12 passages par an"
         lead="Aurea Piscines entretient les piscines de Montpellier et d’un rayon d’environ 30 km sous contrat annuel : ouverture de saison, passages réguliers, analyses d’eau, hivernage et dépannages ponctuels. Le contrat se construit à partir de votre bassin, de son équipement et de la façon dont vous l’utilisez."
         cta={{ label: "Demander un contrat", href: "/contact" }}
       />
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Construire votre contrat : de 4 à 12 passages selon le bassin</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Construire votre contrat : de 4 à 12 passages selon le bassin</h2>
+        <div className="prose mt-4">
           <p>
             Nous ne vendons pas un contrat pris sur étagère. Nous partons du bassin, puis nous fixons ensemble le nombre de
             passages, entre quatre et douze par an, et le contenu de chacun.
@@ -71,8 +72,8 @@ export default function EntretienPiscine() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Ouverture de saison et hivernage</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Ouverture de saison et hivernage</h2>
+        <div className="prose mt-4">
           <p>
             Sous le climat héraultais, la saison est longue et l’hiver est doux, ce qui change le calendrier par rapport au
             reste de la France. Deux repères de température comptent davantage que les dates du calendrier.
@@ -96,8 +97,8 @@ export default function EntretienPiscine() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Analyses d’eau et traitement</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Analyses d’eau et traitement</h2>
+        <div className="prose mt-4">
           <p>
             À chaque passage, nous mesurons les paramètres qui pilotent la qualité de l’eau et la tenue des équipements : pH,
             désinfectant, alcalinité, dureté calcaire et taux de sel sur les bassins équipés d’une électrolyse. Les valeurs sont
@@ -116,8 +117,8 @@ export default function EntretienPiscine() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Dépannages ponctuels</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Dépannages ponctuels</h2>
+        <div className="prose mt-4">
           <h3>Ce que nous prenons</h3>
           <ul>
             <li>Pannes de pompe, de filtration, de régulation, d’électrolyseur et de pompe à chaleur.</li>

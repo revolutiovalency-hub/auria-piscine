@@ -37,5 +37,5 @@ Si `.claude/agents/` contient des sous-agents (lecteur de section de maquette, r
 Écris dans `.agency/DEV_NOTES.md` : ce que tu as fait, ce que tu n'as pas pu faire et pourquoi, et les choix que tu as dû faire seul. Trois lignes suffisent.
 
 
-## Mode : build
-Construis les pages décrites dans .agency/design_spec.json à partir du template existant et de la maquette dans .agency/mockup/. Reproduis la maquette, n'interprète pas.
+## Mode : fix
+Corrige uniquement les issues listées dans .agency/issues.json. Ne change rien d'autre.

@@ -58,3 +58,17 @@ export function relatedLinks(currentHref: string) {
   const siblings = services.filter((s) => s.href !== currentHref).slice(0, 2);
   return [...siblings.map((s) => ({ label: s.label, href: s.href })), { label: zonePage.label, href: zonePage.href }, { label: homePage.label, href: homePage.href }];
 }
+
+// Navigation principale : 8 entrées comme le header de la maquette, mappées sur les pages réelles
+// de la page_matrix. La maquette listait « Réalisations » et « Conseils » ; ces deux pages n'existent pas
+// (décision D1, retrait de /journal), elles sont remplacées par « Équipements » et « Étude et urbanisme ».
+export const navItems: { label: string; href: string }[] = [
+  { label: "Accueil", href: homePage.href },
+  { label: "Piscines", href: services[0].href },
+  { label: "Rénovation", href: services[1].href },
+  { label: "Équipements", href: services[2].href },
+  { label: "Entretien", href: services[3].href },
+  { label: "Étude et urbanisme", href: services[4].href },
+  { label: "À propos", href: aboutPage.href },
+  { label: "Contact", href: contactPage.href },
+];

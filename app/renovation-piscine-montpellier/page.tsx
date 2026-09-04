@@ -36,14 +36,15 @@ export default function RenovationPiscine() {
   return (
     <>
       <Hero
+        breadcrumb="Rénovation de piscine"
         title="Rénover une piscine vieillissante à Montpellier et alentours"
         lead="Aurea Piscines rénove les bassins existants à Montpellier et dans un rayon d’environ 30 km. Nous commençons toujours par un diagnostic de la structure et de l’étanchéité, puis nous reprenons ce qui doit l’être et posons un nouveau revêtement, avec les mêmes équipes que sur nos chantiers neufs."
         cta={{ label: "Demander un diagnostic", href: "/contact" }}
       />
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Les signes qui imposent une rénovation</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Les signes qui imposent une rénovation</h2>
+        <div className="prose mt-4">
           <ul>
             <li>Une baisse du niveau d’eau supérieure à l’évaporation normale, surtout filtration à l’arrêt.</li>
             <li>Des fissures traversantes, des faïençages qui s’élargissent ou une zone de paroi qui sonne creux.</li>
@@ -60,8 +61,8 @@ export default function RenovationPiscine() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Le diagnostic : ce que nous contrôlons</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Le diagnostic : ce que nous contrôlons</h2>
+        <div className="prose mt-4">
           <p>
             Le diagnostic est une visite technique, pas une visite commerciale. Nous contrôlons la structure du bassin, l’état
             et la tenue du revêtement, les margelles et les plages, le local technique, les réseaux hydrauliques et les pièces à
@@ -78,8 +79,8 @@ export default function RenovationPiscine() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Les travaux possibles</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Les travaux possibles</h2>
+        <div className="prose mt-4">
           <ul>
             <li>
               <strong>Reprise de structure</strong> : traitement des fissures, renforcement local, reprise en béton armé projeté
@@ -105,8 +106,8 @@ export default function RenovationPiscine() {
       </Section>
 
       <Section>
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Rénover ou reconstruire</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Rénover ou reconstruire</h2>
+        <div className="prose mt-4">
           <p>
             Nous le disons sans détour, y compris quand la réponse ne va pas dans notre sens commercial immédiat. Trois critères
             décident.
@@ -133,8 +134,8 @@ export default function RenovationPiscine() {
       </Section>
 
       <Section tone="surface">
-        <h2 className="text-2xl sm:text-3xl font-heading text-primary">Comment nous chiffrons</h2>
-        <div className="mt-4 prose text-secondary">
+        <h2 className="h2-md">Comment nous chiffrons</h2>
+        <div className="prose mt-4">
           <p>
             Nous ne publions pas de grille de prix : deux bassins du même âge peuvent demander des travaux sans rapport. Le
             chiffrage vient du diagnostic, par type d’intervention.

@@ -33,7 +33,7 @@ export function businessJsonLd() {
     url: site.url,
     description: site.description,
     foundingDate: b.foundingYear,
-    telephone: b.telephone || undefined,
+    telephone: b.telephoneE164 || undefined,
     email: b.email || undefined,
     address: { "@type": "PostalAddress", streetAddress: b.address.street, addressLocality: b.address.city, postalCode: b.address.postalCode, addressCountry: b.address.country },
     areaServed: b.areaServed || undefined,
@@ -46,7 +46,8 @@ export function businessJsonLd() {
       { "@type": "EducationalOccupationalCredential", name: "Qualibat 2181" },
       { "@type": "EducationalOccupationalCredential", name: "Propiscines®" },
       { "@type": "EducationalOccupationalCredential", name: "Certification IHB" },
-    ],
+      l.insurance ? { "@type": "EducationalOccupationalCredential", credentialCategory: "insurance", name: l.insurance } : undefined,
+    ].filter(Boolean),
     // Pas d'aggregateRating : la note Google reste en texte sourcé et daté (décision D1, point 18).
   };
 }
